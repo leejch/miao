@@ -27,7 +27,12 @@ var leejch = function() {
                 array[i] === 0 ||
                 array[i] === "" ||
                 array[i] === undefined ||
-                isNaN(array[i])
+
+                // JavaScript里只有NaN!==NaN
+                // 可以用isNaN()和array[i] !== array[i]
+                // 但isNaN()会在非数字类型的值上进行隐式类型转换，导致不必要的错误判断
+                // 而Number.isNaN()专门用于判断一个值是否为NaN，并且不会进行类型转换，避免了isNaN()的陷阱
+                Number.isNaN(array[i])
             ) {
                 continue;
             }
