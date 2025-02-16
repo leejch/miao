@@ -21,7 +21,14 @@ var leejch = function() {
         for (let i = 0; i < array.length; i++) {
 
             // falsey值不push到新数组
-            if (array[i] === false || array[i] === null || array[i] === 0 || array[i] === "" || array[i] === undefined || isNaN(array[i])) {
+            if (
+                array[i] === false ||
+                array[i] === null ||
+                array[i] === 0 ||
+                array[i] === "" ||
+                array[i] === undefined ||
+                isNaN(array[i])
+            ) {
                 continue;
             }
 
