@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Lorem ipsum dolor.</h1>
+<h2>Lorem ipsum dolor sit amet.</h2>
+<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, placeat!</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aperiam dolor ipsum odit praesentium rerum sapiente
+    sunt? Accusamus ad aspernatur dolore esse eveniet molestias, nostrum possimus praesentium quia similique unde?</p>
+
+<a href="https://www.jd.com/" target="_blank">京东</a>
+
+<a href="mailto:i@example.com">发邮件</a>
+
+<a href="#bottom">跳到底部</a>
+
+<a href="/" download="aa.html">下载</a>
+
+<div><img src="./lorem.png" alt="" width="200" height="200"></div>
+
+<hr>
+<hr>
+
+<marquee behavior="" direction="">piao</marquee>
+
+<div>
+    <em>斜体强调</em>
+    <b>b粗体强调</b>
+    <strong>strong强调</strong>
+    <u>u,underline强调</u>
+    <i>i强调</i>
+</div>
+
+<p>&lt;!-- 这是一段注释 --></p>
+
+<pre>
+    <code>
+        function a(){
+            return 0;
+        }
+    </code>
+</pre>
+
+<code>
+    function b(){
+    return 1;
+    }
+</code>
+<hr>
+
+<ul>
+    <li>
+        小学
+        <ol>
+            <li>
+                一年级
+                <ol>
+                    <li>上学期</li>
+                    <li>下学期</li>
+                </ol>
+            </li>
+            <li>二年级</li>
+            <li>三年级</li>
+        </ol>
+    </li>
+    <li>中学</li>
+    <li>
+        大学
+        <ol>
+            <li>大一</li>
+            <li>大二</li>
+            <li>大三</li>
+            <li>大四</li>
+        </ol>
+    </li>
+</ul>
+
+<hr>
+
+<dl>
+    <dt>班级</dt>
+    <dd>三年二班</dd>
+
+    <dt>老师</dt>
+    <dd>张</dd>
+    <dd>李</dd>
+    <dd>王</dd>
+
+    <dt>学生</dt>
+    <dd>小明</dd>
+    <dd>小红</dd>
+</dl>
+
+<hr>
+
+<h2>Bing搜索</h2>
+<form action="https://cn.bing.com/search" target="_blank">
+    <input type="text" name="q" id="">
+    <input hidden="" type="text" name="ie" value="UTF-8">
+    <input hidden="" type="text" name="sourceid" value="UTF-8">
+    <button type="submit">在新窗口打开搜索</button>
+</form>
+
+<hr>
+
+<form action="./html-basic.html">
+    <p>个人信息调查表</p>
+    <dl>
+        <dt>性别</dt>
+        <dd>
+            <label>
+                <input type="radio" name="gender" value="male"> 男
+            </label>
+            <label>
+                <input type="radio" name="gender" value="female"> 女
+            </label>
+        </dd>
+
+        <dt>年龄</dt>
+        <dd>
+            <select name="age">
+                <option value="" hidden="">请选择</option>
+                <optgroup label="少年">
+                    <option value="1-6">1~6岁</option>
+                    <option value="6-12">6~12岁</option>
+                </optgroup>
+                <optgroup label="青年">
+                    <option value="13-15">13~15岁</option>
+                    <option value="16-18">16~18岁</option>
+                </optgroup>
+                <optgroup label="中年">
+                    <option value="18-25">18~25岁</option>
+                    <option value="26-35">26~35岁</option>
+                </optgroup>
+            </select>
+        </dd>
+
+
+        <dt>生日</dt>
+        <dd>
+            <input type="date" value="2021-11-04" name="birthday">
+        </dd>
+
+        <dt>生辰</dt>
+        <dd>
+            <input type="time" name="birthtime">
+        </dd>
+
+        <dt>照片</dt>
+        <dd>
+            <input type="file" name="avatar" id="avatar-upload" hidden="">
+            <label for="avatar-upload">点我上传照片</label>
+        </dd>
+
+        <dt>自我介绍</dt>
+        <dd>
+            <textarea name="intro" cols="30" rows="10">&lt;/textarea>
+            </textarea>
+        </dd>
+    </dl>
+
+    <fieldset disabled>
+        <legend>全部禁用</legend>
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+    </fieldset>
+
+    <button>提交</button>
+    <button type="reset">重置</button>
+
+</form>
+
+<hr>
+
+<table border="1">
+    <colgroup>
+        <col>
+        <col bgcolor="red">
+        <col>
+        <col>
+    </colgroup>
+    <thead>
+    <tr>
+        <th>编号</th>
+        <th>品名</th>
+        <th>进价</th>
+        <th>售价</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>11</td>
+        <td>12</td>
+        <td rowspan="2">13</td>
+        <td>14</td>
+    </tr>
+    <tr>
+        <td>21</td>
+        <td>22</td>
+        <td>24</td>
+    </tr>
+    <tr>
+        <td>31</td>
+        <td>32</td>
+        <td>33</td>
+        <td>34</td>
+    </tr>
+    <tr>
+        <td>41</td>
+        <td>42</td>
+        <td>43</td>
+        <td>44</td>
+    </tr>
+    </tbody>
+</table>
+
+<hr>
+
+<a target="bottom-frame" href="https://cn.bing.com">Bing</a>
+<div></div>
+<iframe name="bottom-frame" src="./html-basic.html" frameborder="1"></iframe>
+
+<div>&lt;span>&lt;/span></div>
+
+<div id="bottom"></div>
+</body>
+</html>
