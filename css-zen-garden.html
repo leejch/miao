@@ -48,6 +48,208 @@
 
 -->
 
+<style>
+    /* 用id还是class选择器 */
+    /* id是一次性的，只出现一次 */
+    /* class是多处可用，可以复用的 */
+    /* id选择器不支持空格分隔的id列表 */
+
+
+    /*  一个元素可以有多个class  */
+    /*p {
+        color: red;
+    }*/
+
+    h3 {
+        text-decoration: underline;
+        color: green;
+    }
+
+    .design-name {
+        color: gray;
+    }
+
+    .designer-name {
+        color: orange;
+    }
+
+    /* 用id控制，id通常不重复，所以正常只能选中一个元素 */
+    #zen-participation {
+        color: violet;
+    }
+
+    /* 属性选择器 */
+    /* role属性的值为banner */
+    [role="banner"] {
+        text-decoration: underline;
+    }
+
+    /* role属性值以banner开头 */
+    [role^="banner"] {
+    }
+
+    /* role属性值以banner结尾 */
+    [role$="banner"] {
+    }
+
+    /* role属性值出现过banner, 比如 bbannerr */
+    [role*="banner"] {
+    }
+
+    /* role属性值存在banner单词的元素, 比如 b banner r */
+    [role~="banner"] {
+    }
+
+    /* role属性值是banner, 或以banner-开头 */
+    [role|="banner"] {
+    }
+
+    /* 选择器末尾的i表示不区分大小写 */
+    [role="banner"i] {
+        text-decoration: underline;
+    }
+
+    /* 伪类选择器 */
+
+    /* 交互伪类 */
+    /* 被鼠标悬浮的元素 */
+    :hover {
+        /*background-color: deepskyblue;*/
+        /* 这个元素的每一级都有框框 */
+        /*border: 2px solid;*/
+    }
+
+    /* 鼠标按下去的元素 */
+    :active {
+        /*border: 2px solid;*/
+    }
+
+    /* 焦点所在元素 */
+    :focus {
+        /*background-color: red;*/
+    }
+
+
+    /* 链接伪类 */
+
+    /* 选中未被访问过的链接元素(a标签) */
+    :link {
+        color: red;
+    }
+
+    /* 选中(现在和曾经)被访问过的链接元素(a标签) */
+    :visited {
+        color: gray;
+    }
+
+    /* 隐含条件伪类 */
+    /* 选中任何元素的第1个子元素 */
+    :first-child {
+        border: 2px solid;
+    }
+
+    /* 最后1个子元素 */
+    :last-child {
+    }
+
+    /* 任何元素的第2个子元素 */
+    :nth-child(2) {
+    }
+
+    /* 倒数第2个子元素 */
+    :nth-last-child(2) {
+    }
+
+    /* 任何元素的第偶数个子元素 */
+    :nth-child(2n) {
+    }
+
+    /* n从0开始计数 */
+    :nth-child(2n+1) {
+    }
+
+    /* 奇数 */
+    :nth-child(odd) {
+    }
+
+    /* 偶数 */
+    :nth-child(even) {
+    }
+
+    /* 选中内容为空的元素 */
+    /* 元素之间连空格都不能有, 只能有一对空标签 */
+    :empty {
+    }
+
+    :not(:empty) {
+    }
+
+    :not(p) {
+    }
+
+    /* 表单选择伪类 */
+    /* 被勾上/选中的 */
+    :checked {
+        /* 尺寸放大2倍 */
+        zoom: 2;
+    }
+
+    /* 被启用的表单元素 (或者说, 未被禁用的) */
+    :enabled {
+        zoom: 3;
+    }
+
+    /* 填对的, 比如邮箱符合格式 */
+    :valid {
+    }
+
+    /* 选择器组合 */
+    /* 满足条件A的元素的后代中，满足B条件的元素 */
+    A B {
+    }
+
+    /* div内部的span */
+    div span {
+    }
+
+    .page-wrapper ul image {
+    }
+
+    /* 同时满足多个选择器 */
+    AB {
+    }
+
+    /* 复合选择器 */
+    div.foo.bar#abc[title^="Hello"]:hover {
+    }
+
+    /* 被hover的div */
+    div:hover {
+    }
+
+    /* div里被hover的元素 */
+    div :hover {
+    }
+
+    /* 满足A的元素, 子元素中满足B的 */
+    A > B {
+    }
+
+    /* 满足A的元素, 旁边紧随其后的、满足B的兄弟元素 */
+    A + B {
+    }
+
+    [type="email"] + [type="checkbox"] {
+    }
+
+    /* 与A+B类似, 但不需要紧挨着 */
+    A ~ B {
+    }
+
+    [type="email"] ~ [type="radio"] {
+    }
+</style>
+
 <body id="css-zen-garden">
 <div class="page-wrapper">
 
@@ -66,6 +268,11 @@
         </div>
 
         <div class="preamble" id="zen-preamble" role="article">
+
+            <input type="checkbox" name="01">
+            <input type="radio" name="02">
+            <input type="radio" name="02">
+
             <h3>The Road to Enlightenment</h3>
             <p>Littering a dark and dreary road lay the past relics of browser-specific tags, incompatible <abbr
                     title="Document Object Model">DOM</abbr>s, broken <abbr title="Cascading Style Sheets">CSS</abbr>
