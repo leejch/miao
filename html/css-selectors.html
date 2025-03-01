@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Selectors</title>
+</head>
+
+<style>
+    /*  *{}选择器的优先级是(0,0,0,0) */
+    /* 继承来的样式没有优先级 */
+    /* 没有优先级与(0,0,0,0)不同, 它比(0,0,0,0)更低 */
+    /* !important的优先级永远比其他优先级高 */
+    /* 都有!important就比较选择器的优先级 */
+
+    /* 浏览器自带样式优先级最低 */
+    * {
+        /*color: red !important;*/
+        color: red;
+    }
+
+    body {
+        color: blue;
+    }
+
+    p {
+        color: yellow;
+    }
+
+    html {
+        font-size: 40px;
+    }
+</style>
+
+<body>
+<font color="gray">aaaaa</font>
+Lorem ipsum dolor.
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid aperiam aut consequatur, deserunt, doloremque ea
+    explicabo odit omnis tempora, veritatis vitae voluptate. Ab accusamus beatae culpa cumque quam rem.</p>
+</body>
+</html>
