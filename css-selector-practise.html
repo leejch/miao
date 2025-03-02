@@ -15,6 +15,7 @@
             color: black;
         }
 
+        /* link > visited > focus > hover > active */
         /* 获得焦点, 但不处于悬浮或按下状态: 蓝色 */
         p.a[tabindex="1"]:focus {
             color: blue;
@@ -43,21 +44,21 @@
             color: blue;
         }
 
-        div > a:not(:visited) {
-            color: pink;
-        }
-
         div > a:visited {
             color: orange;
         }
 
+        div > a:link {
+            color: pink;
+        }
+
         /* 以"mailto:"开头 */
-        div > a[href^="mailto:"] {
+        div > a[href^="mailto:"i] {
             color: blue;
         }
 
         /* 以"tel:"开头 */
-        div > a[href^="tel:"] {
+        div > a[href^="tel:"i] {
             color: yellow;
         }
 
