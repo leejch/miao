@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Box Model</title>
+</head>
+
+<style>
+    div {
+        background-color: lightgreen;
+        width: 200px;
+        color: blue;
+        /*border: 10px double;*/
+        border-top: 10px solid pink;
+        border-right: 20px dashed blue;
+        /*border-color: red;*/
+        padding: 10px 30px 50px 70px;
+        margin: 30px 50px 20px 10px;
+        margin-left: 20px;
+        box-sizing: content-box;
+        /*box-sizing: border-box;*/
+    }
+
+    div:hover {
+        color: lightpink;
+    }
+
+    div.sjx {
+        width: 0px;
+        height: 0px;
+        color: blue;
+
+        border: solid 50px;
+        /*border-width: 15px 15px 15px 15px;*/
+        border-color: red blue green lime;
+        padding: 0px;
+
+        margin: 30px;
+    }
+</style>
+
+<body>
+<div>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Ab alias autem consequatur dolore doloribus dolorum libero quibusdam saepe soluta veniam.
+    Adipisci consequatur corporis dolores et explicabo ipsa molestiae suscipit voluptas!
+</div>
+<div class="sjx"></div>
+</body>
+</html>
