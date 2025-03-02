@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Font Text</title>
+</head>
+
+<style>
+    input#SN {
+        text-transform: uppercase;
+    }
+
+    h1 {
+        font-weight: normal;
+        font-size: 40px;
+    }
+
+    div.div-1 {
+        font-family: "Consolas", "宋体", "仿宋", serif;
+        font-weight: bold;
+        font-style: italic;
+        line-height: 1.5;
+    }
+
+    div.div-2 {
+        font-variant: small-caps;
+    }
+
+    div.div-3 {
+        /*text-indent: 2em;*/
+        text-align: justify;
+        text-align-last: justify;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    div.div-4 {
+        line-height: 2;
+    }
+
+    div.div-4 > span {
+        font-size: 30px;
+        background-color: green;
+        vertical-align: top;
+    }
+
+    div.div-5 {
+        word-spacing: 1em;
+        letter-spacing: 2px;
+        /*text-transform: uppercase;*/
+        /* text-transform 比 font-variant 先执行 */
+        text-transform: capitalize;
+        font-variant: small-caps;
+    }
+
+    div.div-6 {
+        color: blue;
+        text-decoration: underline red wavy;
+        text-shadow: 2px 2px violet;
+    }
+</style>
+
+<body>
+<h1>Lorem ipsum dolor.</h1>
+
+序列号 自动转换大写
+<br>
+<input type="text" name="SN" id="SN">
+
+<br><br>
+
+<div>中文</div>
+
+<div class="div-1">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci blanditiis commodi eius esse explicabo, fuga
+    fugit illum itaque molestias nisi provident quae quibusdam quos rerum similique soluta ullam voluptas voluptates?
+</div>
+
+<br>
+
+<div class="div-2">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi atque blanditiis consequatur cumque doloribus
+    dolorum illum ipsam, libero maiores natus, nisi optio quae quibusdam quidem quod. Alias doloremque iure laudantium.
+</div>
+
+<br>
+
+<h2>Center</h2>
+
+<div class="div-3">
+    中文
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor fugit, provident? Adipisci, aliquid commodi, cum
+    delectus dolorum et facilis fugiat nisi quam quasi quod repudiandae sed, suscipit tempore ullam ut.
+</div>
+
+<br>
+
+<div class="div-4">
+    Lorem ipsum <span>AAAAA</span> dolor sit amet, consectetur adipisicing elit. Cupiditate, fuga illo illum impedit
+    ipsum iusto laboriosam
+    optio quasi sed vero! Asperiores, at autem cum distinctio laudantium libero odio saepe vitae.
+</div>
+
+<br>
+
+<div class="div-5">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus atque deleniti illo iure, laborum natus nesciunt
+    officiis quam. A dignissimos dolores illum ipsum perspiciatis quisquam sit velit. Id odit, ut.
+</div>
+
+<br>
+
+<div class="div-6">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, doloribus, officia. Architecto eligendi fugiat
+    illum iste laudantium placeat repudiandae tenetur ut velit, voluptas! Culpa inventore nesciunt odio rerum suscipit
+    voluptatem!
+</div>
+
+</body>
+</html>
