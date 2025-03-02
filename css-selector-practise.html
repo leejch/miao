@@ -15,6 +15,11 @@
             color: black;
         }
 
+        /* 获得焦点, 但不处于悬浮或按下状态: 蓝色 */
+        p.a[tabindex="1"]:focus {
+            color: blue;
+        }
+
         /* 鼠标悬浮: 红色 */
         p.a[tabindex="1"]:hover {
             color: red;
@@ -25,11 +30,6 @@
             color: green;
         }
 
-        /* 获得焦点, 但不处于按下状态: 蓝色 */
-        /* focus优先级低于active, 所以要not active */
-        p.a[tabindex="1"]:focus:not(:active) {
-            color: blue;
-        }
 
         p.c > span {
             color: red;
