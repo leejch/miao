@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>块元素布局示例</title>
+    <style>
+        /* 设置页面外边框，便于观察整个页面布局 */
+        body {
+            border: 8px solid #333;
+            margin: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        /* 公共规则：让所有示例div具有相对定位，以便绝对定位的标记显示在其内部 */
+        div[id^="div-"] {
+            position: relative;
+            margin-bottom: 80px; /* 为下面的说明留出空间 */
+        }
+
+        /* 在每个示例上方添加标记，显示该示例的盒模型属性 */
+        div[id^="div-"]::before {
+            position: absolute;
+            top: -50px;
+            left: 0;
+            background: rgba(255, 255, 255, 0.8);
+            font-size: 12px;
+            padding: 2px 4px;
+            border: 1px solid #ccc;
+            white-space: pre-line;
+            content: attr(data-label);
+        }
+
+        /* 示例1：0个auto，左右margin均为固定值 */
+        div#div-0 {
+            background-color: lightgreen;
+            margin-left: 10px;
+            margin-right: 10px;
+            padding-left: 20px;
+            border-left: 3px solid blue;
+            width: 100px;
+        }
+
+        div#div-0[data-label]::before {
+            /* 显示各部分的具体数值 */
+            content: "【div-0】\nmargin-left:10px, margin-right:10px\npadding-left:20px, border-left:3px\nwidth:100px";
+        }
+
+        /* 示例2：1个auto，即margin-right为auto */
+        div#div-1 {
+            background-color: #87CEFA;
+            width: 200px;
+            margin-left: 20px;
+            margin-right: auto;
+        }
+
+        div#div-1[data-label]::before {
+            content: "【div-1】\nwidth:200px\nmargin-left:20px, margin-right:auto";
+        }
+
+        /* 示例3：2个auto，即左右margin均为auto，元素居中 */
+        div#div-2 {
+            background-color: #FF7F7F;
+            width: 200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        div#div-2[data-label]::before {
+            content: "【div-2】\nwidth:200px\nmargin-left:auto, margin-right:auto\n（居中显示）";
+        }
+
+        /* 示例4：3个auto，width为auto且左右margin为auto */
+        div#div-3 {
+            background-color: #FFF68F;
+            width: auto;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        div#div-3[data-label]::before {
+            content: "【div-3】\nwidth:auto\nmargin-left:auto, margin-right:auto\n（通常占满整行，实际margin为0）";
+        }
+
+        /* 布局讲解区域样式 */
+        .layout-explanation {
+            margin-top: 50px;
+            padding: 20px;
+            border: 2px dashed #666;
+            background: #f9f9f9;
+        }
+
+        .layout-explanation h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+<!-- 示例1：固定宽度，左右margin、内边距和边框均有设置 -->
+<div id="div-0" data-label="">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, eaque id ipsa ipsam ipsum
+    molestiae nemo nostrum perferendis perspiciatis qui saepe sit vel veritatis! At dolore ducimus
+    eum incidunt voluptas.
+</div>
+
+<!-- 示例2：一个auto，margin-right为auto -->
+<div id="div-1" data-label="">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, eaque id ipsa ipsam ipsum
+    molestiae nemo nostrum perferendis perspiciatis qui saepe sit vel veritatis! At dolore ducimus
+    eum incidunt voluptas.
+</div>
+
+<!-- 示例3：两个auto，左右margin均为auto，实现居中 -->
+<div id="div-2" data-label="">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, eaque id ipsa ipsam ipsum
+    molestiae nemo nostrum perferendis perspiciatis qui saepe sit vel veritatis! At dolore ducimus
+    eum incidunt voluptas.
+</div>
+
+<!-- 示例4：三个auto，width为auto且左右margin为auto -->
+<div id="div-3" data-label="">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, eaque id ipsa ipsam ipsum
+    molestiae nemo nostrum perferendis perspiciatis qui saepe sit vel veritatis! At dolore ducimus
+    eum incidunt voluptas.
+</div>
+
+<!-- 布局讲解区域 -->
+<div class="layout-explanation">
+    <h2>CSS块元素布局讲解</h2>
+    <p>
+        CSS的盒模型从外到内依次为：外边距（margin）→ 边框（border）→ 内边距（padding）→ 内容（content）。在实际布局中，
+        我们可以通过设置这些属性来调整元素之间的间隔、边界和内部填充。
+    </p>
+    <p>
+        例如，上述示例中：
+        <br>• <strong>div-0</strong>：设置了固定宽度100px，同时左右各有10px的外边距，左侧有20px内边距和3px蓝色边框，
+        整体会受到这些数值的影响。
+        <br>• <strong>div-1</strong>：宽度为200px，左侧外边距为20px，右侧外边距设置为auto，效果是元素会尽可能向左靠。
+        <br>• <strong>div-2</strong>：左右外边距均为auto，这会使得元素自动居中显示。
+        <br>• <strong>div-3</strong>：宽度设置为auto，并且左右外边距均为auto，通常表现为占满整行，实际计算时外边距会变为0。
+    </p>
+</div>
+</body>
+</html>
