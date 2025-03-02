@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Block Elements</title>
+</head>
+
+<style>
+    body {
+        border: 8px solid;
+    }
+
+    /*
+    实际应用:
+        定宽居中: width设置为某个值, margin左右设置为auto;
+        两边固定留白, 宽度占剩余空间;
+    */
+
+    /* 0个auto: 元素过分受限 */
+    /* 元素的margin-right会被重置为auto */
+    /* 从右往左的排版则是重置margin-left为auto */
+    div#div-0 {
+        background-color: lightgreen;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding-left: 20px;
+        border-left: 3px solid blue;
+        width: 100px;
+        /* 10 + 10 + 20 + 0 + 3 + 0 + 100 */
+    }
+
+    /* 1个auto: 为auto的这个值会通过包含块的宽度减去剩余6个值确定 */
+    /* 特例: 如果margin-left被计算为负值, 则会重置为0, 转而重置margin-right为auto */
+    /* margin-left不能被自动计算为负值, 如果计算为负值, 重置为0并重新计算 */
+    div#div-1 {
+        background-color: blue;
+        width: 200px;
+        margin-left: 20px;
+        margin-right: auto;
+    }
+
+    /* 2个auto */
+    /* 如果有1个在宽度(width)上, 则另一个相当于0 */
+    /* 如果都在margin上, 则平分，结果就是元素会在包含块里居中 */
+    div#div-2 {
+        background-color: red;
+        width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* 3个auto */
+    /* 相当于2个margin都是0 */
+    div#div-3 {
+        background-color: yellow;
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+
+<body>
+<div id="div-0">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, eaque id ipsa ipsam ipsum
+    molestiae nemo nostrum perferendis perspiciatis qui saepe sit vel veritatis! At dolore ducimus
+    eum incidunt voluptas.
+</div>
+<div id="div-1">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, eaque id ipsa ipsam ipsum
+    molestiae nemo nostrum perferendis perspiciatis qui saepe sit vel veritatis! At dolore ducimus
+    eum incidunt voluptas.
+</div>
+<div id="div-2">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, eaque id ipsa ipsam ipsum
+    molestiae nemo nostrum perferendis perspiciatis qui saepe sit vel veritatis! At dolore ducimus
+    eum incidunt voluptas.
+</div>
+<div id="div-3">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, eaque id ipsa ipsam ipsum
+    molestiae nemo nostrum perferendis perspiciatis qui saepe sit vel veritatis! At dolore ducimus
+    eum incidunt voluptas.
+</div>
+</body>
+</html>
