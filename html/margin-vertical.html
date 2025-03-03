@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>margin vertical</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: 0 0 1px red;
+    }
+
+    div {
+        /* margin外边距会合并 */
+        /* 块元素垂直方向的margin会合并, 保留较大者 */
+        margin-top: 20px;
+        margin-bottom: 50px;
+    }
+
+    section {
+        /* 会变为触发bfc的block */
+        display: flow-root;
+        /*position: absolute;*/
+
+        margin-top: 20px;
+        margin-bottom: 30px;
+
+        /* 当包含块元素没有边框和padding时: */
+        /* 第一子元素的上margin、最后子元素的下margin */
+        /* 会跑到包含块的外面 */
+        border: 5px solid;
+    }
+
+    /*
+    html元素是一个触发了bfc的元素
+    block formating context 块级格式化上下文
+    它并不是指display为block的元素
+    而是元素的特定状态
+    */
+</style>
+
+<body>
+<section>
+    <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed, velit!
+    </div>
+    <div></div>
+    <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, soluta!
+    </div>
+</section>
+</body>
+</html>
