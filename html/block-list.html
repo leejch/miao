@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Block List</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: 0 0 1px red;
+    }
+
+    ul {
+        /*list-style: none;*/
+
+        list-style-position: inside;
+
+        /* 相当于1个div里套了4个div */
+        /*padding-left: 0;*/
+    }
+</style>
+
+<body>
+
+<!--
+列表项(ul, ol, li, dl, dt, dd)的布局
+ul与li都是块元素, 只不过ul有一个默认的 左内/外 边距
+li有项目标号, 但也可以控制标号是否影响布局
+-->
+<ul>
+    <li>Lorem ipsum dolor.</li>
+    <li>Eligendi iure, rem!</li>
+    <!-- 在list-style: none时, 这个li高度就会消失 -->
+    <li></li>
+    <li>Accusamus, excepturi quibusdam.</li>
+</ul>
+
+<br>
+<dl>
+    <dt>Lorem ipsum dolor.</dt>
+    <dd>Animi, nihil quasi?</dd>
+    <dd>Maxime repellendus, soluta.</dd>
+    <dd>Minima, repudiandae, ut.</dd>
+</dl>
+</body>
+</html>
