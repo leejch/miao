@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>margin vertical case</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: 0 0 1px red;
+    }
+
+    ul.ul-1 > li {
+        border-bottom: 5px dashed blue;
+    }
+
+    ul.ul-1 > li:last-child {
+        border-bottom: none;
+    }
+
+    ul.ul-2 > li {
+        border-bottom: 5px dashed green;
+        padding-top: 5px;
+        margin-bottom: -5px;
+    }
+
+    ul.ul-2 {
+        /* ul未触发bfc */
+        overflow: visible;
+    }
+
+    ul.ul-3 > li {
+        border-bottom: 5px dashed darkred;
+        padding-top: 5px;
+        margin-bottom: -5px;
+    }
+
+    ul.ul-3 {
+        /* ul的overflow为hidden, 触发ul的bfc */
+        /* ul包住的是所有li的margin box */
+        /* 而li的margin为负, 所以margin box比border box小 */
+        overflow: hidden;
+    }
+
+    ul.ul-4 > li {
+        border-bottom: 5px dashed darkorange;
+        padding-top: 5px;
+        margin-bottom: -5px;
+    }
+
+    ul.ul-4 {
+        /* 触发bfc, 但不隐藏超出的 */
+        /* margin box比border box小 */
+        display: flow-root;
+        /* overflow: hidden 已经有 display: flow-root 的效果 */
+    }
+
+    div.div-5 {
+        overflow: hidden;
+    }
+
+    ul.ul-5 > li {
+        border-bottom: 5px dashed darkred;
+        padding-top: 5px;
+        margin-bottom: -5px;
+    }
+
+    ul.ul-5 {
+        overflow: hidden;
+        margin-top: -5px;
+        margin-bottom: 0;
+    }
+</style>
+
+<body>
+<ul class="ul-1">
+    <li>Lorem ipsum.</li>
+    <li>Dolor, reiciendis.</li>
+    <li>Incidunt, qui!</li>
+    <li>A, autem!</li>
+</ul>
+<ul class="ul-2">
+    <li>Lorem ipsum dolor.</li>
+    <li>Esse, exercitationem, sapiente!</li>
+    <li>Iste magni, quasi?</li>
+    <li>Id modi, vel!</li>
+</ul>
+
+<ul class="ul-3">
+    <li>Lorem ipsum dolor.</li>
+    <li>Beatae provident, rerum.</li>
+    <li>Dolorem, fuga, rem?</li>
+    <li>Excepturi, numquam, officia.</li>
+</ul>
+
+<ul class="ul-4">
+    <li>Lorem ipsum dolor.</li>
+    <li>Aliquid, excepturi, nisi.</li>
+    <li>Eum, iste voluptates?</li>
+    <li>Laboriosam repellendus, veniam?</li>
+</ul>
+
+<div class="div-5">
+    <ul class="ul-5">
+        <li>Lorem ipsum dolor.</li>
+        <li>Quibusdam, repudiandae, veritatis.</li>
+        <li>Beatae, enim, excepturi!</li>
+        <li>Aut, expedita, repellat?</li>
+    </ul>
+</div>
+
+</body>
+</html>
