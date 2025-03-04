@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>block vertical case</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: 0 0 1px red;
+    }
+
+    body {
+        height: 200px;
+    }
+
+    div.div-1 {
+        /* 当包含块的高度会受子元素影响时, 子元素的百分比高度无效 */
+        /* 会被重置为auto */
+        height: 50%;
+        margin-top: 20%; /* 基于包含块的[宽度] */
+    }
+</style>
+
+<body>
+<div class="div-1">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci animi culpa dicta
+    ea earum eligendi est fuga, mollitia necessitatibus nemo nesciunt numquam, obcaecati quaerat
+    quam repellendus tenetur unde voluptatem? Lorem ipsum dolor sit amet, consectetur adipisicing
+    elit. Architecto, assumenda debitis, delectus distinctio eaque excepturi facilis illum iusto
+    molestias necessitatibus officiis perferendis quod reprehenderit repudiandae sapiente sequi
+    similique ullam voluptatibus.
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>block vertical case 2</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: 0 0 1px red;
+    }
+
+    div.div-1 {
+        border: 50px solid;
+
+        /* padding是其包含块[宽度]的50% */
+        padding-top: 50%;
+    }
+
+    section.section-1 {
+        padding-top: 50%;
+    }
+
+    div.div-2 {
+        border: 50px solid;
+    }
+
+    /* 边框内部的section比例是1:2 */
+    section.section-2 {
+        padding-top: 50%;
+    }
+</style>
+
+<body>
+
+<div class="div-1">
+    <section class="section-1"></section>
+</div>
+
+<br>
+
+<div class="div-2">
+    <section class="section-2"></section>
+</div>
+
+</body>
+</html>
