@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inline Elements</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: 0 0 1px red;
+    }
+
+    em {
+        /*border-top: 5px solid;*/
+        /*border-bottom: 10px solid blue;*/
+        /*padding-bottom: 30px;*/
+
+        /* 水平方向上的属性除width外, 都具有正常布局效果 */
+        border-right: 80px solid green;
+        padding-right: 40px;
+        margin-right: 20px;
+    }
+
+    span {
+        border: 4px dashed yellow;
+    }
+
+    /*
+    em框(字号框): 高度由font-size决定
+    内容区(content area): 多个字的框组成, 注意不是content-box
+    行间距 = 行高 - 字号
+    行高框: 文字的行高形成的框(em框在行高框垂直方向居中)
+
+    行内框: 每个行内元素(包括行内块元素)的布局框
+    行框: 包裹一行所有行内框的最小框
+    */
+</style>
+
+<body>
+<div>
+    <em>lorem</em>
+    <span>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores iusto nihil quis sint vero!
+    Corporis deleniti dolorem et, nesciunt placeat praesentium? Ducimus eius fuga laudantium,
+    necessitatibus sed sequi vel vitae.
+    </span>
+</div>
+</body>
+</html>
