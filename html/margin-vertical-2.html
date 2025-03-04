@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>margin vertical 2</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: 0 0 1px red;
+    }
+
+    div.div-1 {
+        height: 80px;
+
+        /* 如果不定高, 单写hidden, 就是触发bfc */
+        overflow: hidden;
+    }
+
+    div.div-2 {
+        height: 80px;
+        overflow: auto;
+    }
+
+    div.div-3 {
+        height: 100px;
+        /* 始终有滚动条 */
+        overflow: scroll;
+    }
+
+    div.div-4 {
+        height: 80px;
+        /* 默认值visible, 超出部分可见 */
+        overflow: visible;
+    }
+</style>
+
+<body>
+<div class="div-1">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet consectetur consequuntur ex magni
+    quas. Amet aperiam autem commodi cumque dolores enim eum, excepturi optio, pariatur quam quos
+    rerum tempore voluptate. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus,
+    blanditiis culpa deleniti expedita ipsa ipsum nemo odio officia quas repellendus? Animi, ducimus
+    eius est exercitationem ipsum odio pariatur sint voluptate?
+</div>
+<br>
+<div class="div-2">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet consectetur consequuntur ex magni
+    quas. Amet aperiam autem commodi cumque dolores enim eum, excepturi optio, pariatur quam quos
+    rerum tempore voluptate. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus,
+    blanditiis culpa deleniti expedita ipsa ipsum nemo odio officia quas repellendus? Animi, ducimus
+    eius est exercitationem ipsum odio pariatur sint voluptate?
+</div>
+<br>
+<div class="div-3">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, repellat.
+</div>
+<br>
+<div class="div-4">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet consectetur consequuntur ex magni
+    quas. Amet aperiam autem commodi cumque dolores enim eum, excepturi optio, pariatur quam quos
+    rerum tempore voluptate. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus,
+    blanditiis culpa deleniti expedita ipsa ipsum nemo odio officia quas repellendus? Animi, ducimus
+    eius est exercitationem ipsum odio pariatur sint voluptate?
+</div>
+</body>
+</html>
