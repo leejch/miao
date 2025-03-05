@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inline Elements 2</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: 0 0 1px red;
+    }
+
+    span.span-1 {
+        /* 从里面看是块 */
+        /* 从外面看是行内元素, 遵循行内元素的布局 */
+
+        /* 行内元素里如果有字, 则按照最后一行字的基线对齐 */
+        /* inline-block的基线, 被认为是自己最后一行内容的基线 */
+        display: inline-block;
+        width: 50px;
+        height: 100px;
+    }
+
+    span.span-2 {
+        display: inline-block;
+        width: 50px;
+        height: 100px;
+    }
+
+    span.span-3 {
+        display: inline-block;
+        width: 50px;
+        height: 100px;
+        /* 触发bfc */
+        overflow: hidden;
+    }
+
+    span.span-4 {
+        display: inline-block;
+        width: 50px;
+        height: 80px;
+        overflow: hidden;
+    }
+
+    span.span-5 {
+        display: inline-block;
+        width: 100px;
+        height: 90px;
+        overflow: hidden;
+    }
+
+    span.span-6 {
+        display: inline-block;
+
+        /* 宽度由内容撑开, 但最大宽度是包含块的宽度 */
+        /*width: 100px;*/
+
+        height: 100px;
+        overflow: hidden;
+    }
+
+    div.div-2 {
+        font-size: 0;
+    }
+
+    div.div-2 > span {
+        font-size: 16px;
+        /*margin-right: -5px;*/
+    }
+</style>
+
+<body>
+<div class="div-1">
+    aaaxxx
+    <span class="span-1">b b b b b b b b x b b x</span>
+    <span class="span-2">xxxccc</span>
+    xxx
+</div>
+
+<br><br>
+
+<div class="div-2">
+    aaaxxx
+    <span class="span-3">b b b b b b b b x b b x</span><!--
+ --><span class="span-4">xxxccc</span>
+    <span class="span-5"></span>
+    xxx
+</div>
+
+<br><br>
+
+<div class="div-3">
+    aaaxxx
+    <span class="span-6">aaa a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a</span>
+</div>
+
+</body>
+</html>
