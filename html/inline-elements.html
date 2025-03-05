@@ -11,6 +11,12 @@
         box-shadow: 0 0 1px red;
     }
 
+    div {
+        /* normal由字体决定 */
+        line-height: normal;
+        font-family: "JetBrains Mono NL", monospace;
+    }
+
     em {
         /*border-top: 5px solid;*/
         /*border-bottom: 10px solid blue;*/
@@ -19,11 +25,93 @@
         /* 水平方向上的属性除width外, 都具有正常布局效果 */
         border-right: 80px solid green;
         padding-right: 40px;
-        margin-right: 20px;
+        /*margin-right: 20px;*/
+
+        /*font: 25px / 2 simsun;*/
     }
 
     span {
-        border: 4px dashed yellow;
+        /*border: 4px dashed yellow;*/
+    }
+
+    #img-2 {
+        display: inline-block;
+        width: 18px;
+        /* 行内框中心对齐匿名文本x的中心 */
+        /* 并不是在行内垂直居中 */
+        vertical-align: middle;
+    }
+
+    #img-3 {
+        display: inline-block;
+        width: 18px;
+        vertical-align: top;
+    }
+
+    #img-4 {
+        display: inline-block;
+        width: 40px;
+        vertical-align: bottom;
+    }
+
+    #img-5 {
+        display: inline-block;
+        width: 13px;
+        vertical-align: baseline;
+    }
+
+    #img-6 {
+        display: inline-block;
+        width: 50px;
+        vertical-align: top;
+    }
+
+    #img-7 {
+        display: inline-block;
+        width: 80px;
+    }
+
+    .div-5 {
+        line-height: normal;
+        /* line-height: normal 等同于 font-size * 1.2 */
+        font-size: 0;
+    }
+
+    .div-5 > #img-8 {
+        display: inline-block;
+        width: 80px;
+    }
+
+    .div-6 {
+        line-height: 20px; /* 图片底下是10px */
+
+    }
+
+    .div-6 > #img-9 {
+        display: inline-block;
+        width: 40px;
+    }
+
+    .div-7 {
+        line-height: 20px; /* 图片底下是10px */
+    }
+
+    .div-7 > #img-10 {
+        display: inline-block;
+        width: 10px;
+        vertical-align: middle;
+    }
+
+    .div-7 > #img-11 {
+        display: inline-block;
+        width: 10px;
+        vertical-align: bottom;
+    }
+
+    .div-7 > #img-12 {
+        display: inline-block;
+        width: 10px;
+        vertical-align: top;
     }
 
     /*
@@ -34,17 +122,77 @@
 
     行内框: 每个行内元素(包括行内块元素)的布局框
     行框: 包裹一行所有行内框的最小框
+    所有的行框, 垂直堆叠以后, 将包含块撑大
+
+    行内元素是水平排列, 对齐匿名文本的基线
+    如果没有匿名文本, 则想象至少存在一个匿名文本
+
+    没有基线的元素(图片), m-box底部对齐基线
+
+    然后在垂直方向上微调, 基于vertical-align的值
+    vertical-align只能给到行内(块)元素
+    给块元素没有效果, 而是会对其内部的行内元素生效(后续表单元格也可以给)
+
+    baseline 默认值, 该元素的基线与该行匿名文本的基线对齐
+    super, 元素向上移动一定的距离, 具体多少不明确
+    sub, 元素向下移动一定的距离, 具体多少不明确
+    top, 元素的行内框顶部对齐行框顶部
+    bottom, 元素的行内框底部对齐行框底部
+    middle, 行内框中心对齐匿名文本x的中心
+    text-top, 顶部对齐匿名文本em框顶部
+    text-bottom, 底部对齐匿名文本em框底部
     */
 </style>
 
 <body>
-<div>
-    <em>lorem</em>
-    <span>
+<div class="div-1">
+    <em>lorem</em><span>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores iusto nihil quis sint vero!
     Corporis deleniti dolorem et, nesciunt placeat praesentium? Ducimus eius fuga laudantium,
     necessitatibus sed sequi vel vitae.
     </span>
+</div>
+
+<br><br>
+
+<div class="div-2">
+    1xxxxx<img id="img-1" src="example.jpg" height="100px" width="100px" alt="">xxxxx
+</div>
+
+<br><br>
+
+<div class="div-3">
+    2middlexxx<img id="img-2" src="example.jpg" alt="">xxx
+    3topxxx<img id="img-3" src="example.jpg" alt="">xxx
+    4bottomxxx<img id="img-4" src="example.jpg" alt="">xxx
+    5baselinexxx<img id="img-5" src="example.jpg" alt="">xxx
+    6topxxx<img id="img-6" src="example.jpg" alt="">xxx
+</div>
+
+<br><br>
+
+<div class="div-4">
+    7<img id="img-7" src="example.jpg" alt="">
+</div>
+
+<br><br>
+
+<div class="div-5">
+    8<img id="img-8" src="example.jpg" alt="">
+</div>
+
+<br><br>
+
+<div class="div-6">
+    9baseline<img id="img-9" src="example.jpg" alt="">
+</div>
+
+<br><br>
+
+<div class="div-7">
+    10middle<img id="img-10" src="example.jpg" alt="">
+    11bottom<img id="img-11" src="example.jpg" alt="">
+    12top<img id="img-12" src="example.jpg" alt="">
 </div>
 </body>
 </html>
