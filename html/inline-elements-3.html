@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inline Elements 3</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: 0 0 1px red;
+    }
+
+    div.div-1 {
+        line-height: 2;
+    }
+
+    span.span-1 {
+        /* 底色框由默认行高决定 */
+        background-color: hotpink;
+    }
+
+    div.div-2 {
+        line-height: 2;
+    }
+
+    span.span-2 {
+        background-color: hotpink;
+        display: inline-block;
+    }
+
+    div.div-3 {
+        line-height: 36px;
+        /* 行内元素的色块不具备参考价值 */
+        /*overflow: hidden;*/
+    }
+
+    span.span-3 {
+        background-color: hotpink;
+        font-size: 40px;
+    }
+
+    div.div-4 {
+        /* 缩放行高问题, 即行高使用纯数值声明 */
+        /* 这样一来, 继承的是书写值而非计算值 */
+
+        /* AI给出的说明如下 */
+
+        /*
+        当行高使用无单位数值（例如 2）时，子元素继承的只是这个数字本身，
+        而不是父元素根据自身字体大小计算得到的具体行高（即计算值）。
+        举例来说：如果父元素的默认字体大小为 18px，则父元素的行高计算为 18px * 2 = 36px；
+        而子元素（如 .span-4）即便将字体大小改为 24px，也只是继承数字 2，
+        按照标准计算，其行高应为 24px * 2 = 48px，而不会固定为父元素的 36px。
+        这种行为可能导致子元素的行高在视觉上与父元素不一致，从而影响整体布局。
+        */
+        line-height: 2;
+    }
+
+    span.span-4 {
+        background-color: hotpink;
+        font-size: 24px;
+    }
+</style>
+
+<body>
+<div class="div-1">
+    <span class="span-1">spanxxx</span>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam nihil placeat
+    quaerat quam veritatis voluptatem. Ad beatae consectetur eaque et ex libero minus modi quam
+    saepe tenetur. Earum, illum!
+</div>
+
+<br><br>
+
+<div class="div-2">
+    <span class="span-2">spanxxx</span>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam nihil placeat
+    quaerat quam veritatis voluptatem. Ad beatae consectetur eaque et ex libero minus modi quam
+    saepe tenetur. Earum, illum!
+</div>
+
+<br><br>
+
+<div class="div-3">
+    <span class="span-3">spanxxx</span>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam nihil placeat
+    quaerat quam veritatis voluptatem. Ad beatae consectetur eaque et ex libero minus modi quam
+    saepe tenetur. Earum, illum!
+</div>
+
+<br><br>
+
+<div class="div-4">
+    <span class="span-4">spanxxx</span>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam nihil placeat
+    quaerat quam veritatis voluptatem. Ad beatae consectetur eaque et ex libero minus modi quam
+    saepe tenetur. Earum, illum!
+</div>
+</body>
+</html>
