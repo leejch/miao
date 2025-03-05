@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inline Elements 4</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: 0 0 1px red;
+    }
+
+    /* 多行文本垂直居中(且行数不确定) */
+    div.div-1 {
+        height: 200px;
+        font-size: 0;
+        line-height: 200px;
+    }
+
+    span.span-1 {
+        /* 让这个inline-block始终是div中唯一的一行 */
+        display: inline-block;
+
+        vertical-align: middle;
+        font-size: 24px;
+        line-height: normal;
+    }
+
+    div.div-2 {
+        height: 200px;
+        font-size: 16px;
+        line-height: 200px;
+    }
+
+    span.span-2 {
+        width: 90%;
+
+        /* 让这个inline-block始终是div中唯一的一行 */
+        display: inline-block;
+
+        vertical-align: middle;
+        font-size: 24px;
+        line-height: normal;
+    }
+</style>
+
+<body>
+<div class="div-1">
+    <span class="span-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+</div>
+
+<br><br>
+
+<div class="div-2">
+    x<span class="span-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+</div>
+</body>
+</html>
