@@ -40,6 +40,12 @@
 
         overflow: auto;
         background-color: lightskyblue;
+
+        border-bottom: 8px solid black;
+        /* 加上box-sizing: border-box; */
+        /* height: 80px; 就变成了可视高度(含border) */
+        /* border-box很常用, 更好计算尺寸 */
+        box-sizing: border-box;
     }
 
     div {
@@ -62,6 +68,9 @@
 
         font-size: 16px;
         background-color: purple;
+
+        border-right: 8px solid deepskyblue;
+        box-sizing: border-box;
 
     }
 
