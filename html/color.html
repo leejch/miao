@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: 0 0 1px red;
+    }
+
+    img#img-1 {
+        width: 300px;
+        height: 200px;
+        object-fit: contain;
+    }
+
+    img#img-2 {
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    div {
+        color: blue; /* 前景色 */
+        width: 900px;
+        height: 600px;
+
+        /* 背景色不继承, 默认是transparent透明, 不会默认取前景色 */
+        background-color: yellow;
+        border: 50px dashed currentColor;
+        padding: 30px;
+
+        /* 背景图片默认是对齐padding box的左上角 */
+        background-image: url("./example2.jpg");
+
+        /* 背景图片默认是平铺 */
+        /*background-repeat: no-repeat;*/
+        background-repeat: repeat-x;
+        /* contain等比例放大至box边界, cover不显示box外的超出部分 */
+
+        /* 如果填百分比, 不是按照content box计算, 而是从平铺的box计算 */
+        background-size: 20% 150px;
+
+        font-size: 36px;
+    }
+</style>
+
+<body>
+<img src="./example2.jpg" alt="" id="img-1">
+<img src="./example2.jpg" alt="" id="img-2">
+<div>xxxxx</div>
+</body>
+</html>
