@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>oald layout block</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: 0 0 1px red;
+    }
+
+    html, body {
+        height: 100%;
+        margin: 0;
+    }
+
+    div {
+        height: 100%;
+        font-size: 0;
+    }
+
+    div > * {
+        font-size: 16px;
+    }
+
+    aside {
+        display: inline-block;
+        width: 100px;
+        height: 100%;
+        vertical-align: top;
+        overflow: auto;
+    }
+
+
+    /*
+    100%与100vw / 100vh的区别
+
+    1. 计算基准不同
+      100% 是相对于父元素或包含块的
+      100vw / 100vh 是相对于浏览器窗口的
+    2. 父元素、包含块的影响
+      当父元素、包含块大小改变时，100%的计算结果会随之变化
+      （且计算基准是父元素的内容区尺寸，不包含父元素的内边距、边框或滚动条）
+      100vw / 100vh 不受父元素影响，只受视口尺寸影响
+    */
+
+    section {
+        display: inline-block;
+        vertical-align: top;
+        height: 100%;
+        width: calc(100% - 300px);
+    }
+
+    section > header {
+        height: 100px;
+        overflow: auto;
+    }
+
+    section > main {
+        height: calc(100% - 100px);
+        overflow: auto;
+    }
+</style>
+
+<body>
+<div class="oald">
+    <aside class="left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A dignissimos
+        dolor ducimus earum quidem quos rerum sunt. Beatae blanditiis consequatur culpa deleniti
+        deserunt distinctio dolorem eius enim error eveniet exercitationem harum, illum incidunt
+        inventore iure labore non nulla officia porro provident quam sapiente sunt tempora veniam
+        voluptates. Ab ad animi autem cumque deleniti eligendi facere impedit ipsa necessitatibus
+        nihil optio, quae, quaerat quis quo quod quos, ratione sapiente tempora! Amet dolores
+        doloribus enim eveniet excepturi, fuga impedit laboriosam laudantium libero, molestiae
+        obcaecati quae quas voluptatem. Commodi corporis deleniti dicta dolor dolores ducimus error
+        est quam, quibusdam rem saepe temporibus ullam?
+    </aside>
+    <section>
+        <header>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aut consequuntur dolor
+            dolores eius esse hic ipsum maxime modi mollitia nam nesciunt nulla officia quaerat,
+            sequi tempora velit vero, voluptate?
+        </header>
+        <main>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad aliquam
+            aperiam asperiores aut beatae blanditiis consequatur deserunt dolor dolore earum eius,
+            expedita facere fugiat illum in incidunt, maxime molestiae nam nisi placeat possimus
+            quae, qui quidem quod repellendus rerum saepe suscipit totam velit veniam vitae
+            voluptates voluptatibus. A aliquid aperiam architecto cupiditate debitis dolorum
+            exercitationem fugiat, magnam maiores nihil odit, omnis qui quidem vero voluptas! A ad
+            aut consequatur distinctio, dolores dolorum earum incidunt inventore ipsam iste libero
+            modi nemo perspiciatis provident recusandae similique veniam veritatis! Eligendi numquam
+            quia recusandae velit voluptate. Asperiores atque consequuntur cupiditate, dignissimos
+            dolor dolores ducimus eum inventore minus nesciunt odit officiis porro rem velit, veniam
+            vero voluptas. Accusantium dicta eum iusto. At atque eligendi esse excepturi expedita
+            modi saepe totam ut vitae. Aliquam asperiores at atque, autem blanditiis cum et eum
+            explicabo, facere iste natus nisi non officiis porro qui quos rem tenetur ut veniam
+            vero! Alias animi assumenda cumque delectus distinctio eius eum inventore perspiciatis
+            vel veritatis? Alias beatae cupiditate debitis dolorem doloremque earum error esse
+            exercitationem ipsam, maxime nemo officia perferendis placeat quam quia soluta unde?
+            Amet assumenda consequuntur, cupiditate eum explicabo incidunt ipsam placeat,
+            repellendus sint sunt vel velit, veritatis voluptates!
+        </main>
+    </section>
+    <aside class="right1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, atque
+        autem dicta dolorem doloremque ducimus ea eaque earum eos esse inventore iste laudantium
+        minus modi nemo neque pariatur perferendis praesentium quidem quisquam reiciendis repellat
+        veniam. A deleniti ducimus excepturi inventore libero quae quam qui, quis quo rem?
+        Architecto consectetur dignissimos explicabo in iste iusto magnam reiciendis rem
+        reprehenderit sint. Amet facilis fugiat, incidunt inventore molestias rerum. Consequatur ea
+        et expedita fugiat id illo iste rem repellendus, tempora unde! Ab aliquam aliquid animi
+        aperiam architecto dignissimos dolorum et illum magnam magni maxime odit, reiciendis rem
+        repudiandae, sapiente sequi unde ut voluptate.
+    </aside>
+    <aside class="right2">a</aside>
+</div>
+</body>
+</html>
