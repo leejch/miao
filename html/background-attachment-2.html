@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Background attachment 2</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: 0 0 1px red;
+    }
+
+    html, body {
+        margin: 0;
+        height: 100%;
+    }
+
+    div {
+        height: 100%;
+        background-size: contain;
+        background-attachment: fixed;
+        /*background-repeat: no-repeat;*/
+    }
+
+    div:nth-child(1) {
+        background-image: url("./color1.webp");
+    }
+
+    div:nth-child(2) {
+        background-image: url("./color2.webp");
+    }
+</style>
+
+<body>
+<div></div>
+<div></div>
+</body>
+</html>
+

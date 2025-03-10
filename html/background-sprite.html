@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Background sprite</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: 0 0 1px red;
+    }
+
+    div {
+        font-size: 0;
+    }
+
+    .bing {
+        /* 去掉宽高限制 */
+        width: auto;
+        height: auto;
+        padding: 0 1030px 92px 0;
+
+        display: inline-block;
+        vertical-align: bottom;
+
+        background-image: url("./bing.png");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .icon-search-gray {
+        width: 43px;
+        height: 43px;
+
+        display: inline-block;
+        vertical-align: bottom;
+
+        background-image: url("./bing.png");
+        background-repeat: no-repeat;
+        background-position: -758px -36px;
+    }
+
+    .icon-search-blue-small-bold {
+        width: 37px;
+        height: 37px;
+
+        display: inline-block;
+        vertical-align: bottom;
+
+        background-image: url("./bing.png");
+        background-repeat: no-repeat;
+        background-position: -843px -31px;
+    }
+
+    .icon-star-white {
+        width: 29px;
+        height: 29px;
+
+        display: inline-block;
+        vertical-align: bottom;
+
+        background-image: url("./bing.png");
+        background-repeat: no-repeat;
+        background-position: -65px -67px;
+    }
+
+    .icon-next-white {
+        width: 80px;
+        height: 80px;
+
+        display: inline-block;
+        vertical-align: bottom;
+
+        background-image: url("./bing.png");
+        background-repeat: no-repeat;
+        background-position: -514px 0px;
+    }
+</style>
+
+<body>
+<div>
+    <span class="bing"></span>
+</div>
+<div>
+    <span class="icon-search-gray"></span>
+    <span class="icon-search-blue-small-bold"></span>
+    <span class="icon-star-white"></span>
+    <span class="icon-next-white"></span>
+</div>
+</body>
+</html>

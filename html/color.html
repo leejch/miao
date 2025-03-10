@@ -38,11 +38,19 @@
 
         /* 背景图片默认是平铺 */
         /*background-repeat: no-repeat;*/
-        background-repeat: repeat-x;
+        background-repeat: no-repeat;
         /* contain等比例放大至box边界, cover不显示box外的超出部分 */
 
         /* 如果填百分比, 不是按照content box计算, 而是从平铺的box计算 */
         background-size: 20% 150px;
+
+        /*background-position: left 50px bottom 100px;*/
+        /* 50%是图片整个处于中间, 而不是左侧边界在中间 */
+        /* 0%: 图片的0%对准元素的0%,
+           100%: 图片的100%对准元素的100%,
+           导致奇怪的现象: 当图片比元素大时, 随百分比变大, 图片往左移
+         */
+        background-position: 50% 100px;
 
         font-size: 36px;
     }
