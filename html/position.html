@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: 0 0 1px red;
+    }
+
+    /*
+    定位布局通过直接指定元素的位置来实现布局
+    某些方式定位的元素会脱离常规流/正常流
+    脱离常规流:
+        其他元素感知不到它们
+        或其他元素当它们不存在: 在不指定位置时，它们自己还是以原来的起点为起点
+    定位元素的包含块, 即是它相对于谁定位:
+        fixed: 视口
+        relative: 自身原来的位置
+            元素尺寸的计算方式保留原来的方式, 不脱离常规流
+            一般某个轴只制定一个方位
+            这种定位方式无法通过设定方位来改元素的大小, 元素的大小还是不定位时的大小
+        absolute: 最近的定位祖先的padding-box
+    */
+
+    div {
+        /* body感知不到div, body的高度变成0了 */
+        position: fixed;
+        /* 定位后, 通过方位来指定位置 */
+        top: 50px;
+        bottom: 200px;
+        left: 100px;
+        right: 100px;
+
+        /*
+        水平方向上的9个属性求和等于包含块的宽度
+        left + margin-left + border-left + padding-left + width + padding-right + border-right + margin-right + right
+
+        left margin-left border-left padding-left
+        width
+        padding-right border-right margin-right right
+
+        具体的处理顺序为：
+        1. 如果 left、width、right 都明确指定了具体数值，且总宽度超出包含块，则浏览器会首先调整外边距（margin）属性来解决冲突。
+        2. 优先重置（自动调整）的是 margin-right。
+        3. 如果重置 margin-right 为零后冲突依然存在，再继续重置 margin-left 为零。
+        4. 如果重置两个外边距后依旧存在冲突，则下一步会根据方向性（如 direction: ltr 或 rtl）调整定位属性（如调整 right 属性为 auto）
+        */
+    }
+
+    button {
+
+    }
+
+    button:active {
+        position: relative;
+        top: 5px;
+        left: 5px;
+    }
+</style>
+
+<body>
+<button>button</button>
+<br>
+A
+<!-- div感知到A, 所以跟在A的下一行 -->
+<div>Lorem ipsum dolor</div>
+<!-- position: fixed 影响的是B的位置 -->
+B
+</body>
+</html>
