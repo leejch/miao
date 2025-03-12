@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>position absolute</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: 0 0 1px red;
+    }
+
+    /*
+    absolute: 最近的定位祖先的padding-box
+    当不存在定位祖先时, 相对于第一屏定位, 而不是随着视口移动
+    */
+
+    html {
+        height: 100%;
+    }
+
+    body {
+        position: relative;
+        margin: 20px;
+        border: 5px solid blue;
+        padding: 10px;
+    }
+
+    section {
+        /* div相对于section定位了, 相当于不在section里面 */
+        /*position: fixed;*/
+        border: 3px solid lime;
+        height: 500px;
+        width: 200px;
+    }
+
+    /*
+    div的尺寸是由最近定位祖先元素body的padding-box和我设置的距离决定，而非被内容撑开
+    */
+    div {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+
+        /* 当去掉section的定位以后, 这个50%也会生效 */
+        /* div是定位的, body感知不到div, 所以div不影响body高度, 50%可以生效 */
+        height: 50%;
+
+        /* margin-top取包含块水平宽度(padding-box)百分比 */
+        /* 解除了相互依赖, 就可以写百分比 */
+        margin-top: 20%;
+
+        background-color: rgba(255, 0, 85, 0.5);
+    }
+
+</style>
+
+<body>
+<section>
+    xxxxx
+    <div>
+        nisi numquam
+    </div>
+</section>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam asperiores culpa delectus
+dolores earum eligendi esse et facere hic ipsam laudantium libero magni, mollitia nemo odio quas
+quasi quod rerum saepe sint veniam vero voluptatibus. Aut dicta dignissimos est, et ex, iste,
+maiores minus nemo nihil nisi numquam perferendis quam quia quis rem saepe totam. Adipisci animi
+consequatur consequuntur deserunt dignissimos, eos et excepturi exercitationem facilis fugiat ipsa
+iste iusto maxime natus nihil pariatur perferendis provident qui reiciendis repudiandae tempora
+velit vero voluptas. Commodi earum hic laborum minima nemo porro recusandae reprehenderit suscipit
+velit vitae. A aliquid architecto asperiores consequatur deleniti doloribus dolorum earum in, iure
+labore laborum molestias natus neque nesciunt possimus quae quia quod recusandae repellendus
+sapiente temporibus vitae voluptatibus. Aliquam atque, dicta eos facere, fugiat fugit id itaque,
+maxime molestias natus nulla perferendis quis quo sed tempore tenetur unde voluptate voluptatem.
+Animi explicabo mollitia sapiente voluptate! Assumenda deleniti dolorem libero obcaecati unde? Ab
+aut cum, ex, fuga harum labore, laudantium libero reiciendis sequi sint veniam veritatis. A commodi
+eligendi illo minus nulla officia quia reiciendis sapiente similique sit tempora tempore, vitae,
+voluptate. Accusantium aliquam consequuntur culpa cupiditate eligendi fugit incidunt iste
+necessitatibus odio optio quae quam quidem quis rem repellendus reprehenderit, sed sequi, temporibus
+vel voluptatem. A animi laboriosam quos. Aliquid at deleniti dicta fugit impedit, incidunt, porro
+provident quas quisquam quos ratione recusandae. Aut autem commodi deserunt, fugiat incidunt iure,
+laudantium nesciunt numquam porro possimus ratione unde voluptates! Accusantium, ad amet,
+dignissimos doloremque error esse id ipsa itaque laudantium modi necessitatibus numquam officia
+perspiciatis quo quos saepe voluptatum. Ab accusamus aspernatur debitis deleniti dolor dolorem
+doloribus exercitationem, fugiat fugit id minus modi molestiae molestias nam obcaecati quae
+quibusdam quisquam rerum sequi sit vero, vitae voluptates. Beatae facere incidunt, labore nesciunt
+quisquam quos ratione sequi voluptates.
+</body>
+</html>
