@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>position sticky</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: 0 0 1px red;
+    }
+
+    section {
+        /* h1不是被顶走的, 而是被包含块带走的 */
+        border: 5px solid deeppink;
+    }
+
+    /* 用sticky模拟好友列表 */
+    section > h1 {
+        margin: 0;
+        position: sticky;
+        top: 0;
+        background-color: white;
+
+        /*
+         定位元素的布局块是其margin-box
+         定位元素自动触发BFC, 即里面的margin不会跑出去
+         */
+    }
+</style>
+
+<body>
+<section>
+    <h1>Lorem.</h1>
+    <div>Lorem ipsum.</div>
+    <div>Esse, quae?</div>
+    <div>Deleniti, iste!</div>
+    <div>Esse, nihil.</div>
+    <div>Dignissimos, obcaecati.</div>
+    <div>Dignissimos, molestiae.</div>
+    <div>Nulla, numquam.</div>
+    <div>Harum, pariatur.</div>
+    <div>Eaque, natus.</div>
+    <div>Sapiente, velit!</div>
+    <div>Lorem ipsum.</div>
+    <div>Esse, quae?</div>
+    <div>Deleniti, iste!</div>
+    <div>Esse, nihil.</div>
+    <div>Dignissimos, obcaecati.</div>
+    <div>Dignissimos, molestiae.</div>
+    <div>Nulla, numquam.</div>
+    <div>Harum, pariatur.</div>
+    <div>Eaque, natus.</div>
+    <div>Sapiente, velit!</div>
+</section>
+<section>
+    <h1>Quo?</h1>
+    <div>Lorem ipsum.</div>
+    <div>In, nulla.</div>
+    <div>At, natus.</div>
+    <div>At, temporibus!</div>
+    <div>Molestias, soluta?</div>
+    <div>Odit, officia.</div>
+    <div>Aliquam, quia.</div>
+    <div>Facere, molestias.</div>
+    <div>Facere, inventore!</div>
+    <div>Deserunt, in.</div>
+    <div>Lorem ipsum.</div>
+    <div>In, nulla.</div>
+    <div>At, natus.</div>
+    <div>At, temporibus!</div>
+    <div>Molestias, soluta?</div>
+    <div>Odit, officia.</div>
+    <div>Aliquam, quia.</div>
+    <div>Facere, molestias.</div>
+    <div>Facere, inventore!</div>
+    <div>Deserunt, in.</div>
+</section>
+<section>
+    <h1>Obcaecati.</h1>
+    <div>Lorem ipsum.</div>
+    <div>Laboriosam, omnis.</div>
+    <div>Ipsam, nisi!</div>
+    <div>Quas, sequi.</div>
+    <div>Aliquam, iste?</div>
+    <div>Expedita, omnis!</div>
+    <div>Nesciunt, saepe.</div>
+    <div>Iste, neque?</div>
+    <div>Recusandae, rerum.</div>
+    <div>Ipsa, voluptate.</div>
+    <div>Lorem ipsum.</div>
+    <div>Laboriosam, omnis.</div>
+    <div>Ipsam, nisi!</div>
+    <div>Quas, sequi.</div>
+    <div>Aliquam, iste?</div>
+    <div>Expedita, omnis!</div>
+    <div>Nesciunt, saepe.</div>
+    <div>Iste, neque?</div>
+    <div>Recusandae, rerum.</div>
+    <div>Ipsa, voluptate.</div>
+</section>
+<section>
+    <h1>Harum.</h1>
+    <div>Lorem ipsum.</div>
+    <div>Laborum, qui.</div>
+    <div>Commodi, sed.</div>
+    <div>Alias, ut.</div>
+    <div>Asperiores, suscipit.</div>
+    <div>Assumenda, dignissimos!</div>
+    <div>Cum, voluptates.</div>
+    <div>Perferendis, reprehenderit.</div>
+    <div>Facilis, totam.</div>
+    <div>At, nemo!</div>
+    <div>Lorem ipsum.</div>
+    <div>Laborum, qui.</div>
+    <div>Commodi, sed.</div>
+    <div>Alias, ut.</div>
+    <div>Asperiores, suscipit.</div>
+    <div>Assumenda, dignissimos!</div>
+    <div>Cum, voluptates.</div>
+    <div>Perferendis, reprehenderit.</div>
+    <div>Facilis, totam.</div>
+    <div>At, nemo!</div>
+</section>
+</body>
+</html>

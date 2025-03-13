@@ -40,18 +40,29 @@
     */
     div {
         position: absolute;
-        top: 0;
-        left: 0;
 
-        width: 100%;
+        /*
+        定位元素的布局块是其margin-box
+        定位元素自动触发BFC, 即里面的margin不会跑出去
+        */
+        margin-left: 20px;
+
+        /*top: 0;*/
+        /*left: 0;*/
+        /* 可以简写为:
+           inset: <top> <right> <bottom> <left>
+        */
+        inset: 50px 0 100px 0;
+
+        /*width: 100%;*/
 
         /* 当去掉section的定位以后, 这个50%也会生效 */
         /* div是定位的, body感知不到div, 所以div不影响body高度, 50%可以生效 */
-        height: 50%;
+        /*height: 50%;*/
 
         /* margin-top取包含块水平宽度(padding-box)百分比 */
         /* 解除了相互依赖, 就可以写百分比 */
-        margin-top: 20%;
+        /*margin-top: 20%;*/
 
         background-color: rgba(255, 0, 85, 0.5);
     }
