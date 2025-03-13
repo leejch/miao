@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>position sticky</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: 0 0 1px red;
+    }
+
+    section {
+        height: 200px;
+        border: 5px solid;
+        padding: 10px;
+    }
+
+    div {
+        position: sticky;
+        background-color: deeppink;
+        /*
+         当这个元素由于屏幕滚动的原因, 要离开屏幕时, 保留的距离
+         但包含块(content-box)离开足够多的时候, 仍会被包含块带走
+         */
+        top: 20px;
+        bottom: 0;
+    }
+</style>
+
+<body>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. At officiis quia recusandae repudiandae
+saepe. Adipisci aliquam aliquid animi beatae error excepturi fuga id in incidunt inventore, iure
+iusto laborum molestiae nisi non officia, omnis perspiciatis, porro praesentium quia quo ratione
+repellat sequi tempore veritatis. Aliquam mollitia neque temporibus! Aliquam autem blanditiis
+deserunt, eveniet facere illum ipsa, minima nisi non qui rem totam vitae. Dicta, dolorem facere
+libero necessitatibus quam quia quis reiciendis tenetur? Accusantium, aspernatur doloribus expedita
+fuga laudantium nemo saepe veritatis? A aliquid, animi architecto autem consectetur cupiditate dolor
+dolore dolorem earum eius eos est facere facilis hic in minima modi nemo numquam odio porro
+praesentium quas quibusdam quod quos, recusandae soluta tempora, ullam ut vel voluptatum! Assumenda
+atque cupiditate dolor ex fugiat illum qui! Alias aliquam corporis, eos et hic laborum maxime modi
+neque quisquam quo, ratione, reprehenderit? Commodi dicta, doloribus eius iste recusandae unde vero.
+Autem dolorum illum in, ipsum mollitia, quas quod ratione recusandae tempore temporibus ut
+voluptate. Ab assumenda cupiditate dignissimos dolor, dolore doloribus id iusto nostrum odio
+quisquam reiciendis reprehenderit sed, ut vel velit. Animi commodi ea incidunt ipsam itaque magni
+nisi nulla omnis perferendis quia repellendus, similique sunt suscipit. Aspernatur consequuntur
+deleniti earum fuga, itaque minus molestiae neque nulla numquam tempore. Ab aut dicta et eum
+excepturi harum, ipsam iusto mollitia nesciunt obcaecati odit, pariatur quo, voluptas! Explicabo
+nemo quae quo repudiandae, suscipit tenetur. Accusantium consectetur eveniet fuga illo ipsa ipsam
+labore molestiae placeat quasi, voluptates! Accusantium architecto corporis culpa cupiditate
+deleniti dolores dolorum ducimus eaque ex harum iusto molestiae optio possimus quam unde, vel
+veritatis? Alias asperiores blanditiis, corporis deleniti distinctio dolore ea esse in ipsa ipsam
+ipsum laborum perspiciatis praesentium quas quia recusandae soluta ut vero voluptas voluptate. Autem
+commodi dignissimos distinctio doloribus eligendi esse, est eum inventore iste recusandae
+reiciendis?
+<section>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus consequatur id ipsam, omnis
+    quaerat suscipit totam velit voluptatum. Amet assumenda exercitationem itaque, mollitia nesciunt
+    nostrum quis recusandae sit veniam voluptates!
+    <div>
+        aaaaa
+    </div>
+</section>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores hic nostrum nulla omnis
+vel voluptates. Architecto exercitationem harum obcaecati, repellat soluta tempora totam? Alias,
+architecto autem cumque dicta unde vero vitae! Animi aspernatur atque aut, beatae delectus
+doloremque dolorum esse et eveniet excepturi fugit hic impedit laboriosam minus molestiae molestias
+nesciunt nulla omnis placeat quasi quidem quos ratione recusandae rem reprehenderit similique
+tempora tempore tenetur velit veniam veritatis vitae voluptas voluptate? Ad amet at culpa distinctio
+dolorem doloremque doloribus eos fugit id ipsa ipsum iste laudantium libero, magnam mollitia nemo,
+nobis omnis porro quibusdam quod ratione repellat sed sequi ullam ut, vero voluptate voluptatum. A
+ducimus ea facilis libero sequi. Excepturi expedita magni quos? Ab asperiores blanditiis dignissimos
+eaque exercitationem explicabo iusto, laudantium, pariatur, quisquam tempore totam vero? At cum
+exercitationem explicabo, facere iusto nisi obcaecati totam voluptatum? Aliquam cum deleniti dicta
+dolores dolorum ducimus ea eaque, esse, facere hic iste laudantium mollitia natus nemo quas quisquam
+ratione repudiandae sapiente sint sit sunt tempore vel veniam voluptate voluptates. Accusamus,
+accusantium ad aliquid aspernatur autem consequuntur dolor earum est ex impedit inventore ipsa iste
+itaque laboriosam, laudantium magnam necessitatibus odio porro quaerat quam quasi quis quisquam
+reiciendis temporibus, voluptatem. Accusantium aliquam aperiam atque aut beatae cum debitis deserunt
+distinctio eaque eius explicabo hic in itaque laborum necessitatibus neque, nesciunt nobis placeat
+porro, repellat rerum sint sit temporibus totam voluptates? At, autem deleniti ducimus fugiat illo
+vel? Alias architecto aspernatur aut consectetur consequatur deleniti, eius enim esse et
+exercitationem facilis impedit incidunt ipsam ipsum labore laboriosam laborum, magni maiores modi
+nobis nulla pariatur quas qui quidem quisquam reiciendis rem saepe sed, sunt vero. Ab aliquam animi,
+architecto blanditiis consequuntur culpa cupiditate expedita fugit nemo nisi nostrum odit
+praesentium provident quaerat quibusdam ratione sequi sit soluta suscipit, ut. Consequuntur dicta
+doloremque magni.
+</body>
+</html>

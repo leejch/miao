@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>position z-index</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: 0 0 1px red;
+    }
+
+    /*
+    元素的覆盖关系:
+    常规流元素之间: 后面覆盖前面, 行内覆盖块级
+    定位元素与常规流元素: 定位的覆盖常规流的
+    定位元素之间: 后面覆盖前面, 但z-index属性可以指定z轴的顺序, 决定覆盖顺序
+
+    z-index:
+    只能用在定位元素上, (目前)在其他元素上无效
+    由于表示的是顺序, 所以只能是整数, 但可以为负
+        为负时, 会跑到未定位元素的下方(被未定位元素覆盖)
+    父元素定位时, 子元素无法通过z调整到被父元素覆盖
+    z越大, 元素越能覆盖其他元素
+    当z相同时, 后面的元素覆盖前面的元素
+
+    */
+
+
+    div {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        width: 50px;
+        height: 50px;
+        background-color: orangered;
+    }
+
+    div.a {
+        z-index: 8;
+    }
+
+    div.b {
+        /*z-index: 9;*/
+
+        top: 50px;
+        left: 50px;
+        background-color: yellow;
+    }
+
+    span {
+        position: absolute;
+
+        /* 父元素定位时, 子元素无法通过z调整到被父元素覆盖 */
+        z-index: -5;
+    }
+
+    section {
+        background: pink;
+    }
+
+    section + section {
+        background: olive;
+        margin-top: -50px;
+    }
+</style>
+
+<body>
+<div class="a"><span>span</span></div>
+<div class="b">bbbb</div>
+<section>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus culpa esse explicabo ipsa
+    nam necessitatibus nisi quis reiciendis rerum voluptates? Accusantium amet architecto beatae
+    consequatur cumque delectus deleniti dolorem eius eos et fugiat harum id illum iste itaque
+    laboriosam magnam magni minima molestiae odio officia pariatur perferendis placeat porro,
+    praesentium quasi quo reiciendis rem repudiandae rerum saepe velit veniam veritatis! Architecto
+    blanditiis distinctio, est facilis id labore natus optio qui, quibusdam, quidem repellendus
+    saepe similique temporibus tenetur veniam? Alias autem beatae cumque distinctio doloremque eius
+    error harum impedit ipsum, itaque magni, natus nostrum repellat reprehenderit soluta suscipit
+    voluptatem. Error, nisi!
+</section>
+<section>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus culpa esse explicabo ipsa
+    nam necessitatibus nisi quis reiciendis rerum voluptates? Accusantium amet architecto beatae
+    consequatur cumque delectus deleniti dolorem eius eos et fugiat harum id illum iste itaque
+    laboriosam magnam magni minima molestiae odio officia pariatur perferendis placeat porro,
+    praesentium quasi quo reiciendis rem repudiandae rerum saepe velit veniam veritatis! Architecto
+    blanditiis distinctio, est facilis id labore natus optio qui, quibusdam, quidem repellendus
+    saepe similique temporibus tenetur veniam? Alias autem beatae cumque distinctio doloremque eius
+    error harum impedit ipsum, itaque magni, natus nostrum repellat reprehenderit soluta suscipit
+    voluptatem. Error, nisi!
+</section>
+</body>
+</html>
