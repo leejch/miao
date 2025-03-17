@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>menu</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: 0 0 1px red;
+    }
+
+    div {
+        width: 40px;
+        height: 20px;
+        position: relative;
+
+        display: inline-block;
+    }
+
+    span {
+        display: none;
+        position: absolute;
+        width: 100px;
+        height: 200px;
+        left: 0;
+        top: 100%;
+    }
+
+    div:hover > span {
+        display: block;
+    }
+</style>
+
+<body>
+<div>
+    <span></span>
+</div>
+<div>
+    <span></span>
+</div>
+<div>
+    <span></span>
+</div>
+</body>
+</html>
