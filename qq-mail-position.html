@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QQ Mail Position</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: inset 0 0 1px red;
+    }
+
+    body, html {
+        margin: 0;
+        /* 成为后代的定位祖先 */
+        position: relative;
+        height: 100%;
+        min-width: 400px;
+    }
+
+    header, aside, main {
+        overflow: auto;
+    }
+
+    header {
+        /* absolute当不存在定位祖先时, 相对于第一屏定位 */
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+
+        height: 100px;
+
+        /* 固定定位元素超出窗口时,
+        不会出现滚动条, 因为滚动它也不动 */
+        /*min-width: 400px;*/
+    }
+
+    aside {
+        position: absolute;
+        top: 100px;
+        bottom: 0;
+        left: 0;
+        width: 100px;
+    }
+
+    main {
+        position: absolute;
+        top: 100px;
+        right: 0;
+        bottom: 0;
+        left: 100px;
+    }
+</style>
+
+<body>
+
+<header>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias ea eos iusto maiores, natus
+    nihil omnis! Adipisci autem consequatur debitis dolor, doloremque dolores eaque earum esse eum
+    fuga hic ipsa ipsum, iure magnam magni minima molestias natus necessitatibus nobis nulla
+    pariatur placeat possimus provident quaerat sint soluta sunt totam unde velit voluptate! Autem
+    dolores tempore vitae? Cum eaque facilis laboriosam minima nemo non quae similique tenetur?
+    Alias amet culpa cumque debitis deserunt eos esse eveniet expedita facilis ipsum iure laudantium
+    molestiae, necessitatibus numquam possimus provident quam recusandae sequi, sunt, voluptate? Ab
+    debitis labore molestias, numquam quam reiciendis veritatis vitae. A accusantium animi aperiam
+    asperiores commodi culpa deleniti deserunt doloribus eaque eligendi est eveniet expedita facere
+    harum impedit inventore maiores maxime neque nisi, nulla odio odit praesentium quia quibusdam
+    quidem quo quod recusandae reiciendis similique suscipit ullam ut voluptate voluptates! Amet
+    animi culpa esse eum maxime neque nulla. Ab aliquam aliquid animi aperiam aspernatur
+    consequuntur corporis cum cumque dolor dolores ducimus ea earum eos eum exercitationem hic id,
+    iure iusto laboriosam molestias mollitia nulla odio omnis optio provident quidem quisquam
+    tempora, unde voluptatem voluptatibus? Ab deleniti dolor ea, excepturi odit placeat sunt.
+    Architecto fuga nobis numquam, quo quos tempore tenetur voluptatem?
+</header>
+<aside>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aperiam distinctio
+    doloribus impedit laborum veritatis voluptatum. Aliquam aliquid amet animi asperiores autem
+    consectetur consequuntur delectus deleniti doloremque dolorum eius error eum facere facilis fuga
+    fugiat fugit hic in, ipsum iusto placeat quidem quisquam quos repudiandae similique sunt tempora
+    velit. Aliquam aperiam assumenda beatae cum dicta dolor ducimus, eligendi facilis, fugiat
+    impedit itaque iure nisi odio quibusdam saepe vitae, voluptatibus. Accusamus animi deleniti
+    ipsam minus, nemo non quia voluptatem! Animi architecto at dolore doloremque eum fugiat incidunt
+    inventore, laboriosam laborum, libero maxime modi molestias nam numquam officia perferendis
+    quibusdam quod soluta velit voluptate. Beatae corporis deleniti deserunt ea est harum laboriosam
+    natus quaerat quos tenetur. Accusantium architecto corporis dolores error in iure nihil non quo
+    similique. Aperiam, culpa cumque dolores dolorum earum enim error, esse exercitationem, harum
+    illo incidunt labore laudantium magni mollitia nisi non porro quasi sequi unde vitae. Aliquam
+    architecto blanditiis dolore eveniet facilis fugit illo ipsam laboriosam laborum magnam
+    molestiae molestias neque pariatur placeat possimus qui quod ratione, reiciendis saepe sequi,
+    similique sint tempora, totam velit voluptatem! Beatae, dolor fugiat magnam modi nobis odio quis
+    sapiente voluptatibus. Ab accusamus exercitationem harum id magnam nihil nostrum quod saepe
+    voluptatem.
+</aside>
+<main>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur harum incidunt veritatis.
+    Animi ducimus earum harum illo modi mollitia sed similique voluptatem! Amet explicabo laborum
+    nesciunt! Accusamus adipisci cupiditate deleniti ducimus error, excepturi incidunt libero
+    molestias natus quaerat quam sequi, vel, voluptatum? Alias aliquam culpa eligendi in ipsam.
+    Culpa dolorem fuga iste laudantium repudiandae sequi? Accusamus aliquid blanditiis cum deserunt
+    dolore, hic labore minima, nesciunt obcaecati officia quaerat ratione soluta sunt tenetur totam
+    unde voluptates? Ad, aliquid aperiam consectetur doloremque exercitationem laborum magni nam,
+    natus nesciunt obcaecati ullam unde? Consequatur culpa deleniti fugiat iure iusto possimus rem
+    voluptatem. Excepturi harum molestiae natus quod repellat veritatis, voluptatibus? Aliquam
+    beatae explicabo in nihil, reprehenderit temporibus veritatis voluptas. Adipisci culpa
+    doloremque eligendi id libero minima nam neque omnis pariatur porro. Dolore error inventore ipsa
+    iure, nisi reiciendis totam veniam voluptatem. Accusantium consequuntur dignissimos
+    exercitationem impedit nihil. Cum deserunt maxime minus placeat quae quas quibusdam rerum sunt
+    suscipit veritatis. Aliquid autem blanditiis commodi dolore ea facere fuga in magnam molestias
+    necessitatibus nemo omnis porro, rerum temporibus tenetur, vel voluptates? A, alias animi
+    corporis cum distinctio dolore, earum eos facere facilis laborum magnam magni minima nam
+    nesciunt nisi pariatur, quo quod repellat sint soluta sunt vero voluptates. Architecto
+    consequatur cupiditate dicta dolor eaque ex, expedita id illum laboriosam magni maiores
+    molestias nisi optio possimus quidem recusandae saepe sed, sint, soluta totam voluptates
+    voluptatibus voluptatum. Adipisci, expedita, laborum. A, alias culpa cum, dolores eius expedita
+    nemo quo reiciendis repudiandae, suscipit tempora tenetur totam vitae! Ab animi blanditiis,
+    dolor ea eligendi fuga ipsum laborum laudantium odit placeat, provident, quae quasi ullam. Alias
+    aliquid aperiam architecto blanditiis, debitis deleniti distinctio dolores, doloribus est et ex
+    excepturi explicabo ipsa ipsam ipsum minima molestiae porro quis quod soluta suscipit temporibus
+    veritatis vero voluptatem voluptatum. Dolorum esse eveniet rerum. Assumenda, quas, quasi.
+    Asperiores ea fugiat fugit nihil officiis rerum tenetur ullam veritatis? Cum enim est
+    voluptatibus! A aliquam assumenda, at atque culpa dignissimos eaque, error fuga fugiat impedit
+    iure iusto minima molestiae, nam natus necessitatibus nobis officiis provident quidem quisquam
+    repellat repellendus repudiandae saepe sunt totam voluptas voluptate? Debitis ex nostrum quaerat
+    totam voluptates? A accusamus, accusantium adipisci alias aliquid animi architecto consequuntur
+    cupiditate deserunt est eveniet ex excepturi exercitationem expedita facere id iste libero
+    maxime minima modi molestiae molestias natus non nostrum odio officia optio perferendis
+    praesentium provident quaerat quam quas quibusdam quisquam reprehenderit sint ullam vel.
+    Aliquam, doloribus iusto maiores minima modi necessitatibus obcaecati officiis, omnis
+    perspiciatis soluta vitae voluptatibus. Amet consectetur culpa, harum hic id ipsa laboriosam
+    magnam necessitatibus pariatur voluptate. Ad animi blanditiis dolores eaque et expedita facilis
+    in libero, molestiae nam nesciunt nostrum placeat quia repellendus suscipit veniam vitae. Beatae
+    culpa cupiditate dignissimos dolor dolores id neque, nesciunt nostrum qui rem sit temporibus!
+    Adipisci alias aliquam asperiores assumenda beatae consequatur corporis cupiditate dolorem
+    doloribus ea, eaque earum eos error ex illo illum laboriosam laborum modi nobis obcaecati odio
+    omnis perferendis porro quae quam, qui quis ratione rerum sapiente sed sint tenetur totam,
+    vitae? Architecto, distinctio, tempore.
+</main>
+</body>
+</html>
