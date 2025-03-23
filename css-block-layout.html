@@ -47,6 +47,9 @@
 
     section > span {
         font-size: 16px;
+        text-align: center;
+        vertical-align: middle;
+
         display: inline-block;
         width: 180px;
         height: 40px;
@@ -77,6 +80,33 @@
         text-align: center;
         background-color: violet;
     }
+
+    .outer {
+        width: 600px;
+        margin: auto;
+    }
+
+    .inner {
+        width: 180px;
+        height: 40px;
+        border: 2px solid black;
+        box-sizing: border-box;
+
+        margin-bottom: 16px;
+    }
+
+    .inner:nth-child(n+5) {
+        margin-left: 210px;
+    }
+
+    .inner:nth-child(n+9) {
+        margin-left: 420px;
+    }
+
+    .inner:nth-child(4n+5) {
+        /* (40 + 16) * 4 = 224 */
+        margin-top: -224px;
+    }
 </style>
 
 <body>
@@ -100,18 +130,18 @@
 
 <div>
     <section>
-        <span>Lorem.</span>
-        <span>Architecto!</span>
-        <span>Pariatur?</span>
-        <span>Recusandae.</span>
-        <span>Minima!</span>
-        <span>Accusamus.</span>
-        <span>Earum.</span>
-        <span>Aliquam!</span>
-        <span>Soluta!</span>
-        <span>Commodi.</span>
-        <span>Laborum?</span>
-        <span>Minus!</span>
+        <span>1 宽180高40</span>
+        <span>2 Architecto!</span>
+        <span>3 Pariatur?</span>
+        <span>4 水平间隙30px</span>
+        <span>5 Minima!</span>
+        <span>6 Accusamus.</span>
+        <span>7 垂直间隙15px</span>
+        <span>8 Aliquam!</span>
+        <span>9 Soluta!</span>
+        <span>10 边框宽度3px</span>
+        <span>11 Laborum?</span>
+        <span>12 Minus!</span>
     </section>
 </div>
 
@@ -129,6 +159,21 @@
     <br>
     像素级还原
 </footer>
+
+<main class="outer">
+    <main class="inner">1</main>
+    <main class="inner">2</main>
+    <main class="inner">3</main>
+    <main class="inner">4</main>
+    <main class="inner">5</main>
+    <main class="inner">6</main>
+    <main class="inner">7</main>
+    <main class="inner">8</main>
+    <main class="inner">9</main>
+    <main class="inner">10</main>
+    <main class="inner">11</main>
+    <main class="inner">12</main>
+</main>
 
 </body>
 </html>
