@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>table introduce</title>
+</head>
+
+<style>
+    * {
+        /*background-color: rgba(0, 0, 0, 0.08);*/
+        /*box-shadow: inset 0 0 1px red;*/
+    }
+
+    /* 每种元素都有自己独特的display属性 */
+    table {
+        width: 100%;
+        overflow: auto;
+        caption-side: top;
+        border: 1px solid red;
+
+        /*border-spacing: 5px 10px;*/
+
+        empty-cells: show;
+
+        /* 默认是separate拆分 */
+        /* border-spacing和empty-cells就没用了 */
+        /* collapse合并时, 每种表格元素都可以设置边框 */
+        border-collapse: collapse;
+        /*
+        合并规则:
+            * 最粗的优先
+            * 粗细相同看边框样式: double > solid > dashed > dotted
+            * 样式相同, 只有颜色不同, 看来源, 高层次优先
+            * none优先级最低, 别的元素在这里设置了边框, 就显示别的元素的
+            * hidden优先级最高, 只要这里设置了hidden, 就没边框
+        */
+
+        table-layout: fixed;
+    }
+
+    .td-2-3 {
+        border: 3px dotted red;
+    }
+
+    .td-3-2 {
+        border: hidden;
+    }
+
+    tr:nth-child(2) {
+        border: 5px solid green;
+    }
+
+    tbody {
+        display: table-row-group;
+    }
+
+    tr {
+        display: table-row;
+    }
+
+    td {
+        display: table-cell;
+        border: 1px solid blue;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+</style>
+
+<body>
+
+<table>
+    <caption>成绩单</caption>
+    <tbody>
+    <tr>
+        <td>Lorem.</td>
+        <td>Nobis.</td>
+        <td>Dolorum?</td>
+        <td>Nesciunt.</td>
+        <td>Quidem.</td>
+    </tr>
+    <tr>
+        <td>Lorem.</td>
+        <td>Officia?</td>
+        <td class="td-2-3"></td>
+        <td>Esse.</td>
+        <td>Architecto?</td>
+    </tr>
+    <tr>
+        <td>Lorem.</td>
+        <td class="td-3-2">hidden</td>
+        <td>Eligendi.</td>
+        <td>Esse.</td>
+        <td>Dolores.</td>
+    </tr>
+    <tr>
+        <td>Lorem.</td>
+        <td>Dolorum.</td>
+        <td>Neque.</td>
+        <td>Quasi.</td>
+        <td>Praesentium.</td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
