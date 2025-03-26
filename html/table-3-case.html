@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>table case</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: inset 0 0 1px red;
+    }
+
+    .table1 {
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    .left1 {
+        width: 100px;
+    }
+
+    .right1 {
+        width: 99%;
+    }
+
+    .table2 {
+        width: 100%;
+    }
+
+    .left2 {
+    }
+
+    .right2 {
+        width: 99%;
+    }
+
+    .table3 {
+        width: 100%;
+    }
+
+    .table3-1-2 {
+        font-size: 48px;
+    }
+
+    .table3 td {
+        vertical-align: top;
+    }
+
+    div {
+        display: table-cell;
+        vertical-align: middle;
+        width: 200px;
+        height: 150px;
+        text-align: center;
+    }
+
+    section {
+        text-align: center;
+        display: inline-block;
+        width: 120px;
+    }
+</style>
+
+<body>
+
+<table class="table1">
+    <td class="left1">a</td>
+    <td class="right1">b</td>
+</table>
+
+<br>
+
+<table class="table2">
+    <td class="left2">aaa</td>
+    <td class="right2">b</td>
+</table>
+
+<br>
+
+<table class="table3">
+    <tbody>
+    <tr>
+        <td>Lorem.</td>
+        <td class="table3-1-2">Laborum?</td>
+        <td>Voluptate!</td>
+        <td>Quae!</td>
+    </tr>
+    <tr>
+        <td>Lorem.</td>
+        <td>Incidunt.</td>
+        <td>Aut?</td>
+        <td>Beatae.</td>
+    </tr>
+    <tr>
+        <td>Lorem.</td>
+        <td>Fugit.</td>
+        <td>Pariatur.</td>
+        <td>Vel.</td>
+    </tr>
+    <tr>
+        <td>Lorem.</td>
+        <td>Necessitatibus!</td>
+        <td>Nam.</td>
+        <td>Aut!</td>
+    </tr>
+    <tr>
+        <td>Lorem.</td>
+        <td>Quia?</td>
+        <td>Officiis.</td>
+        <td>Soluta.</td>
+    </tr>
+    </tbody>
+</table>
+
+<br>
+
+<div>
+    <section>aaa</section>
+</div>
+</body>
+</html>
