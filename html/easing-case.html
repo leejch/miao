@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>easing case</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        /*box-shadow: inset 0 0 1px red;*/
+    }
+
+    section {
+        width: 200px;
+        height: 250px;
+
+        position: relative;
+
+        margin: 50px auto;
+
+        background-color: white;
+        transition: 0.5s;
+
+        /*
+        没有缓动的原因是因为top属性的初始值没有被设置
+        浏览器不知道从哪个值开始动画，因此没有缓动效果
+        */
+        top: 0;
+
+        visibility: visible;
+
+        background-image: url("./example2.jpg");
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        /*transition-behavior: allow-discrete;*/
+    }
+
+    section:hover {
+        box-shadow: 0 0 50px blue;
+        top: -10px;
+        visibility: hidden;
+        background-size: cover;
+    }
+</style>
+
+<body>
+<section>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, vero?</section>
+</body>
+</html>
