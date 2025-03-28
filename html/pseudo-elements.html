@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pseudo elements</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: inset 0 0 1px red;
+    }
+
+    /*
+    伪类是实际元素的隐含状态或交互状态
+    伪元素是每个元素前后多出来的隐藏元素
+
+    伪元素选择器本身不计优先级,
+    伪元素样式冲突时, 看其前序选择器的优先级
+     */
+
+    div span::before {
+        content: "span::before";
+        display: inline-block;
+        border: 5px solid red;
+        background-color: yellow;
+
+        width: 100px;
+        height: 50px;
+    }
+
+    div span::after {
+        border: 2px solid blue;
+        content: attr(title);
+    }
+
+    /*
+    伪元素里的内容无法被选中
+    普通元素也可以设置不能选中 user-select: none
+    */
+    div span {
+        user-select: none;
+    }
+</style>
+
+<body>
+<div>
+    <span title="title">
+        aaa
+    </span>
+</div>
+</body>
+</html>
