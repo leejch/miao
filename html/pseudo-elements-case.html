@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pseudo elements</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: inset 0 0 1px red;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        width: 200px;
+
+        position: relative;
+    }
+
+    ul > li {
+        /*position: relative;*/
+    }
+
+    ul > li::after {
+        content: "";
+        /*position: absolute;*/
+
+        right: 5px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+
+        /*
+         行内元素(inline)本来是不能设定宽度的,
+         但给它定位或浮动(或其他方式),
+         都将让它不再为行内元素, 从而可以设置宽高
+         */
+        width: 10px;
+        height: 10px;
+        float: right;
+
+        background-color: red;
+    }
+
+    ul > li::before {
+        content: attr(class);
+
+        /* 定位祖先是ul */
+        position: absolute;
+
+        left: 100%;
+        top: 0;
+        height: 100%;
+        width: 100px;
+        display: none;
+        background-color: yellow;
+    }
+
+    ul > li:hover::before {
+        display: block;
+    }
+
+</style>
+
+<body>
+<ul>
+    <li class="x01">Lorem.</li>
+    <li class="x02">Molestias.</li>
+    <li class="x03">Facilis!</li>
+    <li class="x04">Nam.</li>
+    <li class="x05">Rem.</li>
+    <li class="x06">Dolores!</li>
+    <li class="x07">Suscipit.</li>
+    <li class="x08">Doloribus!</li>
+    <li class="x09">Quis.</li>
+    <li class="x10">Voluptatem!</li>
+</ul>
+</body>
+</html>
