@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>float 4</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: inset 0 0 1px red;
+    }
+
+    /**
+    闭合浮动: 元素变大(往往是变高)以包裹其内的所有浮动元素,
+    以避免影响其他元素
+    一般通过触发bfc实现:
+    overflow: hidden;
+    display: flow-root;
+    float: left; 一般不使用, 它会让自身也浮动
+     */
+    .div-1 {
+        /*overflow: hidden;*/
+        /*display: flow-root;*/
+    }
+
+    /**
+    也可以借助清除浮动实现:
+    在需要闭合浮动的元素最后加一个块元素,
+    并且清除该块元素的浮动,
+    该块元素下移, 就会撑大需要闭合浮动的元素
+
+    这个块元素也可以通过after伪元素实现
+     */
+    /*.clearfix::after {*/
+    /*    content: '';*/
+    /*    display: block;*/
+    /*    clear: both;*/
+
+    /*    height: 5px;*/
+    /*    background-color: red;*/
+    /*}*/
+
+    div {
+        border: 2px solid black;
+    }
+
+    .div-2 {
+        /*clear: left;*/
+
+        /**
+        触发bfc的元素是通过变窄(在宽度为auto的情况下)
+        来避开外部浮动元素对其内部影响
+
+        不能变窄时, 类似于 clear: both;
+        即下移
+         */
+        overflow: hidden;
+
+        width: 30%;
+        border: 10px solid red;
+    }
+
+    span {
+        float: left;
+    }
+
+    span.span-1 {
+        width: 50px;
+        height: 50px;
+    }
+
+    span.span-2 {
+        width: 40px;
+        height: 50px;
+    }
+
+    span.span-3 {
+        width: 50px;
+        height: 40px;
+    }
+
+    span.span-4 {
+        width: 30px;
+        height: 50px;
+    }
+
+    span.span-5 {
+        width: 70px;
+        height: 70px;
+    }
+
+</style>
+
+<body>
+<div class="div-1 clearfix">
+    <span class="span-1">1</span>
+    <span class="span-2">2</span>
+    <span class="span-3">3</span>
+    <span class="span-4">4</span>
+    <span class="span-5">5</span>
+</div>
+<div class="div-2">div-2</div>
+</body>
+</html>

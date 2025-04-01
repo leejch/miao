@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>float 1</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: inset 0 0 1px red;
+    }
+
+    /**
+    浮动元素同时处于常规流内与常规流外——即只有部分元素能感知到它
+        块元素感知不到它
+        行内元素能感知到(块元素里面的元素也能感知到)
+
+    浮动元素只能处于能够摆放文字(即行内内容)的上下文中
+
+    浮动元素无需设置display: inline-block等,
+    元素浮动时, 外部布局会自动变为浮动模式, 内部保留原来的布局方式
+
+    浮动可以跟相对定位一起用, 不支持绝对定位和固定定位
+    相对于自己浮动之后的位置去偏移
+     */
+
+    table {
+        /* table是内部布局 */
+        display: table;
+
+        /* 浮动改的是元素外部的布局 */
+        float: left;
+    }
+
+    div {
+        width: 200px;
+        float: left;
+    }
+</style>
+
+<body>
+
+<div>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque autem blanditiis corporis
+    dignissimos ea earum ex fugit id itaque nam, odio officia saepe voluptatum. Adipisci, aperiam
+    autem cupiditate dignissimos, enim eum nam neque nulla officiis provident repellat ut velit
+    vitae. Ab ea ipsam velit! Exercitationem impedit in itaque quia quo!
+</div>
+<table>
+    <tr>
+        <td>Lorem.</td>
+        <td>Quis.</td>
+        <td>Hic.</td>
+        <td>Aliquam?</td>
+        <td>Qui.</td>
+    </tr>
+    <tr>
+        <td>Lorem.</td>
+        <td>Voluptatem.</td>
+        <td>Quae.</td>
+        <td>Mollitia.</td>
+        <td>Quam.</td>
+    </tr>
+    <tr>
+        <td>Lorem.</td>
+        <td>Veniam.</td>
+        <td>Libero?</td>
+        <td>Veritatis.</td>
+        <td>Sint?</td>
+    </tr>
+</table>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus aliquid architecto
+consequatur cum, delectus distinctio eaque ex iure nihil nostrum, quae quaerat quas quidem
+reiciendis, sint sit tempora unde vero voluptatibus! A accusamus ad asperiores consectetur
+consequatur consequuntur debitis deserunt dicta distinctio doloribus enim eos est, facilis fugit
+harum hic incidunt iure libero nisi nostrum qui quibusdam quod reiciendis reprehenderit rerum saepe
+sequi, unde ut velit veritatis voluptas voluptatem voluptates, voluptatum. Accusantium autem
+delectus dicta eaque eius ex hic incidunt ipsum iure laboriosam, magnam neque nihil numquam
+obcaecati praesentium sequi soluta suscipit ullam, veritatis voluptatem. Quibusdam repellat suscipit
+voluptatem?
+</body>
+</html>
