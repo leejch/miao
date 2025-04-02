@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QQ Mail float</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: inset 0 0 1px red;
+    }
+
+    html, body {
+        margin: 0;
+        height: 100%;
+    }
+
+    div {
+        height: 100%;
+    }
+
+    header {
+        height: 100px;
+        overflow: auto;
+
+        background-color: yellow;
+    }
+
+    aside {
+        float: left;
+        height: calc(100% - 100px);
+        width: 100px;
+        overflow: auto;
+
+        background-color: pink;
+    }
+
+    main {
+        box-sizing: border-box;
+        border: 5px solid blue;
+        height: calc(100% - 100px);
+
+        /* 触发BFC的元素会优先变窄, 来不跟浮动元素重叠 */
+        overflow: auto;
+        /*display: flow-root;*/
+
+        background-color: lightgreen;
+    }
+</style>
+
+<body>
+<div>
+    <header>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, obcaecati, sint! Ab animi
+        architecto assumenda at, atque autem cumque ducimus esse, excepturi fuga fugiat impedit
+        ipsum labore laboriosam, magnam molestiae molestias natus nesciunt nostrum obcaecati
+        officiis placeat provident reiciendis reprehenderit sint voluptate voluptatibus. Animi
+        aspernatur commodi eaque, illum iste iure, labore laudantium magni maiores nemo nesciunt
+        officia officiis praesentium quas quisquam, quo repellendus saepe sapiente velit veniam.
+        Consequuntur, quis, recusandae. Assumenda debitis dicta distinctio error exercitationem
+        expedita fugiat in ipsam iure molestiae perspiciatis placeat, quia repellat sapiente sequi
+        voluptate voluptatibus! Accusamus alias animi assumenda autem ea eos eveniet id magni,
+        maxime non numquam porro quae quod, repudiandae sit totam ut. Accusantium assumenda autem
+        error, esse facilis, laboriosam molestias nobis quis ratione velit voluptates voluptatum!
+        Animi aperiam beatae dicta distinctio dolores eos eum expedita iste magni natus nostrum
+        pariatur perspiciatis quaerat quam qui quidem, recusandae repellendus, vel! Explicabo libero
+        nesciunt quasi.
+    </header>
+    <aside>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis commodi consequatur
+        consequuntur cumque deleniti dolor dolorum ea earum enim eos esse, hic illo laboriosam
+        laborum minima mollitia necessitatibus perferendis possimus praesentium quia quo rem,
+        repudiandae sed sunt ut vel vero, vitae. Aspernatur explicabo iste, modi neque optio
+        possimus reprehenderit sapiente ut. Adipisci delectus doloribus ea ex illo iusto laudantium
+        sequi ullam. Aliquam beatae, blanditiis consequatur cum debitis dolor ea eaque eligendi esse
+        exercitationem facilis, iusto libero maiores nesciunt nihil nulla numquam odio odit officia
+        provident reiciendis tempore temporibus vel vero voluptatum. Animi, cumque dicta doloremque
+        eligendi explicabo fugiat id inventore laboriosam maxime nesciunt nisi perferendis
+        praesentium quibusdam quis sint ullam ut? Adipisci commodi consequuntur doloremque explicabo
+        laboriosam, non quae quod reiciendis rem similique temporibus ullam, voluptas voluptate.
+        Ducimus error expedita harum hic impedit, molestiae molestias necessitatibus quisquam quo
+        repellendus soluta temporibus vero. Deleniti, ducimus et minima odit perferendis
+        perspiciatis sed.
+    </aside>
+    <main>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum ea incidunt molestias nam
+        pariatur porro ratione. Animi exercitationem, illo labore maxime molestias odit quaerat rem
+        totam veniam voluptas? Adipisci cumque, eaque impedit iste molestiae nam nihil nostrum nulla
+        odio recusandae rem sapiente, temporibus veritatis. Aliquam aperiam at cumque, dolor ducimus
+        eaque fuga iure maxime provident quia quisquam recusandae, sapiente temporibus ut vel! Alias
+        commodi dolorem ipsa laborum. Adipisci at corporis cum debitis ea enim, laborum nihil nisi,
+        omnis perferendis quis sequi sit vel voluptas voluptates! A atque consequatur cum dolorem
+        ducimus, ea error eveniet excepturi exercitationem explicabo impedit iusto neque nesciunt
+        non omnis possimus quisquam reiciendis reprehenderit sapiente sequi sint sit totam
+        voluptatum! Facere facilis nemo repudiandae? Aliquam atque ducimus et facere hic illum ipsum
+        laboriosam minima neque possimus quae qui quia, quo quos repellat saepe similique sit ullam
+        veniam, voluptas. Commodi debitis doloremque eos in ipsum modi molestias omnis quos
+        similique, sint tempora, ullam, veniam. Ab adipisci atque corporis doloremque iste,
+        laudantium libero maiores necessitatibus neque non officiis placeat quis repudiandae sequi
+        soluta. Ab asperiores aspernatur at aut beatae consectetur consequuntur cupiditate
+        distinctio dolor eius harum ipsam labore mollitia neque numquam omnis quae, quidem
+        reiciendis suscipit tenetur totam veniam, vero voluptas voluptate voluptatum. Alias aliquid
+        asperiores, blanditiis, cum debitis dolor dolore harum maiores nemo nisi, nulla officiis
+        ratione saepe ullam voluptate! Cumque cupiditate ducimus odit quas quia ratione
+        voluptatibus? Adipisci alias aperiam cum cumque, eius est expedita impedit ipsa ipsum itaque
+        mollitia neque, nostrum obcaecati praesentium provident repellendus velit vitae
+        voluptatibus! Aperiam aspernatur eveniet ex hic impedit obcaecati quae similique totam? Ab
+        aliquid aperiam asperiores atque dolore earum eos excepturi exercitationem fuga illum iure
+        magnam maxime nihil nostrum numquam odio optio placeat praesentium quaerat quasi quibusdam
+        quod reiciendis sapiente sequi tempore temporibus veniam vero, vitae voluptate, voluptatem.
+        Laborum, quam!
+    </main>
+</div>
+</body>
+</html>
