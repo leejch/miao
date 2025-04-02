@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>oald layout float</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: inset 0 0 1px red;
+    }
+
+    html, body {
+        margin: 0;
+        height: 100%;
+    }
+
+    #div1 {
+        height: 100%;
+        width: 100%;
+    }
+
+    aside {
+        width: 100px;
+        height: 100%;
+        overflow: auto;
+    }
+
+    aside.left {
+        float: left;
+        background-color: purple;
+    }
+
+    aside.right {
+        float: right;
+    }
+
+    aside#right1 {
+        background: lightgreen;
+    }
+
+    aside#right2 {
+        background-color: lightskyblue;
+    }
+
+    #div2 {
+        height: 100%;
+
+        /* 左右两边主动变窄, 避开浮动元素 */
+        overflow: auto;
+
+        background-color: pink;
+    }
+
+    header {
+        height: 100px;
+        overflow: auto;
+    }
+
+    main {
+        height: calc(100% - 100px);
+        overflow: auto;
+    }
+</style>
+
+<body>
+<div id="div1">
+    <aside class="left">aside.left Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Blanditiis, consequatur consequuntur dicta eum fuga impedit nesciunt nulla quidem rem rerum
+        tempore, veniam vitae voluptates. Architecto debitis dolorum eaque enim excepturi ipsa
+        laboriosam nam natus necessitatibus, officia, perferendis quo rem reprehenderit rerum sed
+        sequi sint suscipit totam ut voluptate! Amet eligendi expedita id recusandae sapiente!
+        Blanditiis inventore laboriosam praesentium tempore! Alias, aliquam, molestiae. Architecto,
+        autem blanditiis deserunt, error fugit iure, laudantium minima modi obcaecati porro quo
+        totam? Accusantium ad architecto, deserunt exercitationem facere, fugiat illo magni nemo
+        nihil nulla qui, rem rerum soluta suscipit veniam! Deserunt doloribus ea laudantium natus
+        possimus.
+    </aside>
+    <aside class="right" id="right1">aside.right1 Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Commodi deleniti dolor ea eligendi ex exercitationem fugit inventore
+        libero nesciunt obcaecati, officiis omnis perferendis quas quibusdam quis ratione sit sunt
+        temporibus. A asperiores autem commodi consequuntur deserunt eum excepturi impedit ipsum
+        iste maxime natus nisi, non nostrum obcaecati odio odit, quas recusandae sit tempore vitae.
+        Aliquid aperiam blanditiis, consequuntur corporis cupiditate delectus, deserunt dicta
+        dignissimos dolore dolores dolorum ea est, harum id impedit inventore magni maiores nisi
+        nobis non pariatur praesentium quas quo quos repellat reprehenderit repudiandae rerum
+        tempore temporibus veniam. Fugit, magnam necessitatibus neque reiciendis repudiandae tempora
+        tempore tenetur ut.
+    </aside>
+    <aside class="right" id="right2">aside.right2 Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Aut, autem commodi debitis enim est incidunt, magni nisi odit optio quod
+        rem sed similique tempora tenetur totam voluptate voluptatem voluptatum. Animi, culpa
+        debitis eius esse facilis iste maxime modi nihil numquam recusandae repellat sit temporibus,
+        totam voluptates voluptatibus. A animi autem beatae, corporis cum cupiditate dolor, ducimus
+        eos et facere, facilis inventore ipsam mollitia placeat tenetur unde ut? A accusantium alias
+        at beatae cumque dicta, distinctio dolor earum eum illo, in ipsa iste libero magni minima,
+        natus necessitatibus nesciunt praesentium quaerat quo recusandae sapiente sed temporibus
+        totam vel veniam voluptates voluptatum.
+    </aside>
+    <div id="div2">
+        <header>header Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi
+            aspernatur consectetur debitis delectus distinctio, dolorem ducimus eius eligendi enim
+            facilis fugit labore laborum magnam nemo, neque obcaecati odio optio porro, provident
+            quaerat quasi qui quibusdam recusandae vitae voluptas voluptate. Accusantium adipisci
+            aliquam consectetur consequuntur fugiat itaque minima sequi voluptate!
+        </header>
+        <main>main Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci
+            architecto aspernatur autem blanditiis consequatur cupiditate dolor ducimus ea facilis,
+            fuga ipsa iusto laudantium minus molestias natus obcaecati officiis omnis perferendis
+            quam repellendus, saepe sequi similique, sint sunt suscipit temporibus unde vel vitae
+            voluptatibus! Aliquid architecto consequatur dignissimos esse exercitationem, harum
+            ipsum iste, laudantium minima, nam numquam quasi rem suscipit vero voluptas. In natus
+            neque provident quasi sapiente? Ab aliquam amet blanditiis, consectetur consequuntur
+            culpa deserunt eaque ipsum laudantium, minus nam nobis odit officiis pariatur
+            perferendis perspiciatis porro recusandae rem rerum, saepe sapiente sint suscipit ut
+            vero voluptas! Aperiam delectus dolorem error est modi mollitia nesciunt repudiandae
+            saepe sit! Aliquid asperiores, autem consequuntur dolor doloremque ea eos excepturi iste
+            labore libero molestias nihil provident quae qui repellat repellendus similique ullam
+            velit. Alias aliquam aliquid assumenda consequuntur corporis, culpa dignissimos ducimus
+            hic impedit in incidunt libero magnam minima modi mollitia necessitatibus neque nobis
+            nulla optio quaerat, quod repellat repudiandae rerum saepe sit suscipit tenetur totam
+            vero voluptas voluptatibus. Accusantium aliquid assumenda consequatur deserunt dolorum
+            ducimus ea, hic in iure laboriosam magnam necessitatibus officiis optio perferendis
+            quibusdam sapiente sit. Atque debitis, maxime neque officiis perspiciatis quia vitae!
+            Atque eligendi quas quia sunt?
+        </main>
+    </div>
+</div>
+</body>
+</html>
