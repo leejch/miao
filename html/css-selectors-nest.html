@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>menu</title>
+    <style>
+        * {
+            background-color: rgba(0, 0, 0, 0.08);
+            box-shadow: inset 0 0 1px red;
+        }
+
+        ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        ul.menu {
+
+            > li { /* 一级按钮 li */
+                display: inline-block;
+            }
+
+            & li { /* 各级按钮 li 的定位与内边距设置 */
+                position: relative;
+                padding: 5px 10px;
+
+                &:hover { /* 内层选择器以&开头时, 它与外层选择器的连接没有空格 */
+
+                    > ul { /* 当 hover 时显示子菜单ul */
+                        display: block;
+                    }
+                }
+            }
+
+            & ul { /* 各级菜单的样式 */
+                position: absolute;
+                display: none;
+                white-space: nowrap;
+                left: 0;
+                top: 100%;
+
+                & ul { /* 三级及以下菜单定位在上级按钮右边 */
+                    left: 100%;
+                    top: 0;
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+<ul class="menu">
+    <li class="menu-item">文件
+        <ul class="menu-submenu">
+            <li class="menu-submenu-item">新建 >>>
+                <ul class="menu-subsubmenu">
+                    <li class="menu-subsubmenu-item">项目</li>
+                    <li class="menu-subsubmenu-item">来自版本控制的项目</li>
+                </ul>
+            </li>
+            <li class="menu-submenu-item">打开</li>
+            <li class="menu-submenu-item">另存为</li>
+            <li class="menu-submenu-item">最近的项目</li>
+            <li class="menu-submenu-item">关闭项目</li>
+            <li class="menu-submenu-item">重命名项目</li>
+        </ul>
+    </li>
+    <li class="menu-item">编辑
+        <ul class="menu-submenu">
+            <li class="menu-submenu-item">撤销键入</li>
+            <li class="menu-submenu-item">重做</li>
+            <li class="menu-submenu-item">剪切</li>
+            <li class="menu-submenu-item">复制</li>
+            <li class="menu-submenu-item">复制路径/引用</li>
+            <li class="menu-submenu-item">粘贴 >>>
+                <ul class="menu-subsubmenu">
+                    <li class="menu-subsubmenu-item">粘贴</li>
+                    <li class="menu-subsubmenu-item">从历史记录粘贴</li>
+                    <li class="menu-subsubmenu-item">粘贴为纯文本</li>
+                </ul>
+            </li>
+            <li class="menu-submenu-item">删除</li>
+        </ul>
+    </li>
+    <li class="menu-item">视图
+        <ul class="menu-submenu">
+            <li class="menu-submenu-item">工具窗口 >>>
+                <ul class="menu-subsubmenu">
+                    <li class="menu-subsubmenu-item">提交</li>
+                    <li class="menu-subsubmenu-item">项目</li>
+                    <li class="menu-subsubmenu-item">书签</li>
+                </ul>
+            </li>
+            <li class="menu-submenu-item">外观</li>
+            <li class="menu-submenu-item">快速定义</li>
+            <li class="menu-submenu-item">快速类型定义</li>
+            <li class="menu-submenu-item">快速文档</li>
+            <li class="menu-submenu-item">外部文档</li>
+        </ul>
+    </li>
+    <li class="menu-item">导航
+        <ul class="menu-submenu">
+            <li class="menu-submenu-item">后退</li>
+            <li class="menu-submenu-item">前进</li>
+            <li class="menu-submenu-item">随处搜索</li>
+            <li class="menu-submenu-item">类</li>
+            <li class="menu-submenu-item">文件</li>
+            <li class="menu-submenu-item">符号</li>
+            <li class="menu-submenu-item">文本</li>
+            <li class="menu-submenu-item">行:列</li>
+            <li class="menu-submenu-item">端点</li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>
