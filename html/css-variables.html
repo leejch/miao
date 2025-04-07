@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS variables</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: inset 0 0 1px red;
+    }
+
+    div {
+        --size: 50px;
+        --foo-bar: 5px solid red;
+
+        border: var(--foo-bar);
+        width: calc(var(--size) * 5);
+    }
+
+    span {
+        display: inline-block;
+        height: var(--size);
+    }
+</style>
+
+<body>
+<div>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci commodi dicta
+    doloremque earum esse, eum iure necessitatibus officiis provident quae quasi tempora totam ut
+    veritatis voluptate voluptatibus. Distinctio, ratione!
+</div>
+<div>
+    <span>
+        123
+    </span>
+</div>
+</body>
+</html>
