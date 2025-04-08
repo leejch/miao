@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex 1 grow</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: inset 0 0 1px red;
+    }
+
+    /**
+    flex元素的子元素的外部布局总为flex子元素.
+    当设置这些子元素的display属性时, 总是设置其内部布局
+
+    所以设置子元素为table还是inline-table没有区别,
+    因为其外部布局已经确定, 设置的是其内部布局
+
+    flex元素内不能出现浮动元素
+     */
+    section {
+        display: flex;
+        height: 100px;
+    }
+
+    div {
+        /**
+        改变的是div内部元素的布局, 而不是div的
+         */
+        display: inline-block;
+    }
+
+    div.div-1 {
+        width: 100px;
+
+        /* 扩张系数 */
+        flex-grow: 2;
+    }
+
+    div.div-2 {
+        width: 150px;
+
+        /* 扩张系数 */
+        flex-grow: 1;
+    }
+
+    div.div-3 {
+        width: 100px;
+
+        /* 扩张系数 */
+        flex-grow: 0.2;
+    }
+
+    div.div-4 {
+        width: 150px;
+
+        /* 扩张系数 */
+        flex-grow: 0.2;
+    }
+</style>
+
+<body>
+aaa
+<section>
+    <div class="div-1">flex-grow: 2</div>
+    <div class="div-2">flex-grow: 1</div>
+</section>
+<section>
+    <div class="div-3">flex-grow: 0.2</div>
+    <div class="div-4">flex-grow: 0.2</div>
+</section>
+ddd
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex 2 shrink</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: inset 0 0 1px red;
+    }
+
+    section {
+        display: flex;
+        height: 100px;
+
+        width: 200px;
+
+        border: 2px solid black;
+    }
+
+    div {
+        /**
+        改变的是div内部元素的布局, 而不是div的
+         */
+        display: inline-block;
+    }
+
+    div.div-1 {
+        width: 100px;
+        flex-shrink: 0;
+        border: 5px solid yellow;
+    }
+
+    div.div-2 {
+        width: 150px;
+        flex-shrink: 0;
+        border: 5px solid lightgreen;
+    }
+
+    div.div-3 {
+        width: 100px;
+        /* 超出的部分, 按初始宽度的比例乘以收缩系数分别收缩 */
+        flex-shrink: 1;
+        border: 5px solid yellow;
+    }
+
+    div.div-4 {
+        /* 初始宽度越宽, 收缩越多 */
+        width: 150px;
+        flex-shrink: 1;
+        border: 5px solid lightgreen;
+    }
+
+    div.div-5 {
+        width: 100px;
+        flex-shrink: 0.2;
+        border: 5px solid yellow;
+    }
+
+    div.div-6 {
+        width: 150px;
+        flex-shrink: 0.1;
+        border: 5px solid lightgreen;
+    }
+</style>
+
+<body>
+aaa
+<section>
+    <div class="div-1">flex-shrink: 0</div>
+    <div class="div-2">flex-shrink: 0</div>
+</section>
+<section>
+    <div class="div-3">flex-shrink: 1</div>
+    <div class="div-4">flex-shrink: 1</div>
+</section>
+<section>
+    <div class="div-5">flex-shrink: 0.2</div>
+    <div class="div-6">flex-shrink: 0.1</div>
+</section>
+ddd
+</body>
+</html>
