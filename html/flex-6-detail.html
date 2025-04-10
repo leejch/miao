@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex 6</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: inset 0 0 1px red;
+    }
+
+    .div-1 {
+        display: flex;
+        height: 100px;
+    }
+
+    /**
+    margin为auto时的情况:
+    flex上下文中auto的margin会尽量大且均等分配
+     */
+    .div-1 > span:first-child {
+        margin-right: auto;
+    }
+
+    .div-1 > span:nth-child(2) {
+        margin-right: auto;
+    }
+
+    .div-2 {
+        display: flex;
+        /* 空间分配的优先级: gap > grow > margin > justify-content */
+        gap: 16px 16px;
+        flex-flow: wrap;
+    }
+
+    .div-2 > span {
+        width: 100px;
+        height: 50px;
+    }
+
+    /* 横向无法撑开包含块(2025这个问题不存在了)(grid也解决了这个问题) */
+    .div-3 {
+        display: flex;
+        height: 150px;
+        flex-flow: column wrap;
+
+        position: absolute;
+    }
+
+    .div-3 > span {
+        width: 50px;
+        height: 30px;
+    }
+</style>
+
+<body>
+<div class="div-1">
+    <span>aaa</span>
+    <span>aaa</span>
+</div>
+
+<div class="div-2">
+    <span>01</span>
+    <span>02</span>
+    <span>03</span>
+    <span>04</span>
+    <span>05</span>
+    <span>06</span>
+    <span>07</span>
+    <span>08</span>
+    <span>09</span>
+    <span>10</span>
+    <span>11</span>
+    <span>12</span>
+</div>
+
+<div class="div-3">
+    <span>01</span>
+    <span>02</span>
+    <span>03</span>
+    <span>04</span>
+    <span>05</span>
+    <span>06</span>
+    <!-- order默认是0, 由小到大排序 -->
+    <span style="order: 1">07</span>
+    <span>08</span>
+    <span>09</span>
+    <span>10</span>
+    <span>11</span>
+    <span>12</span>
+    <span>13</span>
+    <span>14</span>
+    <span>15</span>
+    <span>16</span>
+    <span>17</span>
+    <span>18</span>
+    <span>19</span>
+</div>
+</body>
+</html>

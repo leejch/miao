@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex 5</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: inset 0 0 1px red;
+    }
+
+    section {
+        display: flex;
+        height: 100px;
+
+        width: 200px;
+
+        border: 2px solid black;
+    }
+
+    div {
+        /**
+        改变的是div内部元素的布局, 而不是div的
+         */
+        display: inline-block;
+    }
+
+    div.div-1 {
+        width: 100px;
+        /*flex-shrink: 0.2;*/
+        /*flex-grow: 0.6;*/
+        border: 5px solid yellow;
+
+        /**
+        当主轴是水平时相当于width
+        当主轴是垂直时相当于height
+         */
+        /*flex-basis: 200px; !* 覆盖了width *!*/
+
+        /* flex-basis flex-grow flex-shrink */
+        flex: 200px 0.6 0.2;
+    }
+
+    div.div-2 {
+        width: 150px;
+        flex-shrink: 0.1;
+        flex-grow: 0.6;
+        border: 5px solid lightgreen;
+    }
+</style>
+
+<body>
+aaa
+<section>
+    <div class="div-1">flex-shrink: 0</div>
+    <div class="div-2">flex-shrink: 0</div>
+</section>
+ddd
+</body>
+</html>
