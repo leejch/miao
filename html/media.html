@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>media</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: inset 0 0 1px red;
+    }
+
+    /*@media (max-width: 400px) {*/
+    @media (width <= 400px) {
+        div {
+            color: red;
+        }
+    }
+
+    @media (width > 400px) and (width <= 500px) {
+        div {
+            color: blue;
+        }
+    }
+</style>
+
+<body>
+<div>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, dolorum!
+</div>
+</body>
+</html>
