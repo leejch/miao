@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" class="m-0 h-full">
+<head>
+    <meta charset="UTF-8">
+    <title>tailwindcss</title>
+    <!--<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>-->
+    <script src="/js/tailwindcss_v4.1.4.js"></script>
+</head>
+
+<style>
+    /**
+    @layer name { css code }
+    声明一个级联层,
+    后面级联层的代码的优先级高于前面的级联层
+    级联层外的代码优先级高于级联层内的
+    */
+    * {
+        /*background-color: rgba(0, 0, 0, 0.08);*/
+        box-shadow: inset 0 0 1px red;
+    }
+
+    .hover\:text-red-500 {
+        &:hover {
+            color: skyblue;
+        }
+    }
+
+</style>
+
+<body class="m-0 h-full">
+<!-- tailwindcss页面的盒模型是border-box -->
+<!-- 默认是box-border -->
+<!-- 改为box-content可以观察到border超出来了 -->
+<div class="flex flex-col h-full border-1">
+    <!-- sm: width >= 40rem (640px) -->
+    <!-- md: width >= 48rem (768px) -->
+    <!-- lg: width >= 64rem (1024px) -->
+    <header class="h-[99px] flex-none overflow-auto hover:text-red-500
+    sm:bg-green-500 md:bg-yellow-500 lg:bg-blue-500">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cum delectus doloribus eos
+        incidunt iusto magnam, maiores minima placeat quas quis quo similique, vel. A accusantium
+        amet, at, atque consequuntur eius, enim ex fugiat fugit harum hic in incidunt ipsam magni
+        neque officia officiis quia quod sequi ut vero vitae.
+    </header>
+    <div class="flex flex-grow overflow-auto">
+        <aside class="flex-none w-30 overflow-auto">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis illo nam non nostrum
+            praesentium quam quisquam tempore temporibus vel voluptatum? Aspernatur autem mollitia
+            pariatur quisquam reprehenderit tempora voluptatem. Aliquam consequuntur delectus,
+            deleniti dignissimos doloremque est expedita fuga, id illo nisi optio provident quaerat
+            quis quos recusandae, suscipit temporibus vero voluptatibus.
+        </aside>
+        <main class="overflow-auto">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid atque aut commodi
+            earum explicabo, facere ipsam perspiciatis rem reprehenderit tempore. Adipisci aliquid,
+            amet animi aperiam architecto asperiores assumenda doloribus harum impedit magni odio
+            porro voluptatibus voluptatum. Adipisci asperiores cum, deleniti doloribus eveniet
+            laborum modi sequi sint soluta velit. Amet assumenda ducimus est fugiat illo possimus
+            rerum suscipit unde? Accusantium dolores perferendis quae ratione rerum suscipit
+            veritatis voluptas? Aliquam blanditiis culpa cum excepturi laboriosam? Aliquam debitis
+            eius illo itaque laborum neque quibusdam saepe sequi vitae, voluptatem? Accusamus, animi
+            commodi consectetur error et eum iusto quam sed voluptates voluptatibus. Ad aliquid
+            aspernatur beatae blanditiis deserunt, fugit, inventore ipsum iste possimus, quam
+            repellendus repudiandae tenetur vel. Accusantium aliquam at atque consectetur deserunt
+            explicabo, incidunt iste laudantium, minus nisi officiis perferendis quo quod. A
+            eligendi nesciunt nisi sapiente similique, velit! Accusantium aliquam aliquid aperiam
+            atque deleniti laborum magnam minus odio provident, quaerat quis reiciendis rerum soluta
+            totam voluptates. Asperiores autem cupiditate, deserunt distinctio, eos, error est ex
+            fugiat illum ipsam itaque iusto maxime minus nemo non provident quibusdam rem sit
+            tempora vitae. Aliquam blanditiis debitis eaque, neque officia porro? At doloremque
+            eaque enim iure nesciunt optio quisquam recusandae! Error iure quos reprehenderit ut
+            voluptatibus.
+        </main>
+    </div>
+</div>
+</body>
+</html>
