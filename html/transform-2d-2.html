@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transform 2d</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: inset 0 0 1px red;
+    }
+
+    #div-1 {
+        margin: 20px;
+        width: 100px;
+        height: 150px;
+        border: 3px solid black;
+        position: relative;
+
+        /* 没有写 top，等价于 top: auto */
+        /* CSS 动画（transition）只能在两个确定的数值之间做插值 */
+        top: 0;
+        transition: 1s;
+    }
+
+    #div-1:hover {
+        top: -2px;
+    }
+
+    /* transform平滑移动 */
+    #div-2 {
+        margin: 20px;
+        width: 100px;
+        height: 150px;
+        border: 3px solid black;
+        position: relative;
+
+        transition: transform 1s ease;
+        transform: translateY(0) skewX(0) scale(100%);
+    }
+
+    /**
+    rotate(deg) 旋转
+    skew(deg) 倾斜
+    scale(%) 缩放
+    translate(x px, y px) 平移
+     */
+    #div-2:hover {
+        transform: translateY(-2px) skewX(5deg) scale(120%);
+    }
+</style>
+
+<body>
+<div id="div-1"></div>
+<div id="div-2">Lorem ipsum dolor sit amet.</div>
+</body>
+</html>
