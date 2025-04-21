@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transform 3d</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: inset 0 0 1px red;
+    }
+
+    #div-1 {
+        height: 300px;
+        width: 300px;
+        background-image: url("./coordinate-system.png");
+        background-size: 100% 100%;
+
+        transition: 1s;
+        transform: perspective(500px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+
+    #div-1:hover {
+        transform: perspective(500px) rotateX(60deg) rotateY(15deg) rotateZ(30deg);
+    }
+
+    #div-2 {
+        height: 300px;
+        width: 300px;
+        background-image: url("./coordinate-system.png");
+        background-size: 100% 100%;
+        background-position: 4px 0;
+
+        transition: 1s;
+        transform: perspective(500px) rotate3d(1, 1, 1, 30deg) translateZ(0px);
+
+        transform-style: preserve-3d;
+    }
+
+    #div-2::after {
+        content: '';
+        height: 2px;
+        width: 100%;
+        top: 50%;
+        background-color: red;
+        position: absolute;
+        transform: rotateY(90deg);
+    }
+
+    #div-2:hover {
+        transform: perspective(500px) rotate3d(1, 1, 1, 30deg) translateZ(50px);
+    }
+
+    #div-3 {
+        height: 300px;
+        width: 300px;
+        background-image: url("./coordinate-system.png");
+        background-size: 100% 100%;
+        background-position: 4px 0;
+
+        /* 眼睛在xoy平面投影的位置 */
+        perspective-origin: top left;
+        /* 观察距离 */
+        perspective: 500px;
+
+        transform: perspective(500px);
+        transform-style: preserve-3d;
+    }
+
+    #div-3::after {
+        content: '';
+        height: 2px;
+        width: 100%;
+        top: 50%;
+        background-color: red;
+        position: absolute;
+        transform: rotateY(90deg);
+    }
+
+    #div-4 {
+        height: 300px;
+        width: 300px;
+        background-image: url("./coordinate-system.png");
+        background-size: 100% 100%;
+        background-position: 4px 0;
+
+        transition: 1s;
+
+        /* 眼睛在xoy平面投影的位置 */
+        perspective-origin: bottom left;
+        /* 观察距离 */
+        perspective: 500px;
+
+        transform: perspective(500px) rotateY(30deg);
+        transform-style: preserve-3d;
+
+        /*backface-visibility: visible;*/
+        backface-visibility: hidden;
+    }
+
+    #div-4::after {
+        content: '';
+        height: 2px;
+        width: 100%;
+        top: 50%;
+        background-color: red;
+        position: absolute;
+        transform: rotateY(90deg);
+    }
+
+    #div-4:hover {
+        transform: perspective(500px) rotateY(120deg);
+    }
+
+</style>
+
+<body>
+<div id="div-1"></div>
+<div id="div-2"></div>
+<div id="div-3"></div>
+<div id="div-4"></div>
+</body>
+</html>
