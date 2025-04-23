@@ -22,6 +22,7 @@
 - `css-block-layout-variable.html`: 用CSS变量实现css-block-layout.html
 - `smile-face.html`: 公转但不自转的笑脸(借助flex布局、2D变幻、动画实现)
 - `clock.html`: 时钟(带刻度、时分秒针)
+- `cube.html`: 旋转的立方体
 - **邮箱布局系列**
   - `qq-mail-block.html`: border-box布局方式
   - `qq-mail-position.html`: 定位布局实现

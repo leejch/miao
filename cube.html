@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cube</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        /*box-shadow: inset 0 0 1px red;*/
+    }
+
+    div {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: 10s;
+        transform: perspective(400px) rotateX(0deg) rotateY(0deg);
+
+        &:hover { transform: perspective(400px) rotateX(360deg) rotateY(720deg); }
+    }
+
+    aside {
+        width: 128px;
+        height: 128px;
+        position: absolute;
+        margin: auto;
+        inset: 0 0 0 0;
+        background-color: white;
+
+        &:nth-child(1) { transform: rotateX(90deg) translateZ(64px); }
+
+        &:nth-child(2) { transform: rotateX(-90deg) translateZ(64px); }
+
+        &:nth-child(3) { transform: rotateY(90deg) translateZ(64px); }
+
+        &:nth-child(4) { transform: rotateY(-90deg) translateZ(64px); }
+
+        &:nth-child(5) { transform: rotateZ(0deg) translateZ(64px); }
+
+        &:nth-child(6) { transform: rotateY(180deg) translateZ(64px); }
+
+        & span {
+            width: 8px;
+            height: 8px;
+            float: left;
+            background-color: rgb(calc(var(--index)), calc(255 - var(--index)), 255);
+        }
+    }
+</style>
+
+<body>
+<div>
+    <aside id="a1">1</aside>
+    <aside id="a2">2</aside>
+    <aside id="a3">3</aside>
+    <aside id="a4">4</aside>
+    <aside id="a5">
+        <span style="--index:0"></span>
+        <span style="--index:1"></span>
+        <span style="--index:2"></span>
+        <span style="--index:3"></span>
+        <span style="--index:4"></span>
+        <span style="--index:5"></span>
+        <span style="--index:6"></span>
+        <span style="--index:7"></span>
+        <span style="--index:8"></span>
+        <span style="--index:9"></span>
+        <span style="--index:10"></span>
+        <span style="--index:11"></span>
+        <span style="--index:12"></span>
+        <span style="--index:13"></span>
+        <span style="--index:14"></span>
+        <span style="--index:15"></span>
+        <span style="--index:16"></span>
+        <span style="--index:17"></span>
+        <span style="--index:18"></span>
+        <span style="--index:19"></span>
+        <span style="--index:20"></span>
+        <span style="--index:21"></span>
+        <span style="--index:22"></span>
+        <span style="--index:23"></span>
+        <span style="--index:24"></span>
+        <span style="--index:25"></span>
+        <span style="--index:26"></span>
+        <span style="--index:27"></span>
+        <span style="--index:28"></span>
+        <span style="--index:29"></span>
+        <span style="--index:30"></span>
+        <span style="--index:31"></span>
+        <span style="--index:32"></span>
+        <span style="--index:33"></span>
+        <span style="--index:34"></span>
+        <span style="--index:35"></span>
+        <span style="--index:36"></span>
+        <span style="--index:37"></span>
+        <span style="--index:38"></span>
+        <span style="--index:39"></span>
+        <span style="--index:40"></span>
+        <span style="--index:41"></span>
+        <span style="--index:42"></span>
+        <span style="--index:43"></span>
+        <span style="--index:44"></span>
+        <span style="--index:45"></span>
+        <span style="--index:46"></span>
+        <span style="--index:47"></span>
+        <span style="--index:48"></span>
+        <span style="--index:49"></span>
+        <span style="--index:50"></span>
+        <span style="--index:51"></span>
+        <span style="--index:52"></span>
+        <span style="--index:53"></span>
+        <span style="--index:54"></span>
+        <span style="--index:55"></span>
+        <span style="--index:56"></span>
+        <span style="--index:57"></span>
+        <span style="--index:58"></span>
+        <span style="--index:59"></span>
+        <span style="--index:60"></span>
+        <span style="--index:61"></span>
+        <span style="--index:62"></span>
+        <span style="--index:63"></span>
+        <span style="--index:64"></span>
+        <span style="--index:65"></span>
+        <span style="--index:66"></span>
+        <span style="--index:67"></span>
+        <span style="--index:68"></span>
+        <span style="--index:69"></span>
+        <span style="--index:70"></span>
+        <span style="--index:71"></span>
+        <span style="--index:72"></span>
+        <span style="--index:73"></span>
+        <span style="--index:74"></span>
+        <span style="--index:75"></span>
+        <span style="--index:76"></span>
+        <span style="--index:77"></span>
+        <span style="--index:78"></span>
+        <span style="--index:79"></span>
+        <span style="--index:80"></span>
+        <span style="--index:81"></span>
+        <span style="--index:82"></span>
+        <span style="--index:83"></span>
+        <span style="--index:84"></span>
+        <span style="--index:85"></span>
+        <span style="--index:86"></span>
+        <span style="--index:87"></span>
+        <span style="--index:88"></span>
+        <span style="--index:89"></span>
+        <span style="--index:90"></span>
+        <span style="--index:91"></span>
+        <span style="--index:92"></span>
+        <span style="--index:93"></span>
+        <span style="--index:94"></span>
+        <span style="--index:95"></span>
+        <span style="--index:96"></span>
+        <span style="--index:97"></span>
+        <span style="--index:98"></span>
+        <span style="--index:99"></span>
+        <span style="--index:100"></span>
+        <span style="--index:101"></span>
+        <span style="--index:102"></span>
+        <span style="--index:103"></span>
+        <span style="--index:104"></span>
+        <span style="--index:105"></span>
+        <span style="--index:106"></span>
+        <span style="--index:107"></span>
+        <span style="--index:108"></span>
+        <span style="--index:109"></span>
+        <span style="--index:110"></span>
+        <span style="--index:111"></span>
+        <span style="--index:112"></span>
+        <span style="--index:113"></span>
+        <span style="--index:114"></span>
+        <span style="--index:115"></span>
+        <span style="--index:116"></span>
+        <span style="--index:117"></span>
+        <span style="--index:118"></span>
+        <span style="--index:119"></span>
+        <span style="--index:120"></span>
+        <span style="--index:121"></span>
+        <span style="--index:122"></span>
+        <span style="--index:123"></span>
+        <span style="--index:124"></span>
+        <span style="--index:125"></span>
+        <span style="--index:126"></span>
+        <span style="--index:127"></span>
+        <span style="--index:128"></span>
+        <span style="--index:129"></span>
+        <span style="--index:130"></span>
+        <span style="--index:131"></span>
+        <span style="--index:132"></span>
+        <span style="--index:133"></span>
+        <span style="--index:134"></span>
+        <span style="--index:135"></span>
+        <span style="--index:136"></span>
+        <span style="--index:137"></span>
+        <span style="--index:138"></span>
+        <span style="--index:139"></span>
+        <span style="--index:140"></span>
+        <span style="--index:141"></span>
+        <span style="--index:142"></span>
+        <span style="--index:143"></span>
+        <span style="--index:144"></span>
+        <span style="--index:145"></span>
+        <span style="--index:146"></span>
+        <span style="--index:147"></span>
+        <span style="--index:148"></span>
+        <span style="--index:149"></span>
+        <span style="--index:150"></span>
+        <span style="--index:151"></span>
+        <span style="--index:152"></span>
+        <span style="--index:153"></span>
+        <span style="--index:154"></span>
+        <span style="--index:155"></span>
+        <span style="--index:156"></span>
+        <span style="--index:157"></span>
+        <span style="--index:158"></span>
+        <span style="--index:159"></span>
+        <span style="--index:160"></span>
+        <span style="--index:161"></span>
+        <span style="--index:162"></span>
+        <span style="--index:163"></span>
+        <span style="--index:164"></span>
+        <span style="--index:165"></span>
+        <span style="--index:166"></span>
+        <span style="--index:167"></span>
+        <span style="--index:168"></span>
+        <span style="--index:169"></span>
+        <span style="--index:170"></span>
+        <span style="--index:171"></span>
+        <span style="--index:172"></span>
+        <span style="--index:173"></span>
+        <span style="--index:174"></span>
+        <span style="--index:175"></span>
+        <span style="--index:176"></span>
+        <span style="--index:177"></span>
+        <span style="--index:178"></span>
+        <span style="--index:179"></span>
+        <span style="--index:180"></span>
+        <span style="--index:181"></span>
+        <span style="--index:182"></span>
+        <span style="--index:183"></span>
+        <span style="--index:184"></span>
+        <span style="--index:185"></span>
+        <span style="--index:186"></span>
+        <span style="--index:187"></span>
+        <span style="--index:188"></span>
+        <span style="--index:189"></span>
+        <span style="--index:190"></span>
+        <span style="--index:191"></span>
+        <span style="--index:192"></span>
+        <span style="--index:193"></span>
+        <span style="--index:194"></span>
+        <span style="--index:195"></span>
+        <span style="--index:196"></span>
+        <span style="--index:197"></span>
+        <span style="--index:198"></span>
+        <span style="--index:199"></span>
+        <span style="--index:200"></span>
+        <span style="--index:201"></span>
+        <span style="--index:202"></span>
+        <span style="--index:203"></span>
+        <span style="--index:204"></span>
+        <span style="--index:205"></span>
+        <span style="--index:206"></span>
+        <span style="--index:207"></span>
+        <span style="--index:208"></span>
+        <span style="--index:209"></span>
+        <span style="--index:210"></span>
+        <span style="--index:211"></span>
+        <span style="--index:212"></span>
+        <span style="--index:213"></span>
+        <span style="--index:214"></span>
+        <span style="--index:215"></span>
+        <span style="--index:216"></span>
+        <span style="--index:217"></span>
+        <span style="--index:218"></span>
+        <span style="--index:219"></span>
+        <span style="--index:220"></span>
+        <span style="--index:221"></span>
+        <span style="--index:222"></span>
+        <span style="--index:223"></span>
+        <span style="--index:224"></span>
+        <span style="--index:225"></span>
+        <span style="--index:226"></span>
+        <span style="--index:227"></span>
+        <span style="--index:228"></span>
+        <span style="--index:229"></span>
+        <span style="--index:230"></span>
+        <span style="--index:231"></span>
+        <span style="--index:232"></span>
+        <span style="--index:233"></span>
+        <span style="--index:234"></span>
+        <span style="--index:235"></span>
+        <span style="--index:236"></span>
+        <span style="--index:237"></span>
+        <span style="--index:238"></span>
+        <span style="--index:239"></span>
+        <span style="--index:240"></span>
+        <span style="--index:241"></span>
+        <span style="--index:242"></span>
+        <span style="--index:243"></span>
+        <span style="--index:244"></span>
+        <span style="--index:245"></span>
+        <span style="--index:246"></span>
+        <span style="--index:247"></span>
+        <span style="--index:248"></span>
+        <span style="--index:249"></span>
+        <span style="--index:250"></span>
+        <span style="--index:251"></span>
+        <span style="--index:252"></span>
+        <span style="--index:253"></span>
+        <span style="--index:254"></span>
+        <span style="--index:255"></span>
+    </aside>
+    <aside id="a6">6</aside>
+</div>
+</body>
+</html>
