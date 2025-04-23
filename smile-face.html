@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smile Face</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: inset 0 0 1px red;
+    }
+
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        /* 页面太宽会导致旋转半径太大, 内容超出屏幕, 所以限定 width <= height */
+        width: min(100vw, 100vh);
+
+        /* 最后修改: 这样不会在旋转过程中意外出现滚动条 */
+        overflow: hidden;
+    }
+
+    body {
+        /* 希望两个旋转分别位于页面上下50% */
+        display: flex;
+        flex-flow: wrap row;
+        /* 各行在父元素内的垂直位置 */
+        align-content: space-between;
+    }
+
+    @keyframes zhuan-a {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    div.a {
+        display: inline-block;
+        width: 100%;
+        height: fit-content;
+        /* 到上边距为50%旋转半径 */
+        margin-top: 50%;
+
+        animation: zhuan-a infinite 10s linear;
+
+        & span {
+            display: inline-block;
+            animation: zhuan-a reverse infinite 10s linear;
+        }
+    }
+
+    @keyframes zhuan-b {
+        from {
+            /* 思路来源: 2D变幻——时钟 */
+            /* 页面太宽会导致旋转半径太大, 内容超出屏幕, 所以限定 width <= height */
+            /* 并且限定旋转半径为min(50vw, 50vh), 当页面真的拉宽时也控制住最大旋转半径为50% height */
+            transform: rotate(180deg) translateX(calc(min(50vw, 50vh) - 10px)) rotate(-180deg);
+        }
+        to {
+            transform: rotate(540deg) translateX(calc(min(50vw, 50vh) - 10px)) rotate(-540deg);
+        }
+    }
+
+    div.b {
+        display: inline-block;
+        width: fit-content;
+        height: fit-content;
+        /* 到下边距为50%旋转半径 */
+        margin-bottom: 50%;
+        margin-left: auto;
+        margin-right: auto;
+
+        animation: zhuan-b infinite 10s linear;
+    }
+</style>
+
+<body>
+<div class="a">
+    <span>A</span>
+</div>
+<div class="b">B</div>
+</body>
+</html>
