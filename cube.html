@@ -46,7 +46,11 @@
             width: 8px;
             height: 8px;
             float: left;
-            background-color: rgb(calc(var(--index)), calc(255 - var(--index)), 255);
+            background-color: rgb(
+                    calc(var(--index) / 16 * 16),
+                    calc(mod(var(--index), 16) * 16),
+                    255
+            );
         }
     }
 </style>
