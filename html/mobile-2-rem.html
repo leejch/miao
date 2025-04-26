@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mobile</title>
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: inset 0 0 1px red;
+    }
+
+    /**
+    rem(root em)的含义是: 它始终相对于根元素(即html)的font-size来计算
+    默认情况下: 浏览器会把根元素的字体大小设为16px, 那么:
+
+    1 rem = 根元素 font-size
+    若未改动根元素字体, 则 1 rem = 16px
+    若把根元素字体改为10px, 则 1 rem = 10px
+
+
+    设计稿720px, 元素56px
+
+    设置html的font-size为calc(100vw / 设计图宽度)
+    设置元素为56rem
+
+    1  rem = (1  / 720) * 100 vw
+    56 rem = (56 / 720) * 100 vw
+
+    但在一些旧浏览器中, 字号不能设置得太小(不能小于12像素),
+    所以公式最终生效的结果是12px
+
+    所以一般的做法是再乘以100
+     */
+    html {
+        font-size: calc(100vw * 100 / 720);
+    }
+
+    div {
+        width: .56rem;
+        height: .56rem;
+        background-color: red;
+    }
+</style>
+
+<body>
+<div>Lorem ipsum dolor sit amet</div>
+</body>
+</html>
