@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>grid case ins</title>
+    <script src="/js/tailwindcss_v4.1.4.js"></script>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: inset 0 0 1px red;
+    }
+
+    div:nth-child(12n+1) {
+        grid-area: span 2 / span 2;
+    }
+
+    div:nth-child(12n+8) {
+        grid-area: span 2 / span 2;
+    }
+
+    div {
+        aspect-ratio: 1 / 1;
+    }
+</style>
+
+<body class="grid grid-cols-[1fr_1fr_1fr] grid-flow-dense">
+<div>01</div>
+<div>02</div>
+<div>03</div>
+<div>04</div>
+<div>05</div>
+<div>06</div>
+<div>07</div>
+<div>08</div>
+<div>09</div>
+<div>10</div>
+<div>11</div>
+<div>12</div>
+<div>13</div>
+<div>14</div>
+<div>15</div>
+<div>16</div>
+<div>17</div>
+<div>18</div>
+<div>19</div>
+<div>20</div>
+<div>21</div>
+<div>22</div>
+<div>23</div>
+<div>24</div>
+<div>25</div>
+<div>26</div>
+<div>27</div>
+<div>28</div>
+<div>29</div>
+<div>30</div>
+<div>31</div>
+<div>32</div>
+<div>33</div>
+<div>34</div>
+<div>35</div>
+<div>36</div>
+</body>
+</html>
