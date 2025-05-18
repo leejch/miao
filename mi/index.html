@@ -7,8 +7,17 @@
     <link rel="stylesheet" href="/mi/css/mi-iconfont-style.css">
 </head>
 
+<style>
+    /** {*/
+    /*    background-color: rgba(0, 0, 0, 0.08);*/
+    /*    box-shadow: inset 0 0 1px red;*/
+    /*}*/
+</style>
+
 <body>
+<!-- 顶栏高40px 黑灰色 -->
 <div class="h-[40px]" style="background-color: rgb(51,51,51);">
+    <!-- 行高40px 整栏宽1226px并水平居中-->
     <div class="m-0 p-0 w-[1226px] text-[12px] leading-[40px] mx-auto text-neutral-300">
         <a href="#" class="!text-neutral-300 hover:!text-white">小米官网</a>
         <span class="mx-[.3em] text-gray-600">|</span>
@@ -33,17 +42,22 @@
         <a href="#" class="!text-neutral-300 hover:!text-white">下载app</a>
         <span class="mx-[.3em] text-gray-600">|</span>
         <a href="#" class="!text-neutral-300 hover:!text-white">Select Location</a>
+        <!-- 浮动至右侧  -->
         <div class="float-right">
             <a href="#" class="!text-neutral-300 hover:!text-white">登录</a>
             <span class="mx-[.3em]">|</span>
             <a href="#" class="!text-neutral-300 hover:!text-white">注册</a>
             <span class="mx-[.3em]">|</span>
             <a href="#" class="!text-neutral-300 hover:!text-white">消息通知</a>
-            <div class="relative inline-block bg-neutral-600 ml-4 w-[120px] text-center group">
+            <!-- 购物车按钮离左边文字16px relative+group为购物车内容弹出做准备-->
+            <div class="relative inline-block bg-neutral-600 ml-[16px] w-[120px] text-center group">
+                <!-- 字体图标 大号字体 垂直居中-->
                 <span class="iconfont-cart text-xl align-middle p-0 m-0 !text-neutral-300"></span>
                 购物车（0）
-                <div class="hidden absolute top-full right-0 group-hover:block h-[100px] w-[320px]
-                text-black text-center shadow-lg">
+                <!-- 整个购物车色块被hover时向下弹出购物车内容-->
+                <!-- flex justify-center主轴(水平)居中 items-center交叉轴(垂直)居中-->
+                <div class="hidden absolute top-full right-0 h-[100px] w-[320px]
+                text-black shadow-lg group-hover:flex justify-center items-center">
                     购物车中还没有商品，赶紧选购吧！
                 </div>
             </div>
@@ -51,31 +65,74 @@
     </div>
 </div>
 
-<div class="h-[100px] w-[1226px] mx-auto flex items-center">
-    <img src="/mi/assets/images/logo.png" class="h-[56px] aspect-square mr-[180px]">
-    <ul class="flex">
-        <li class="px-[10px] text-[16px] hover:text-orange-500">Xiaomi手机</li>
-        <li class="px-[10px] text-[16px] hover:text-orange-500">REDMI手机</li>
-        <li class="px-[10px] text-[16px] hover:text-orange-500">电视</li>
-        <li class="px-[10px] text-[16px] hover:text-orange-500">笔记本</li>
-        <li class="px-[10px] text-[16px] hover:text-orange-500">平板</li>
-        <li class="px-[10px] text-[16px] hover:text-orange-500">家电</li>
-        <li class="px-[10px] text-[16px] hover:text-orange-500">路由器</li>
-        <li class="px-[10px] text-[16px] hover:text-orange-500">服务中心</li>
-        <li class="px-[10px] text-[16px] hover:text-orange-500">社区</li>
-    </ul>
-    <form action="" class="group flex ml-auto">
-        <input type="text"
-               class="peer h-[50px] w-[240px] outline-none p-2
+<!-- 最外层套个div，用于给展开栏定位 -->
+<div class="relative">
+    <!-- 高度100px 宽度1226px 水平居中 内部元素在交叉轴(垂直方向)居中-->
+    <div class="h-[100px] w-[1226px] mx-auto flex items-center">
+        <!-- logo高56px 方形 与右侧ul相距180px -->
+        <img src="/mi/assets/images/logo.png" class="h-[56px] aspect-square mr-[180px]">
+        <!-- 内部flex布局 ul整体高度为外层div减去16px ul整体向下移动16px-->
+        <ul class="flex h-[calc(100%-16px)] mb-[-16px]">
+            <!-- flex让文字可以使用items-center垂直居中 padding-bottom让文字上移16px-->
+            <!-- padding-inline多个li之间文字水平间隔10px li整体hover时内部文字为橙色-->
+            <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500 group">
+                Xiaomi手机
+                <!-- 相对于整体外层的div定位 全宽 定在紧贴外层div之下 高240px-->
+                <div class="absolute left-0 top-full w-full h-[240px] bg-gray-300 hidden group-hover:block"></div>
+            </li>
+            <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500 group">
+                REDMI手机
+                <div class="absolute left-0 top-full w-full h-[240px] bg-gray-300 hidden group-hover:block"></div>
+            </li>
+            <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500 group">
+                电视
+                <div class="absolute left-0 top-full w-full h-[240px] bg-gray-300 hidden group-hover:block"></div>
+            </li>
+            <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500 group">
+                笔记本
+                <div class="absolute left-0 top-full w-full h-[240px] bg-gray-300 hidden group-hover:block"></div>
+            </li>
+            <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500 group">
+                平板
+                <div class="absolute left-0 top-full w-full h-[240px] bg-gray-300 hidden group-hover:block"></div>
+            </li>
+            <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500 group">
+                家电
+                <div class="absolute left-0 top-full w-full h-[240px] bg-gray-300 hidden group-hover:block"></div>
+            </li>
+            <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500 group">
+                路由器
+                <div class="absolute left-0 top-full w-full h-[240px] bg-gray-300 hidden group-hover:block"></div>
+            </li>
+            <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500 group">
+                服务中心
+                <div class="absolute left-0 top-full w-full h-[240px] bg-gray-300 hidden group-hover:block"></div>
+            </li>
+            <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500 group">
+                社区
+                <div class="absolute left-0 top-full w-full h-[240px] bg-gray-300 hidden group-hover:block"></div>
+            </li>
+        </ul>
+        <!-- 左margin auto, 靠右 -->
+        <form action="" class="group flex ml-auto">
+            <!-- outline-none移除获得焦点时显示的轮廓 padding让文字输入左侧不顶格-->
+            <!-- 搜索输入框仅右侧无边框(使用搜索按钮的左边框) -->
+            <input type="text"
+                   class="peer h-[50px] w-[240px] outline-none p-2
                border border-r-0 border-gray-300 group-hover:border-gray-500
                focus:border-orange-500">
-        <button class="h-[50px] aspect-square
+            <!-- 50*50px方形按钮-->
+            <!-- 输入框(peer)获得焦点时，与输入框一起边框变橙 -->
+            <!-- 同时，搜索按钮被hover时，搜索按钮背景色变橙，搜索按钮内文字变白 -->
+            <button class="h-[50px] aspect-square
                 border border-gray-300 group-hover:border-gray-500
                 peer-focus:border-orange-500
                 hover:bg-orange-500 hover:!text-white">
-            搜索
-        </button>
-    </form>
+                搜索
+            </button>
+        </form>
+    </div>
 </div>
+
 </body>
 </html>
