@@ -8,10 +8,13 @@
 </head>
 
 <style>
-    /** {*/
-    /*    background-color: rgba(0, 0, 0, 0.08);*/
-    /*    box-shadow: inset 0 0 1px red;*/
-    /*}*/
+    /* @layer theme, base, components, utilities */
+    @layer base {
+        * {
+            background-color: rgba(0, 0, 0, 0.08);
+            box-shadow: inset 0 0 1px red;
+        }
+    }
 </style>
 
 <body>
@@ -72,45 +75,95 @@
         <!-- logo高56px 方形 与右侧ul相距180px -->
         <img src="/mi/assets/images/logo.png" class="h-[56px] aspect-square mr-[180px]">
         <!-- 内部flex布局 ul整体高度为外层div减去16px ul整体向下移动16px-->
-        <ul class="flex h-[calc(100%-16px)] mb-[-16px]">
+        <!-- ul(而不是li)被hover时, 向下缓动弹出商品图 -->
+        <ul class="flex h-[calc(100%-16px)] mb-[-16px] group/ul">
             <!-- flex让文字可以使用items-center垂直居中 padding-bottom让文字上移16px-->
             <!-- padding-inline多个li之间文字水平间隔10px li整体hover时内部文字为橙色-->
-            <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500 group">
+            <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500 group/li">
                 Xiaomi手机
                 <!-- 相对于整体外层的div定位 全宽 定在紧贴外层div之下 高240px-->
-                <div class="absolute left-0 top-full w-full h-[240px] bg-gray-300 hidden group-hover:block"></div>
+                <!-- ul(而不是li)被hover时, 向下缓动弹出商品图 -->
+                <!-- li被hover时，置顶且不透明(默认在下层且透明) -->
+                <div class="absolute left-0 top-full w-full bg-gray-300
+                transition-[height] overflow-hidden
+                h-0 group-hover/ul:h-[240px]
+                z-0 group-hover/li:z-1
+                opacity-0 group-hover/li:opacity-100
+                ">
+                    Xiaomi手机
+                </div>
             </li>
-            <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500 group">
+            <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500 group/li">
                 REDMI手机
-                <div class="absolute left-0 top-full w-full h-[240px] bg-gray-300 hidden group-hover:block"></div>
+                <div class="absolute left-0 top-full w-full bg-gray-300
+                transition-[height] overflow-hidden
+                h-0 group-hover/ul:h-[240px]
+                z-0 group-hover/li:z-1
+                opacity-0 group-hover/li:opacity-100
+                ">
+                    REDMI手机
+                </div>
             </li>
-            <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500 group">
+            <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500 group/li">
                 电视
-                <div class="absolute left-0 top-full w-full h-[240px] bg-gray-300 hidden group-hover:block"></div>
+                <div class="absolute left-0 top-full w-full bg-gray-300
+                transition-[height] overflow-hidden
+                h-0 group-hover/ul:h-[240px]
+                z-0 group-hover/li:z-1
+                opacity-0 group-hover/li:opacity-100
+                ">
+                    电视
+                </div>
             </li>
-            <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500 group">
+            <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500 group/li">
                 笔记本
-                <div class="absolute left-0 top-full w-full h-[240px] bg-gray-300 hidden group-hover:block"></div>
+                <div class="absolute left-0 top-full w-full bg-gray-300
+                transition-[height] overflow-hidden
+                h-0 group-hover/ul:h-[240px]
+                z-0 group-hover/li:z-1
+                opacity-0 group-hover/li:opacity-100
+                ">
+                    笔记本
+                </div>
             </li>
-            <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500 group">
+            <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500 group/li">
                 平板
-                <div class="absolute left-0 top-full w-full h-[240px] bg-gray-300 hidden group-hover:block"></div>
+                <div class="absolute left-0 top-full w-full bg-gray-300
+                transition-[height] overflow-hidden
+                h-0 group-hover/ul:h-[240px]
+                z-0 group-hover/li:z-1
+                opacity-0 group-hover/li:opacity-100
+                ">
+                    平板
+                </div>
             </li>
-            <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500 group">
+            <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500 group/li">
                 家电
-                <div class="absolute left-0 top-full w-full h-[240px] bg-gray-300 hidden group-hover:block"></div>
+                <div class="absolute left-0 top-full w-full bg-gray-300
+                transition-[height] overflow-hidden
+                h-0 group-hover/ul:h-[240px]
+                z-0 group-hover/li:z-1
+                opacity-0 group-hover/li:opacity-100
+                ">
+                    家电
+                </div>
             </li>
-            <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500 group">
+            <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500 group/li">
                 路由器
-                <div class="absolute left-0 top-full w-full h-[240px] bg-gray-300 hidden group-hover:block"></div>
+                <div class="absolute left-0 top-full w-full bg-gray-300
+                transition-[height] overflow-hidden
+                h-0 group-hover/ul:h-[240px]
+                z-0 group-hover/li:z-1
+                opacity-0 group-hover/li:opacity-100
+                ">
+                    路由器
+                </div>
             </li>
-            <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500 group">
+            <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500">
                 服务中心
-                <div class="absolute left-0 top-full w-full h-[240px] bg-gray-300 hidden group-hover:block"></div>
             </li>
-            <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500 group">
+            <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500">
                 社区
-                <div class="absolute left-0 top-full w-full h-[240px] bg-gray-300 hidden group-hover:block"></div>
             </li>
         </ul>
         <!-- 左margin auto, 靠右 -->
