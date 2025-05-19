@@ -84,10 +84,11 @@
                 <!-- 相对于整体外层的div定位 全宽 定在紧贴外层div之下 高240px-->
                 <!-- ul(而不是li)被hover时, 向下缓动弹出商品图 -->
                 <!-- li被hover时，置顶且不透明(默认在下层且透明) -->
+                <!-- 若不hover时不给默认z-index, 会被后面的定位元素甚至常规流元素覆盖 -->
                 <div class="absolute left-0 top-full w-full bg-gray-300
-                transition-[height] overflow-hidden
+                transition-[height,z-index] delay-[200ms,0] duration-500 overflow-hidden
                 h-0 group-hover/ul:h-[240px]
-                z-0 group-hover/li:z-1
+                z-500 group-hover/li:z-1000
                 opacity-0 group-hover/li:opacity-100
                 ">
                     Xiaomi手机
@@ -96,9 +97,9 @@
             <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500 group/li">
                 REDMI手机
                 <div class="absolute left-0 top-full w-full bg-gray-300
-                transition-[height] overflow-hidden
+                transition-[height,z-index] delay-[200ms,0] duration-500 overflow-hidden
                 h-0 group-hover/ul:h-[240px]
-                z-0 group-hover/li:z-1
+                z-500 group-hover/li:z-1000
                 opacity-0 group-hover/li:opacity-100
                 ">
                     REDMI手机
@@ -107,9 +108,9 @@
             <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500 group/li">
                 电视
                 <div class="absolute left-0 top-full w-full bg-gray-300
-                transition-[height] overflow-hidden
+                transition-[height,z-index] delay-[200ms,0] duration-500 overflow-hidden
                 h-0 group-hover/ul:h-[240px]
-                z-0 group-hover/li:z-1
+                z-500 group-hover/li:z-1000
                 opacity-0 group-hover/li:opacity-100
                 ">
                     电视
@@ -118,9 +119,9 @@
             <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500 group/li">
                 笔记本
                 <div class="absolute left-0 top-full w-full bg-gray-300
-                transition-[height] overflow-hidden
+                transition-[height,z-index] delay-[200ms,0] duration-500 overflow-hidden
                 h-0 group-hover/ul:h-[240px]
-                z-0 group-hover/li:z-1
+                z-500 group-hover/li:z-1000
                 opacity-0 group-hover/li:opacity-100
                 ">
                     笔记本
@@ -129,9 +130,9 @@
             <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500 group/li">
                 平板
                 <div class="absolute left-0 top-full w-full bg-gray-300
-                transition-[height] overflow-hidden
+                transition-[height,z-index] delay-[200ms,0] duration-500 overflow-hidden
                 h-0 group-hover/ul:h-[240px]
-                z-0 group-hover/li:z-1
+                z-500 group-hover/li:z-1000
                 opacity-0 group-hover/li:opacity-100
                 ">
                     平板
@@ -140,9 +141,9 @@
             <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500 group/li">
                 家电
                 <div class="absolute left-0 top-full w-full bg-gray-300
-                transition-[height] overflow-hidden
+                transition-[height,z-index] delay-[200ms,0] duration-500 overflow-hidden
                 h-0 group-hover/ul:h-[240px]
-                z-0 group-hover/li:z-1
+                z-500 group-hover/li:z-1000
                 opacity-0 group-hover/li:opacity-100
                 ">
                     家电
@@ -151,9 +152,9 @@
             <li class="flex items-center pb-[16px] px-[10px] text-[16px] hover:text-orange-500 group/li">
                 路由器
                 <div class="absolute left-0 top-full w-full bg-gray-300
-                transition-[height] overflow-hidden
+                transition-[height,z-index] delay-[200ms,0] duration-500 overflow-hidden
                 h-0 group-hover/ul:h-[240px]
-                z-0 group-hover/li:z-1
+                z-500 group-hover/li:z-1000
                 opacity-0 group-hover/li:opacity-100
                 ">
                     路由器
@@ -187,5 +188,63 @@
     </div>
 </div>
 
+<!-- 品目+轮播图栏 -->
+<div class="w-[1226px] mx-auto relative">
+    <!-- 品目栏上下各留padding 20px 左右30px-->
+    <!-- 内部各品目垂直flex排列 -->
+    <ul class="absolute left-0 top-0 h-full w-[234px] py-[20px] pl-[30px] pr-[20px]
+    flex flex-col">
+        <!-- flex-grow让10个品目高度均分 -->
+        <!-- 内部再用flex + items-center让匿名文本在交叉轴(垂直)居中 -->
+        <!-- justify-between让间隙充满匿名文本与箭头之间, 实现箭头靠右 -->
+        <li class="flex-grow flex items-center justify-between group">
+            手机
+            <div class="iconfont-arrow-right-big"></div>
+            <!-- h-full是相对于包含块的padding-box而不是content-box -->
+            <ul class="absolute left-full top-0 h-full hidden group-hover:block">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </li>
+        <li class="flex-grow flex items-center justify-between">
+            电视
+            <div class="iconfont-arrow-right-big"></div>
+        </li>
+        <li class="flex-grow flex items-center justify-between">
+            家电
+            <div class="iconfont-arrow-right-big"></div>
+        </li>
+        <li class="flex-grow flex items-center justify-between">
+            笔记本 平板 显示器
+            <div class="iconfont-arrow-right-big"></div>
+        </li>
+        <li class="flex-grow flex items-center justify-between">
+            出行 穿戴
+            <div class="iconfont-arrow-right-big"></div>
+        </li>
+        <li class="flex-grow flex items-center justify-between">
+            耳机 音箱
+            <div class="iconfont-arrow-right-big"></div>
+        </li>
+        <li class="flex-grow flex items-center justify-between">
+            健康 儿童
+            <div class="iconfont-arrow-right-big"></div>
+        </li>
+        <li class="flex-grow flex items-center justify-between">
+            生活 箱包
+            <div class="iconfont-arrow-right-big"></div>
+        </li>
+        <li class="flex-grow flex items-center justify-between">
+            智能 路由器
+            <div class="iconfont-arrow-right-big"></div>
+        </li>
+        <li class="flex-grow flex items-center justify-between">
+            电源 配件
+            <div class="iconfont-arrow-right-big"></div>
+        </li>
+    </ul>
+    <img class="block w-[1226px] h-[460px]" src="/mi/assets/images/image.jpg">
+</div>
 </body>
 </html>
