@@ -9,12 +9,12 @@
 
 <style>
     /* @layer theme, base, components, utilities */
-    @layer base {
-        * {
-            background-color: rgba(0, 0, 0, 0.08);
-            box-shadow: inset 0 0 1px red;
-        }
-    }
+    /*@layer base {*/
+    /*    * {*/
+    /*        background-color: rgba(0, 0, 0, 0.08);*/
+    /*        box-shadow: inset 0 0 1px red;*/
+    /*    }*/
+    /*}*/
 </style>
 
 <body>
@@ -189,59 +189,328 @@
 </div>
 
 <!-- 品目+轮播图栏 -->
-<div class="w-[1226px] mx-auto relative">
-    <!-- 品目栏上下各留padding 20px 左右30px-->
+<div class="w-[1226px] mx-auto relative ">
+    <!-- 品目栏上下各留padding 20px-->
     <!-- 内部各品目垂直flex排列 -->
-    <ul class="absolute left-0 top-0 h-full w-[234px] py-[20px] pl-[30px] pr-[20px]
-    flex flex-col">
+    <ul class="absolute left-0 top-0 h-full w-[234px] py-[20px]
+    flex flex-col bg-stone-800/70 text-white">
+        <!-- padding改为给到li, 才能让li被hover时整行变橙 -->
         <!-- flex-grow让10个品目高度均分 -->
         <!-- 内部再用flex + items-center让匿名文本在交叉轴(垂直)居中 -->
         <!-- justify-between让间隙充满匿名文本与箭头之间, 实现箭头靠右 -->
-        <li class="flex-grow flex items-center justify-between group">
+        <li class="flex-grow flex items-center justify-between group
+        pl-[30px] pr-[20px] hover:bg-orange-500">
             手机
-            <div class="iconfont-arrow-right-big"></div>
+            <!-- 细节: li被hover时, 这个括号元素颜色变为浅灰 -->
+            <div class="iconfont-arrow-right-big group-hover:text-stone-300"></div>
             <!-- h-full是相对于包含块的padding-box而不是content-box -->
-            <ul class="absolute left-full top-0 h-full hidden group-hover:block">
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
+            <!-- grid 6行, 竖向排列, 宽度设为max-content -->
+            <!-- 要指定bgc为白色, 字为黑色 -->
+            <ul class="absolute left-full top-0 h-full hidden group-hover:grid
+            grid-rows-6 grid-flow-col auto-cols-max bg-white text-black">
+                <!-- li内部再用flex, items-center让商品图和匿名文本垂直居中 -->
+                <!-- 最小宽度260px, 左侧内部留空16px -->
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <!-- 商品图, 方形边长56px, 商品图右侧距文字8px -->
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    Xiaomi 数字旗舰
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    Xiaomi MIX系列
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    Xiaomi Civi系列
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    Redmi K系列
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    Redmi Turbo系列
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    Redmi Note系列
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    Redmi 数字系列
+                </li>
             </ul>
         </li>
-        <li class="flex-grow flex items-center justify-between">
+        <li class="flex-grow flex items-center justify-between group
+        pl-[30px] pr-[20px] hover:bg-orange-500">
             电视
-            <div class="iconfont-arrow-right-big"></div>
+            <div class="iconfont-arrow-right-big group-hover:text-stone-300"></div>
+            <ul class="absolute left-full top-0 h-full hidden group-hover:grid
+            grid-rows-6 grid-flow-col auto-cols-max bg-white text-black">
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    旗舰系列-S Pro Mini LED
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    旗舰系列-S Mini LED
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    巨幕影院-Redmi MAX
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    游戏高刷-Redmi X 2025
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    性价比爆款-Redmi A Pro
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    性价比爆款-Redmi A 2025
+                </li>
+            </ul>
         </li>
-        <li class="flex-grow flex items-center justify-between">
+        <li class="flex-grow flex items-center justify-between group
+        pl-[30px] pr-[20px] hover:bg-orange-500">
             家电
-            <div class="iconfont-arrow-right-big"></div>
+            <div class="iconfont-arrow-right-big group-hover:text-stone-300"></div>
+            <ul class="absolute left-full top-0 h-full hidden group-hover:grid
+            grid-rows-6 grid-flow-col auto-cols-max bg-white text-black">
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    壁挂空调
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    立式空调
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    中央空调Pro
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    冰箱
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    滚筒洗衣机
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    波轮洗衣机
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    除湿机
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    洗地机
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    电暖气
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    净水器
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    微蒸烤
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    烟灶
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    洗碗机
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    扫地机器人
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    吸尘器
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    加湿器
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    空气净化器
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    电饭煲
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    电磁炉
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    水壶
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    落地风扇
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    投影仪
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    灯具
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    除螨仪
+                </li>
+            </ul>
         </li>
-        <li class="flex-grow flex items-center justify-between">
+        <li class="flex-grow flex items-center justify-between group
+        pl-[30px] pr-[20px] hover:bg-orange-500">
             笔记本 平板 显示器
-            <div class="iconfont-arrow-right-big"></div>
+            <div class="iconfont-arrow-right-big group-hover:text-stone-300"></div>
+            <ul class="absolute left-full top-0 h-full hidden group-hover:grid
+            grid-rows-6 grid-flow-col auto-cols-max bg-white text-black">
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    Xiaomi Pad 7 Pro
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    Xiaomi Pad 7
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    REDMI Book Pro 16
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    REDMI Book Pro 14
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    Redmi 平板
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    Xiaomi 平板
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    REDMI Book 14 2025
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    REDMI Book 16 2025
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    办公娱乐显示器
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    游戏电竞显示器
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    Redmi 显示器 G34WQ
+                </li>
+                <li class="flex items-center min-w-[260px] px-[16px]">
+                    <img class="h-[56px] aspect-square mr-[8px]"
+                         src="/mi/assets/images/logo.png">
+                    Redmi G Pro27
+                </li>
+            </ul>
         </li>
-        <li class="flex-grow flex items-center justify-between">
+        <li class="flex-grow flex items-center justify-between group
+        pl-[30px] pr-[20px] hover:bg-orange-500">
             出行 穿戴
-            <div class="iconfont-arrow-right-big"></div>
+            <div class="iconfont-arrow-right-big group-hover:text-stone-300"></div>
         </li>
-        <li class="flex-grow flex items-center justify-between">
+        <li class="flex-grow flex items-center justify-between group
+        pl-[30px] pr-[20px] hover:bg-orange-500">
             耳机 音箱
-            <div class="iconfont-arrow-right-big"></div>
+            <div class="iconfont-arrow-right-big group-hover:text-stone-300"></div>
         </li>
-        <li class="flex-grow flex items-center justify-between">
+        <li class="flex-grow flex items-center justify-between group
+        pl-[30px] pr-[20px] hover:bg-orange-500">
             健康 儿童
-            <div class="iconfont-arrow-right-big"></div>
+            <div class="iconfont-arrow-right-big group-hover:text-stone-300"></div>
         </li>
-        <li class="flex-grow flex items-center justify-between">
+        <li class="flex-grow flex items-center justify-between group
+        pl-[30px] pr-[20px] hover:bg-orange-500">
             生活 箱包
-            <div class="iconfont-arrow-right-big"></div>
+            <div class="iconfont-arrow-right-big group-hover:text-stone-300"></div>
         </li>
-        <li class="flex-grow flex items-center justify-between">
+        <li class="flex-grow flex items-center justify-between group
+        pl-[30px] pr-[20px] hover:bg-orange-500">
             智能 路由器
-            <div class="iconfont-arrow-right-big"></div>
+            <div class="iconfont-arrow-right-big group-hover:text-stone-300"></div>
         </li>
-        <li class="flex-grow flex items-center justify-between">
+        <li class="flex-grow flex items-center justify-between group
+        pl-[30px] pr-[20px] hover:bg-orange-500">
             电源 配件
-            <div class="iconfont-arrow-right-big"></div>
+            <div class="iconfont-arrow-right-big group-hover:text-stone-300"></div>
         </li>
     </ul>
     <img class="block w-[1226px] h-[460px]" src="/mi/assets/images/image.jpg">
