@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: inset 0 0 1px red;
+    }
+
+    @keyframes leave {
+        from {
+            left: 0;
+        }
+        to {
+            left: -100%;
+        }
+    }
+
+    div.slider {
+        position: relative;
+        margin: auto;
+        overflow: hidden;
+        width: 400px;
+        height: 225px;
+
+        & input {
+            /* input隐藏 */
+            display: none;
+        }
+
+        & input:nth-child(1):checked ~ div.imgs > img:nth-child(1),
+        & input:nth-child(2):checked ~ div.imgs > img:nth-child(2),
+        & input:nth-child(3):checked ~ div.imgs > img:nth-child(3),
+        & input:nth-child(4):checked ~ div.imgs > img:nth-child(4),
+        & input:nth-child(5):checked ~ div.imgs > img:nth-child(5) {
+            /* 当第i个input被checked, 其后div.imgs里第i个img定位回来 */
+            left: 0;
+            z-index: 10;
+            /* 进场无动画 */
+            animation: none;
+        }
+
+        & input:nth-child(1):checked ~ div.indicators > label:nth-child(1),
+        & input:nth-child(2):checked ~ div.indicators > label:nth-child(2),
+        & input:nth-child(3):checked ~ div.indicators > label:nth-child(3),
+        & input:nth-child(4):checked ~ div.indicators > label:nth-child(4),
+        & input:nth-child(5):checked ~ div.indicators > label:nth-child(5) {
+            /* 当第i个input被checked, 其后div.indicators里第i个label变色 */
+            background-color: red;
+        }
+
+        & > div.imgs {
+            position: relative;
+            width: 400px;
+            height: 225px;
+
+            & > img {
+                /* 进场速度 > 离场速度, 更好看 */
+                transition: .4s;
+                position: absolute;
+                left: 100%;
+                width: 100%;
+                height: 100%;
+
+                /* 离开时, 播放1次leave */
+                /* 当元素有动画会先播放动画, 然后回到元素原本的位置 */
+                animation: leave .6s 1;
+            }
+        }
+
+        & > div.indicators {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            z-index: 100;
+
+            label {
+                cursor: pointer;
+                width: 10px;
+                height: 10px;
+                display: inline-block;
+                background-color: green;
+            }
+        }
+    }
+</style>
+
+<body>
+<div class="slider">
+    <input type="radio" name="slider" id="slider-1" checked>
+    <input type="radio" name="slider" id="slider-2">
+    <input type="radio" name="slider" id="slider-3">
+    <input type="radio" name="slider" id="slider-4">
+    <input type="radio" name="slider" id="slider-5">
+    <div class="imgs">
+        <img src="./carousel-1.png" alt="">
+        <img src="./carousel-2.png" alt="">
+        <img src="./carousel-3.png" alt="">
+        <img src="./carousel-4.png" alt="">
+        <img src="./carousel-5.png" alt="">
+    </div>
+    <div class="indicators">
+        <label for="slider-1"></label>
+        <label for="slider-2"></label>
+        <label for="slider-3"></label>
+        <label for="slider-4"></label>
+        <label for="slider-5"></label>
+    </div>
+</div>
+</body>
+</html>
