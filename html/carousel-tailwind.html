@@ -15,51 +15,45 @@
             left: -100%;
         }
     }
-
-    div.slider > input:nth-child(1):checked ~ div.imgs > img:nth-child(1),
-    div.slider > input:nth-child(2):checked ~ div.imgs > img:nth-child(2),
-    div.slider > input:nth-child(3):checked ~ div.imgs > img:nth-child(3),
-    div.slider > input:nth-child(4):checked ~ div.imgs > img:nth-child(4),
-    div.slider > input:nth-child(5):checked ~ div.imgs > img:nth-child(5) {
-        /* 当第i个input被checked, 其后div.imgs里第i个img定位回来 */
-        left: 0;
-        z-index: 10;
-        /* 进场无动画 */
-        animation: none;
-    }
-
-    div.slider > input:nth-child(1):checked ~ div.indicators > label:nth-child(1),
-    div.slider > input:nth-child(2):checked ~ div.indicators > label:nth-child(2),
-    div.slider > input:nth-child(3):checked ~ div.indicators > label:nth-child(3),
-    div.slider > input:nth-child(4):checked ~ div.indicators > label:nth-child(4),
-    div.slider > input:nth-child(5):checked ~ div.indicators > label:nth-child(5) {
-        /* 当第i个input被checked, 其后div.indicators里第i个label变色 */
-        background-color: red;
-    }
-
 </style>
 
 <body>
 <div class="slider relative m-auto overflow-hidden w-[400px] h-[225px]">
-    <input class="hidden" type="radio" name="slider" id="slider-1" checked>
-    <input class="hidden" type="radio" name="slider" id="slider-2">
-    <input class="hidden" type="radio" name="slider" id="slider-3">
-    <input class="hidden" type="radio" name="slider" id="slider-4">
-    <input class="hidden" type="radio" name="slider" id="slider-5">
-    <div class="imgs relative w-[400px] h-[225px]">
-        <img class="absolute left-full w-full h-full duration-400 animate-[leave_0.6s_1]" src="./carousel-1.png" alt="">
-        <img class="absolute left-full w-full h-full duration-400 animate-[leave_0.6s_1]" src="./carousel-2.png" alt="">
-        <img class="absolute left-full w-full h-full duration-400 animate-[leave_0.6s_1]" src="./carousel-3.png" alt="">
-        <img class="absolute left-full w-full h-full duration-400 animate-[leave_0.6s_1]" src="./carousel-4.png" alt="">
-        <img class="absolute left-full w-full h-full duration-400 animate-[leave_0.6s_1]" src="./carousel-5.png" alt="">
-    </div>
-    <div class="indicators absolute right-[10px] bottom-[10px] z-100">
-        <label class="cursor-pointer w-[10px] h-[10px] inline-block bg-green-700" for="slider-1"></label>
-        <label class="cursor-pointer w-[10px] h-[10px] inline-block bg-green-700" for="slider-2"></label>
-        <label class="cursor-pointer w-[10px] h-[10px] inline-block bg-green-700" for="slider-3"></label>
-        <label class="cursor-pointer w-[10px] h-[10px] inline-block bg-green-700" for="slider-4"></label>
-        <label class="cursor-pointer w-[10px] h-[10px] inline-block bg-green-700" for="slider-5"></label>
-    </div>
+    <!-- slider-1 -->
+    <input id="slider-1" type="radio" name="slider" class="peer/input1 hidden" checked>
+    <img src="./carousel-1.png" class="absolute left-full w-full h-full duration-400
+    animate-[leave_0.6s_1] peer-checked/input1:left-0 peer-checked/input1:z-10 peer-checked/input1:animate-none">
+    <label for="slider-1" class="absolute bottom-[10px] right-[82px] w-[10px] h-[10px]
+    bg-green-700 cursor-pointer peer-checked/input1:bg-red-500 z-20"></label>
+
+    <!-- slider-2 -->
+    <input id="slider-2" type="radio" name="slider" class="peer/input2 hidden">
+    <img src="./carousel-2.png" class="absolute left-full w-full h-full duration-400
+    animate-[leave_0.6s_1] peer-checked/input2:left-0 peer-checked/input2:z-10 peer-checked/input2:animate-none">
+    <label for="slider-2" class="absolute bottom-[10px] right-[64px] w-[10px] h-[10px]
+    bg-green-700 cursor-pointer peer-checked/input2:bg-red-500 z-20"></label>
+
+    <!-- slider-3 -->
+    <input id="slider-3" type="radio" name="slider" class="peer/input3 hidden">
+    <img src="./carousel-3.png" class="absolute left-full w-full h-full duration-400
+    animate-[leave_0.6s_1] peer-checked/input3:left-0 peer-checked/input3:z-10 peer-checked/input3:animate-none">
+    <label for="slider-3" class="absolute bottom-[10px] right-[46px] w-[10px] h-[10px]
+    bg-green-700 cursor-pointer peer-checked/input3:bg-red-500 z-20"></label>
+
+    <!-- slider-4 -->
+    <input id="slider-4" type="radio" name="slider" class="peer/input4 hidden">
+    <img src="./carousel-4.png" class="absolute left-full w-full h-full duration-400
+    animate-[leave_0.6s_1] peer-checked/input4:left-0 peer-checked/input4:z-10 peer-checked/input4:animate-none">
+    <label for="slider-4" class="absolute bottom-[10px] right-[28px] w-[10px] h-[10px]
+    bg-green-700 cursor-pointer peer-checked/input4:bg-red-500 z-20"></label>
+
+    <!-- slider-5 -->
+    <input id="slider-5" type="radio" name="slider" class="peer/input5 hidden">
+    <img src="./carousel-5.png" class="absolute left-full w-full h-full duration-400
+    animate-[leave_0.6s_1] peer-checked/input5:left-0 peer-checked/input5:z-10 peer-checked/input5:animate-none">
+    <label for="slider-5" class="absolute bottom-[10px] right-[10px] w-[10px] h-[10px]
+    bg-green-700 cursor-pointer peer-checked/input5:bg-red-500 z-20"></label>
 </div>
+
 </body>
 </html>
