@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图tailwind版</title>
+    <script src="/js/tailwindcss_v4.1.4.js"></script>
+</head>
+
+<style>
+    @keyframes leave {
+        from {
+            left: 0;
+        }
+        to {
+            left: -100%;
+        }
+    }
+
+    div.slider > input:nth-child(1):checked ~ div.imgs > img:nth-child(1),
+    div.slider > input:nth-child(2):checked ~ div.imgs > img:nth-child(2),
+    div.slider > input:nth-child(3):checked ~ div.imgs > img:nth-child(3),
+    div.slider > input:nth-child(4):checked ~ div.imgs > img:nth-child(4),
+    div.slider > input:nth-child(5):checked ~ div.imgs > img:nth-child(5) {
+        /* 当第i个input被checked, 其后div.imgs里第i个img定位回来 */
+        left: 0;
+        z-index: 10;
+        /* 进场无动画 */
+        animation: none;
+    }
+
+    div.slider > input:nth-child(1):checked ~ div.indicators > label:nth-child(1),
+    div.slider > input:nth-child(2):checked ~ div.indicators > label:nth-child(2),
+    div.slider > input:nth-child(3):checked ~ div.indicators > label:nth-child(3),
+    div.slider > input:nth-child(4):checked ~ div.indicators > label:nth-child(4),
+    div.slider > input:nth-child(5):checked ~ div.indicators > label:nth-child(5) {
+        /* 当第i个input被checked, 其后div.indicators里第i个label变色 */
+        background-color: red;
+    }
+
+</style>
+
+<body>
+<div class="slider relative m-auto overflow-hidden w-[400px] h-[225px]">
+    <input class="hidden" type="radio" name="slider" id="slider-1" checked>
+    <input class="hidden" type="radio" name="slider" id="slider-2">
+    <input class="hidden" type="radio" name="slider" id="slider-3">
+    <input class="hidden" type="radio" name="slider" id="slider-4">
+    <input class="hidden" type="radio" name="slider" id="slider-5">
+    <div class="imgs relative w-[400px] h-[225px]">
+        <img class="absolute left-full w-full h-full duration-400 animate-[leave_0.6s_1]" src="./carousel-1.png" alt="">
+        <img class="absolute left-full w-full h-full duration-400 animate-[leave_0.6s_1]" src="./carousel-2.png" alt="">
+        <img class="absolute left-full w-full h-full duration-400 animate-[leave_0.6s_1]" src="./carousel-3.png" alt="">
+        <img class="absolute left-full w-full h-full duration-400 animate-[leave_0.6s_1]" src="./carousel-4.png" alt="">
+        <img class="absolute left-full w-full h-full duration-400 animate-[leave_0.6s_1]" src="./carousel-5.png" alt="">
+    </div>
+    <div class="indicators absolute right-[10px] bottom-[10px] z-100">
+        <label class="cursor-pointer w-[10px] h-[10px] inline-block bg-green-700" for="slider-1"></label>
+        <label class="cursor-pointer w-[10px] h-[10px] inline-block bg-green-700" for="slider-2"></label>
+        <label class="cursor-pointer w-[10px] h-[10px] inline-block bg-green-700" for="slider-3"></label>
+        <label class="cursor-pointer w-[10px] h-[10px] inline-block bg-green-700" for="slider-4"></label>
+        <label class="cursor-pointer w-[10px] h-[10px] inline-block bg-green-700" for="slider-5"></label>
+    </div>
+</div>
+</body>
+</html>
