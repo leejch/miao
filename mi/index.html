@@ -717,6 +717,213 @@
                 </li>
             </ul>
         </div>
+
+        <!-- 智能穿戴, tailwind实现选项卡hover切换 -->
+        <div class="relative w-[1226px] h-[680px] mt-[24px] mx-auto">
+            <!-- 左上标题: 智能穿戴 -->
+            <div class="float-left my-[16px] text-2xl leading-none">智能穿戴</div>
+            <!-- 右2: 耳机 -->
+            <div class="relative float-right my-[16px] ml-[36px] text-lg leading-none group/earphone peer/earphone">
+                <div class="group-hover/earphone:text-orange-500">耳机</div>
+                <span class="absolute h-[1.5px] w-[36px] bg-orange-500 bottom-[-4px]
+                invisible group-hover/earphone:visible"></span>
+            </div>
+            <!-- 右1: 穿戴 -->
+            <div class="relative float-right my-[16px] text-lg leading-none group/wear peer/wear">
+                <div class="group-hover/wear:text-orange-500">穿戴</div>
+                <span class="absolute h-[1.5px] w-[36px] bg-orange-500 bottom-[-4px]
+                invisible group-hover/wear:visible"></span>
+            </div>
+            <!-- 穿戴 -->
+            <ul class="grid w-full h-[614px] grid-rows-4 grid-cols-5 gap-[16px]
+            absolute top-[56px] visible z-100 transition-[0s] delay-[9999s]
+            peer-hover/earphone:z-20 peer-hover/earphone:transition-none
+            peer-hover/wear:z-100 peer-hover/wear:transition-[0s] peer-hover/wear:delay-[0s]">
+                <li class="row-span-4 relative top-0 shadow-none
+                transition-all duration-300 hover:top-[-2px] hover:shadow-2xl">
+                    <img class="w-full h-full" src="./assets/images/image.jpg">
+                </li>
+                <li class="row-span-2 flex flex-col py-[20px] items-center bg-white
+                relative top-0 shadow-none
+                transition-all duration-300 hover:top-[-2px] hover:shadow-2xl">
+                    <img class="w-[160px] aspect-square" src="./assets/images/image.jpg">
+                    <div class="mt-[16px]">REDMI Watch 5</div>
+                    <div class="mb-[12px] text-neutral-500 text-xs">2.07英寸高刷高亮大屏</div>
+                    <div class="inline-block text-orange-500">599元起</div>
+                </li>
+                <li class="row-span-2 flex flex-col py-[20px] items-center bg-white
+                relative top-0 shadow-none
+                transition-all duration-300 hover:top-[-2px] hover:shadow-2xl">
+                    <img class="w-[160px] aspect-square" src="./assets/images/image.jpg">
+                    <div class="mt-[16px]">REDMI Watch 5</div>
+                    <div class="mb-[12px] text-neutral-500 text-xs">2.07英寸高刷高亮大屏</div>
+                    <div class="inline-block text-orange-500">599元起</div>
+                </li>
+                <li class="row-span-2 flex flex-col py-[20px] items-center bg-white
+                relative top-0 shadow-none
+                transition-all duration-300 hover:top-[-2px] hover:shadow-2xl">
+                    <img class="w-[160px] aspect-square" src="./assets/images/image.jpg">
+                    <div class="mt-[16px]">REDMI Watch 5</div>
+                    <div class="mb-[12px] text-neutral-500 text-xs">2.07英寸高刷高亮大屏</div>
+                    <div class="inline-block text-orange-500">599元起</div>
+                </li>
+                <li class="row-span-2 flex flex-col py-[20px] items-center bg-white
+                relative top-0 shadow-none
+                transition-all duration-300 hover:top-[-2px] hover:shadow-2xl">
+                    <img class="w-[160px] aspect-square" src="./assets/images/image.jpg">
+                    <div class="mt-[16px]">REDMI Watch 5</div>
+                    <div class="mb-[12px] text-neutral-500 text-xs">2.07英寸高刷高亮大屏</div>
+                    <div class="inline-block text-orange-500">599元起</div>
+                </li>
+                <li class="row-span-2 flex flex-col py-[20px] items-center bg-white
+                relative top-0 shadow-none
+                transition-all duration-300 hover:top-[-2px] hover:shadow-2xl">
+                    <img class="w-[160px] aspect-square" src="./assets/images/image.jpg">
+                    <div class="mt-[16px]">REDMI Watch 5</div>
+                    <div class="mb-[12px] text-neutral-500 text-xs">2.07英寸高刷高亮大屏</div>
+                    <div class="inline-block text-orange-500">599元起</div>
+                </li>
+                <li class="row-span-2 flex flex-col py-[20px] items-center bg-white
+                relative top-0 shadow-none
+                transition-all duration-300 hover:top-[-2px] hover:shadow-2xl">
+                    <img class="w-[160px] aspect-square" src="./assets/images/image.jpg">
+                    <div class="mt-[16px]">REDMI Watch 5</div>
+                    <div class="mb-[12px] text-neutral-500 text-xs">2.07英寸高刷高亮大屏</div>
+                    <div class="inline-block text-orange-500">599元起</div>
+                </li>
+                <li class="row-span-2 flex flex-col py-[20px] items-center bg-white
+                relative top-0 shadow-none
+                transition-all duration-300 hover:top-[-2px] hover:shadow-2xl">
+                    <img class="w-[160px] aspect-square" src="./assets/images/image.jpg">
+                    <div class="mt-[16px]">REDMI Watch 5</div>
+                    <div class="mb-[12px] text-neutral-500 text-xs">2.07英寸高刷高亮大屏</div>
+                    <div class="inline-block text-orange-500">599元起</div>
+                </li>
+                <li class="row-span-1 flex py-[20px] items-center bg-white
+                relative top-0 shadow-none
+                transition-all duration-300 hover:top-[-2px] hover:shadow-2xl">
+                    <div class="h-full flex-none w-[50%] pl-[24px]">
+                        <div class="mt-[16px]">Xiaomi 开放式耳机</div>
+                        <div class="mt-[8px] text-orange-500">649元</div>
+                    </div>
+                    <img class="flex-none w-[80px] ml-[12px] aspect-square" src="./assets/images/image.jpg">
+                </li>
+                <li class="row-span-1 flex py-[20px] items-center bg-white
+                relative top-0 shadow-none
+                transition-all duration-300 hover:top-[-2px] hover:shadow-2xl">
+                    <div class="h-full flex-none w-[50%] pl-[24px]">
+                        <div class="mt-[28px] text-xl">浏览更多</div>
+                        <div class="mt-[4px] text-xs text-gray-500">耳机</div>
+                    </div>
+                    <div class="flex-none text-[48px] ml-[28px] iconfont-circle-arrow-right text-orange-500"></div>
+                </li>
+            </ul>
+            <!-- 耳机 -->
+            <ul class="grid w-full h-[614px] grid-rows-4 grid-cols-5 gap-[16px]
+            absolute top-[56px] visible z-50 transition-[0s] delay-[9999s]
+            peer-hover/wear:z-10 peer-hover/wear:transition-none
+            peer-hover/earphone:z-200 peer-hover/earphone:transition-[0s] peer-hover/earphone:delay-[0s]">
+                <li class="row-span-4 relative top-0 shadow-none
+                transition-all duration-300 hover:top-[-2px] hover:shadow-2xl">
+                    <img class="w-full h-full" src="./assets/images/image.jpg">
+                </li>
+                <li class="row-span-2 flex flex-col py-[20px] items-center bg-white
+                relative top-0 shadow-none
+                transition-all duration-300 hover:top-[-2px] hover:shadow-2xl">
+                    <img class="w-[160px] aspect-square" src="./assets/images/image.jpg">
+                    <div class="mt-[16px]">Xiaomi Buds 5 Pro</div>
+                    <div class="mb-[12px] text-neutral-500 text-xs">小米首发双功放三单元</div>
+                    <div>
+                        <div class="inline-block text-orange-500">1249元起</div>
+                        <div class="inline-block text-gray-400 line-through">1299元</div>
+                    </div>
+                </li>
+                <li class="row-span-2 flex flex-col py-[20px] items-center bg-white
+                relative top-0 shadow-none
+                transition-all duration-300 hover:top-[-2px] hover:shadow-2xl">
+                    <img class="w-[160px] aspect-square" src="./assets/images/image.jpg">
+                    <div class="mt-[16px]">Xiaomi Buds 5 Pro</div>
+                    <div class="mb-[12px] text-neutral-500 text-xs">小米首发双功放三单元</div>
+                    <div>
+                        <div class="inline-block text-orange-500">1249元起</div>
+                        <div class="inline-block text-gray-400 line-through">1299元</div>
+                    </div>
+                </li>
+                <li class="row-span-2 flex flex-col py-[20px] items-center bg-white
+                relative top-0 shadow-none
+                transition-all duration-300 hover:top-[-2px] hover:shadow-2xl">
+                    <img class="w-[160px] aspect-square" src="./assets/images/image.jpg">
+                    <div class="mt-[16px]">Xiaomi Buds 5 Pro</div>
+                    <div class="mb-[12px] text-neutral-500 text-xs">小米首发双功放三单元</div>
+                    <div>
+                        <div class="inline-block text-orange-500">1249元起</div>
+                        <div class="inline-block text-gray-400 line-through">1299元</div>
+                    </div>
+                </li>
+                <li class="row-span-2 flex flex-col py-[20px] items-center bg-white
+                relative top-0 shadow-none
+                transition-all duration-300 hover:top-[-2px] hover:shadow-2xl">
+                    <img class="w-[160px] aspect-square" src="./assets/images/image.jpg">
+                    <div class="mt-[16px]">Xiaomi Buds 5 Pro</div>
+                    <div class="mb-[12px] text-neutral-500 text-xs">小米首发双功放三单元</div>
+                    <div>
+                        <div class="inline-block text-orange-500">1249元起</div>
+                        <div class="inline-block text-gray-400 line-through">1299元</div>
+                    </div>
+                </li>
+                <li class="row-span-2 flex flex-col py-[20px] items-center bg-white
+                relative top-0 shadow-none
+                transition-all duration-300 hover:top-[-2px] hover:shadow-2xl">
+                    <img class="w-[160px] aspect-square" src="./assets/images/image.jpg">
+                    <div class="mt-[16px]">Xiaomi Buds 5 Pro</div>
+                    <div class="mb-[12px] text-neutral-500 text-xs">小米首发双功放三单元</div>
+                    <div>
+                        <div class="inline-block text-orange-500">1249元起</div>
+                        <div class="inline-block text-gray-400 line-through">1299元</div>
+                    </div>
+                </li>
+                <li class="row-span-2 flex flex-col py-[20px] items-center bg-white
+                relative top-0 shadow-none
+                transition-all duration-300 hover:top-[-2px] hover:shadow-2xl">
+                    <img class="w-[160px] aspect-square" src="./assets/images/image.jpg">
+                    <div class="mt-[16px]">Xiaomi Buds 5 Pro</div>
+                    <div class="mb-[12px] text-neutral-500 text-xs">小米首发双功放三单元</div>
+                    <div>
+                        <div class="inline-block text-orange-500">1249元起</div>
+                        <div class="inline-block text-gray-400 line-through">1299元</div>
+                    </div>
+                </li>
+                <li class="row-span-2 flex flex-col py-[20px] items-center bg-white
+                relative top-0 shadow-none
+                transition-all duration-300 hover:top-[-2px] hover:shadow-2xl">
+                    <img class="w-[160px] aspect-square" src="./assets/images/image.jpg">
+                    <div class="mt-[16px]">Xiaomi Buds 5 Pro</div>
+                    <div class="mb-[12px] text-neutral-500 text-xs">小米首发双功放三单元</div>
+                    <div>
+                        <div class="inline-block text-orange-500">1249元起</div>
+                        <div class="inline-block text-gray-400 line-through">1299元</div>
+                    </div>
+                </li>
+                <li class="row-span-1 flex py-[20px] items-center bg-white
+                relative top-0 shadow-none
+                transition-all duration-300 hover:top-[-2px] hover:shadow-2xl">
+                    <div class="h-full flex-none w-[50%] pl-[24px]">
+                        <div class="mt-[16px]">小米手环8 Pro 定制版</div>
+                        <div class="mt-[8px] text-orange-500">549元</div>
+                    </div>
+                    <img class="flex-none w-[80px] ml-[12px] aspect-square" src="./assets/images/image.jpg">
+                </li>
+                <li class="row-span-1 flex py-[20px] items-center bg-white
+                relative top-0 shadow-none
+                transition-all duration-300 hover:top-[-2px] hover:shadow-2xl">
+                    <div class="h-full flex-none w-[50%] pl-[24px]">
+                        <div class="mt-[28px] text-xl">浏览更多</div>
+                        <div class="mt-[4px] text-xs text-gray-500">穿戴</div>
+                    </div>
+                    <div class="flex-none text-[48px] ml-[28px] iconfont-circle-arrow-right text-orange-500"></div>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
 </body>
