@@ -924,6 +924,166 @@
                 </li>
             </ul>
         </div>
+
+        <!-- banner -->
+        <div class="flex w-full h-[120px] mt-[24px]">
+            <img class="w-full h-[120px]" src="./assets/images/image.jpg">
+        </div>
+    </div>
+
+    <!-- 底栏(链接) -->
+    <div class="w-full mt-[36px] bg-white">
+        <!-- container -->
+        <!-- flow-root防止常规流元素垂直margin合并 -->
+        <div class="w-[1226px] mx-auto flow-root">
+
+            <!-- 5个按钮 -->
+            <ul class="relative w-full h-[96px] grid grid-rows-1 grid-cols-5
+            justify-items-center items-center text-lg text-neutral-500">
+                <ol class="flex items-center relative">
+                    <span class="iconfont-tool text-[24px] mr-[8px]"></span>
+                    预约维修服务
+                </ol>
+
+                <!-- 按钮之间分隔线, left递增20% -->
+                <span class="absolute top-[30%] left-[20%] w-[0.5px] h-[40%] bg-neutral-300"></span>
+
+                <ol class="flex items-center relative">
+                    <span class="iconfont-circle-7 text-[24px] mr-[8px]"></span>
+                    7天无理由退货
+                </ol>
+
+                <span class="absolute top-[30%] left-[40%] w-[0.5px] h-[40%] bg-neutral-300"></span>
+
+                <ol class="flex items-center relative">
+                    <span class="iconfont-circle-15 text-[24px] mr-[8px]"></span>
+                    15天免费换货
+                </ol>
+
+                <span class="absolute top-[30%] left-[60%] w-[0.5px] h-[40%] bg-neutral-300"></span>
+
+                <ol class="flex items-center relative">
+                    <span class="iconfont-gift text-[24px] mr-[8px]"></span>
+                    满69包邮
+                </ol>
+
+                <span class="absolute top-[30%] left-[80%] w-[0.5px] h-[40%] bg-neutral-300"></span>
+
+                <ol class="flex items-center relative">
+                    <span class="iconfont-location text-[24px] mr-[8px]"></span>
+                    1100余家售后网点
+                </ol>
+
+                <!-- 底部长分隔线 -->
+                <span class="absolute bottom-[10px] left-0 w-full h-[0.5px] bg-neutral-300"></span>
+            </ul>
+
+            <!-- 5列链接和2个电话联系方式, 水平方向flex布局 -->
+            <div class="flex w-full pb-[36px]">
+                <!-- 5列链接grid布局, 左侧留白160px, 给右侧电话联系方式留20% -->
+                <!-- 相对定位(为了绝对定位右侧分隔线) -->
+                <ul class="relative w-[calc(80%-160px)] flex-none ml-[160px] grid grid-rows-1 grid-cols-5 text-neutral-500 text-xs">
+                    <!-- 每列内部垂直方向flex布局 -->
+                    <ol class="flex flex-col">
+                        <!-- 每列标题独立出来 -->
+                        <div class="my-[24px] text-neutral-700 text-base">选购指南</div>
+                        <!-- 每列内部具体的项, 用垂直方向grid布局搭配gap -->
+                        <ul class="grid grid-cols-1 gap-[10px]">
+                            <ol>手机</ol>
+                            <ol>电视</ol>
+                            <ol>笔记本</ol>
+                            <ol>平板</ol>
+                            <ol>穿戴</ol>
+                            <ol>耳机</ol>
+                            <ol>家电</ol>
+                            <ol>路由器</ol>
+                            <ol>音箱</ol>
+                            <ol>配件</ol>
+                        </ul>
+
+                    </ol>
+                    <ol class="flex flex-col">
+                        <!-- 每列标题独立出来 -->
+                        <div class="my-[24px] text-neutral-700 text-base">服务中心</div>
+                        <!-- 每列内部具体的项, 用垂直方向grid布局搭配gap -->
+                        <ul class="grid grid-cols-1 gap-[10px]">
+                            <ol>申请售后</ol>
+                            <ol>售后政策</ol>
+                            <ol>维修服务价格</ol>
+                            <ol>订单查询</ol>
+                            <ol>以旧换新</ol>
+                            <ol>保障服务</ol>
+                            <ol>防伪查询</ol>
+                            <ol>F码通道</ol>
+                        </ul>
+
+                    </ol>
+                    <ol class="flex flex-col">
+                        <!-- 每列标题独立出来 -->
+                        <div class="my-[24px] text-neutral-700 text-base">线下门店</div>
+                        <!-- 每列内部具体的项, 用垂直方向grid布局搭配gap -->
+                        <ul class="grid grid-cols-1 gap-[10px]">
+                            <ol>小米之家</ol>
+                            <ol>服务网点</ol>
+                            <ol>授权体验店/专区</ol>
+                        </ul>
+                    </ol>
+                    <ol class="flex flex-col">
+                        <!-- 每列标题独立出来 -->
+                        <div class="my-[24px] text-neutral-700 text-base">关于小米</div>
+                        <!-- 每列内部具体的项, 用垂直方向grid布局搭配gap -->
+                        <ul class="grid grid-cols-1 gap-[10px]">
+                            <ol>了解小米</ol>
+                            <ol>加入小米</ol>
+                            <ol>投资者关系</ol>
+                            <ol>ESG与可持续发展</ol>
+                            <ol>廉洁举报</ol>
+                        </ul>
+
+                    </ol>
+                    <ol class="flex flex-col">
+                        <!-- 每列标题独立出来 -->
+                        <div class="my-[24px] text-neutral-700 text-base">关注我们</div>
+                        <!-- 每列内部具体的项, 用垂直方向grid布局搭配gap -->
+                        <ul class="grid grid-cols-1 gap-[10px]">
+                            <ol>新浪微博</ol>
+                            <ol>官方微信</ol>
+                            <ol>联系我们</ol>
+                            <ol>公益基金会</ol>
+                        </ul>
+
+                    </ol>
+
+                    <!-- 右侧短分隔线 -->
+                    <span class="absolute right-0 top-[24px] w-[0.5px] h-[80px] bg-neutral-300"></span>
+                </ul>
+
+                <!-- 右侧电话联系方式 -->
+                <div class="h-full grow flex flex-col items-center  pt-[16px]">
+                    <div class="text-2xl text-orange-500">950816</div>
+                    <div class="text-xs text-neutral-500">8:00-18:00（仅收市话费）</div>
+                    <div class="border-[1px] border-orange-500 text-xs text-orange-500
+                    mt-[6px] mb-[32px] py-[6px] px-[28px]">
+                        <span class="iconfont-message2"></span>
+                        人工客服
+                    </div>
+
+                    <div class="text-2xl text-orange-500">950818</div>
+                    <div class="text-xs text-neutral-500">8:00-18:00（仅收市话费）</div>
+                    <div class="text-xs text-neutral-500 pl-[52px] mt-[6px]">
+                        手机适用于：Xiaomi MIX Fold系列、MIX Flip系列、数字12系列及以上
+                    </div>
+                    <div class="text-xs text-neutral-500 pl-[24px] mt-[6px]">
+                        电视适用于：98寸、100寸电视
+                    </div>
+                    <div class="border-[1px] border-orange-500 text-xs text-orange-500
+                    mt-[6px] mb-[32px] py-[6px] px-[28px]">
+                        <span class="iconfont-message2"></span>
+                        人工客服
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 </body>
