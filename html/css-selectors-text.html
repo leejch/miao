@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>text</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: inset 0 0 1px red;
+    }
+
+    ::selection {
+        color: red;
+        background-color: yellow;
+    }
+
+    ::first-letter {
+        color: green;
+    }
+
+    /*::first-line {*/
+    /*    background-color: pink;*/
+    /*}*/
+
+    input::placeholder {
+        color: blue;
+        background-color: green;
+        font-style: italic;
+    }
+
+    div {
+        /* 最小值 */
+        column-count: 3;
+        column-width: 180px;
+
+        column-gap: 3em;
+        column-rule: 20px dashed red;
+    }
+
+    h1#h1_2 {
+        /* 标题跨越整个元素 */
+        column-span: all;
+    }
+</style>
+
+<body>
+<div>
+    <input type="text" placeholder="abc">
+
+    <!-- 列是它的包含块, 宽度占满一列 -->
+    <h1 id="h1_1">hello world</h1>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci ipsa, voluptas! A accusamus aliquid animi est
+    eveniet expedita illum ipsa natus necessitatibus neque, numquam omnis tempora ut. Beatae, consequatur corporis
+    inventore magnam nam necessitatibus officia perspiciatis placeat quaerat, quam qui quos rerum voluptas. Aliquid
+    assumenda consequuntur dicta dignissimos ex nesciunt nobis numquam porro recusandae voluptates? In, itaque,
+    obcaecati. Eaque quibusdam rerum voluptatum? Amet asperiores aspernatur assumenda beatae cum cupiditate illo in
+    minus provident, quae quas, qui, quidem quis quos rem sequi similique suscipit temporibus voluptate voluptatem?
+    Amet, architecto blanditiis cum debitis ea excepturi fuga, iure nemo nesciunt quam quibusdam rem reprehenderit rerum
+    voluptates voluptatibus? Ad adipisci cupiditate, ducimus esse ex illo inventore officia quas sapiente veritatis.
+    Accusantium adipisci aliquid amet aperiam asperiores aut blanditiis cumque dolorem doloremque ea enim est eum
+    exercitationem harum in incidunt ipsam minus nam necessitatibus neque nobis nostrum nulla pariatur possimus
+    praesentium quae quas quis quisquam quod ratione rem, reprehenderit, vel veniam veritatis vitae voluptatem
+    voluptates. Deserunt, exercitationem iusto. Aliquam aliquid commodi debitis dicta error facilis incidunt libero
+    magnam optio porro possimus quibusdam repellendus, repudiandae sunt totam unde vel velit, veniam vitae voluptatibus?
+    A delectus dicta dolores <b>eveniet laudantium obcaecati!</b>
+    <h1 id="h1_2">hello world</h1>
+    Autem cum cumque dicta id minus placeat temporibus ut. Amet
+    architecto atque aut commodi consequatur corporis cum debitis dolorem eos est fugiat hic impedit ipsa ipsam ipsum
+    itaque iusto laborum magnam maiores neque nesciunt nobis nostrum nulla obcaecati odio pariatur perspiciatis
+    provident, quisquam quo repellendus saepe sit totam velit veniam, vero voluptate voluptatem? Aliquid dolores
+    expedita explicabo illo laudantium, nihil numquam officia, officiis provident quam quas, quos recusandae repudiandae
+    temporibus velit vero voluptas. Ab accusamus accusantium aliquam aliquid amet animi asperiores at aut commodi culpa
+    debitis distinctio dolore eos eum explicabo, facere, fuga hic illum ipsam laboriosam molestias nobis omnis pariatur
+    quo quod quos soluta tempora totam unde voluptatem. Ad, aspernatur assumenda delectus doloremque libero neque quam
+    qui quidem rerum voluptas! Consequuntur cumque debitis dicta dignissimos dolore in ipsum maiores, maxime odit
+    quaerat quidem quos ratione repellendus reprehenderit sed sunt voluptates! Aperiam delectus et rem sapiente
+    temporibus? Aliquid atque blanditiis deleniti dolorem ipsam laboriosam laborum minus, molestiae necessitatibus,
+    nesciunt numquam possimus qui quidem quisquam quod rem repellat reprehenderit repudiandae unde voluptatibus?
+    Eligendi enim expedita iusto.
+    <h1 id="h1_3">hello world</h1>
+    Deserunt distinctio est ex, facilis impedit in libero, molestias neque numquam officia
+    perferendis quae quaerat, quasi recusandae tempora vel veniam voluptate voluptatem. Autem culpa debitis, dolores et
+    facere fugiat! Autem commodi culpa debitis deserunt distinctio dolore ea enim est et facere, fuga fugit impedit ipsa
+    itaque laudantium magni necessitatibus, nemo odio perspiciatis provident, quia ratione recusandae saepe soluta ullam
+    ut vel voluptas! Accusantium at consectetur delectus, dolorem earum eius error et excepturi facere facilis labore
+    maiores maxime molestias non, obcaecati optio praesentium quaerat quod quos sunt tempora tempore temporibus ullam
+    voluptas voluptate. Architecto culpa, cupiditate dicta dignissimos earum enim, facilis inventore nemo nisi optio
+    perferendis, reiciendis rem repudiandae sunt unde voluptas voluptatibus. Amet ducimus expedita, facere id illum
+    impedit labore magni maiores, quia sit tenetur ut veniam voluptas. Minus molestias, nobis.
+</div>
+</body>
+</html>
