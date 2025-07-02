@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计数器</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: inset 0 0 1px red;
+    }
+
+    span {
+        display: block;
+        counter-increment: section;
+    }
+
+    span::before {
+        content: counter(section) ". ";
+    }
+</style>
+
+<body>
+<div>
+    <span>Lorem.</span>
+    <span>Repellendus.</span>
+    <span>Eligendi.</span>
+    <span>Explicabo.</span>
+    <span>Quod?</span>
+    <span>Eius?</span>
+    <span>Repudiandae?</span>
+    <span>Eos?</span>
+    <span>Ut.</span>
+    <span>Doloribus.</span>
+    <span>Enim!</span>
+    <span>Alias!</span>
+    <span>Tenetur?</span>
+    <span>Fuga!</span>
+    <span>Natus!</span>
+</div>
+</body>
+</html>
