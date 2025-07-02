@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>content sizing</title>
+</head>
+
+<style>
+    * {
+        background-color: rgba(0, 0, 0, 0.08);
+        box-shadow: inset 0 0 1px red;
+    }
+
+    #div-1 {
+        width: max-content;
+    }
+
+    #div-2 {
+        width: min-content;
+    }
+
+    #div-3 {
+        /* 不超过包含块, 不小于最小元素 */
+        width: fit-content;
+    }
+
+    #div-4 {
+        display: inline-block;
+        /* 占满可用宽度 */
+        width: -webkit-fill-available;
+
+        border: 5px green solid;
+        margin: 10px;
+        padding: 20px;
+    }
+
+</style>
+
+<body>
+<div id="div-1">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, fuga!
+</div>
+<div id="div-2">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, fuga!
+</div>
+<div id="div-3">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, fuga!
+</div>
+<div id="div-4">
+    Lorem ipsum dolor sit amet!
+</div>
+</body>
+</html>
