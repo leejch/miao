@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>背景色渐变</title>
+</head>
+
+<style>
+    * {
+        box-shadow: inset 0 0 1px red;
+    }
+
+    div {
+        padding: 10px;
+        border-radius: 30px;
+    }
+
+    #div-1 {
+        background-image: linear-gradient(white, white), linear-gradient(red, green, yellow);
+        background-clip: content-box, padding-box;
+        /*background-size: 100px 100px;*/
+        /*background-repeat: no-repeat;*/
+        /*background-origin: border-box;*/
+    }
+
+    #div-2 {
+        background-image: radial-gradient(circle, red, green, yellow, blue);
+    }
+
+    #div-3 {
+        background-image: conic-gradient(red, green, yellow, blue);
+    }
+</style>
+
+<body>
+<div id="div-1">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aut blanditiis et facilis fuga fugit natus,
+    odio omnis optio provident quaerat quas reprehenderit similique temporibus, ullam vel velit? Enim maxime nemo
+    numquam placeat quisquam quos rerum voluptas. At blanditiis corporis debitis, deleniti deserunt dolorem ducimus
+    eligendi enim esse facilis fuga in iure, officiis quae quaerat qui quia quisquam rem, soluta tempora tenetur ut
+    velit voluptates? Ad culpa, cupiditate delectus dignissimos, dolores expedita fugiat fugit iste laborum non numquam
+    quam reprehenderit ut? Assumenda autem cumque dolorum earum ex harum labore, laborum magnam maxime nostrum optio
+    porro quia quos, ratione temporibus vero!
+</div>
+<div id="div-2">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aut blanditiis et facilis fuga fugit natus,
+    odio omnis optio provident quaerat quas reprehenderit similique temporibus, ullam vel velit? Enim maxime nemo
+    numquam placeat quisquam quos rerum voluptas. At blanditiis corporis debitis, deleniti deserunt dolorem ducimus
+    eligendi enim esse facilis fuga in iure, officiis quae quaerat qui quia quisquam rem, soluta tempora tenetur ut
+    velit voluptates? Ad culpa, cupiditate delectus dignissimos, dolores expedita fugiat fugit iste laborum non numquam
+    quam reprehenderit ut? Assumenda autem cumque dolorum earum ex harum labore, laborum magnam maxime nostrum optio
+    porro quia quos, ratione temporibus vero!
+</div>
+<div id="div-3">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aut blanditiis et facilis fuga fugit natus,
+    odio omnis optio provident quaerat quas reprehenderit similique temporibus, ullam vel velit? Enim maxime nemo
+    numquam placeat quisquam quos rerum voluptas. At blanditiis corporis debitis, deleniti deserunt dolorem ducimus
+    eligendi enim esse facilis fuga in iure, officiis quae quaerat qui quia quisquam rem, soluta tempora tenetur ut
+    velit voluptates? Ad culpa, cupiditate delectus dignissimos, dolores expedita fugiat fugit iste laborum non numquam
+    quam reprehenderit ut? Assumenda autem cumque dolorum earum ex harum labore, laborum magnam maxime nostrum optio
+    porro quia quos, ratione temporibus vero!
+</div>
+</body>
+</html>
