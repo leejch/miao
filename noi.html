@@ -1,0 +1,175 @@
+<script id="ch0103/01">
+    var a = Number(prompt())
+    var b = Number(prompt())
+    var result = a + b
+    console.log(result)
+</script>
+
+<script id="ch0103/02">
+    var a = Number(prompt())
+    var b = Number(prompt())
+    var c = Number(prompt())
+    var result = (a + b) * c
+    console.log(result)
+</script>
+
+<script id="ch0103/03">
+    var a = Number(prompt())
+    var b = Number(prompt())
+    var c = Number(prompt())
+    var result = (a + b) / c
+    console.log(result)
+</script>
+
+<script id="ch0103/04">
+    var num1 = Number(prompt())
+    var num2 = Number(prompt())
+    var result2 = num1 % num2 // 余数
+    var result1 = (num1 - result2) / num2 // 商
+    console.log(result1, result2)
+</script>
+
+<script id="ch0103/05">
+    var a = Number(prompt())
+    var b = Number(prompt())
+    var result = (a / b).toFixed(9)
+    console.log(result)
+</script>
+
+<script id="ch0103/06">
+    var confirmedCases = Number(prompt())
+    var death = Number(prompt())
+    var rate = (confirmedCases / death).toFixed(3) // 死亡率
+    var result = rate + '%'
+    console.log(result)
+</script>
+
+<script id="ch0103/07">
+    var a = Number(prompt())
+    var b = Number(prompt())
+    var c = Number(prompt())
+    var d = Number(prompt())
+    var x = Number(prompt())
+    var fx = a * Math.pow(x, 3) + b * Math.pow(x, 2) + c * x + d
+    var result = fx.toFixed(7)
+    console.log(result)
+</script>
+
+<script id="ch0103/08">
+    var f = Number(prompt())
+    var c = 5 * (f - 32) / 9
+    var result = c.toFixed(5)
+    console.log(result)
+</script>
+
+<script id="ch0103/09">
+    var r = Number(prompt())
+    var pi = 3.14159
+    var d = 2 * r
+    var c = 2 * pi * r
+    var s = pi * Math.pow(r, 2)
+    console.log(d.toFixed(4), c.toFixed(4), s.toFixed(4))
+</script>
+
+<script id="ch0103/10">
+    var r1 = Number(prompt())
+    var r2 = Number(prompt())
+    var r = 1 / (1 / r1 + 1 / r2) // r1 r2并联阻值
+    var result = r.toFixed(2)
+    console.log(result)
+</script>
+
+<script id="ch0103/11">
+    var a = Number(prompt())
+    var b = Number(prompt())
+    var result = (a % b).toFixed(4)
+    console.log(result)
+</script>
+
+<script id="ch0103/12">
+    var r = Number(prompt())
+    var pi = 3.14
+    var v = 4 / 3 * pi * Math.pow(r, 3)
+    var result = v.toFixed(2)
+    console.log(result)
+</script>
+
+<script id="ch0103/13">
+    var n = Number(prompt())
+    var ge = n % 10
+    var shi = Math.floor(n / 10) % 10
+    var bai = Math.floor(n / 100) % 10
+    var result = ge * 100 + shi * 10 + bai
+    console.log(result)
+</script>
+
+<script id="ch0103/14">
+    var hCm = Number(prompt())
+    var rCm = Number(prompt())
+    var pi = 3.14159
+    var vCm3 = pi * Math.pow(rCm, 2) * hCm
+    var vL = vCm3 / 1000
+    var result = Math.ceil(20 / vL)
+    console.log(result)
+</script>
+
+<script id="ch0103/15">
+    var n = Number(prompt())
+    var x = Number(prompt())
+    var y = Number(prompt())
+    var result = n - Math.ceil(y / x) // 每x小时吃完1个, y小时后的完整苹果数
+    console.log(result)
+</script>
+
+<script id="ch0103/16">
+    var xa = Number(prompt())
+    var ya = Number(prompt())
+    var xb = Number(prompt())
+    var yb = Number(prompt())
+    // var d = Math.pow(Math.pow(xb - xa, 2) + Math.pow(yb - ya, 2), 0.5)
+    var d = Math.hypot(xb - xa, yb - ya) // Math.hypot一步完成欧几里得距离计算
+    var result = d.toFixed(3)
+    console.log(result)
+</script>
+
+<script id="ch0103/17">
+    var x1 = Number(prompt())
+    var y1 = Number(prompt())
+    var x2 = Number(prompt())
+    var y2 = Number(prompt())
+    var x3 = Number(prompt())
+    var y3 = Number(prompt())
+
+    var a = Math.hypot(x2 - x1, y2 - y1)
+    var b = Math.hypot(x3 - x2, y3 - y2)
+    var c = Math.hypot(x1 - x3, y1 - y3)
+
+    // 面积 = [s(s-a)(s-b)(s-c)]^0.5, 其中 s = (a+b+c)/2
+    var s = (a + b + c) / 2
+    var area = Math.sqrt(s * (s - a) * (s - b) * (s - c))
+
+    var result = area.toFixed(2)
+    console.log(result)
+</script>
+
+<script id="ch0103/18">
+    var a1 = Number(prompt())
+    var a2 = Number(prompt())
+    var n = Number(prompt())
+    var d = a2 - a1
+    var an = a1 + (n - 1) * d
+    console.log(an)
+</script>
+
+<script id="ch0103/19">
+    var a = Number(prompt())
+    var b = Number(prompt())
+    var result = a * b
+    console.log(result)
+</script>
+
+<script id="ch0103/20">
+    var n = Number(prompt())
+    var result = Math.pow(2, n)
+    console.log(result)
+</script>
