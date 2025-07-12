@@ -39,7 +39,7 @@
 <script id="ch0103/06">
     var confirmedCases = Number(prompt())
     var death = Number(prompt())
-    var rate = (death / confirmedCases).toFixed(3) // 死亡率
+    var rate = (death / confirmedCases * 100).toFixed(3) // 死亡率
     var result = rate + '%'
     console.log(result)
 </script>
