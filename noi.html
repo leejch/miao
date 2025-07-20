@@ -349,9 +349,9 @@
     if (tBikeSeconds === tWalkSeconds) {
         result = 'All'
     } else if (tBikeSeconds > tWalkSeconds) {
-        result = 'Bike'
-    } else {
         result = 'Walk'
+    } else {
+        result = 'Bike'
     }
 
     console.log(result)
@@ -465,7 +465,7 @@
     var operator = prompt()
     var result
 
-    if (operator !== '+' || operator !== '-' || operator !== '*' || operator !== '/') {
+    if (operator !== '+' && operator !== '-' && operator !== '*' && operator !== '/') {
         result = 'Invalid operator!'
     } else if (operator === '+') {
         result = n1 + n2
