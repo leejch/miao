@@ -173,3 +173,351 @@
     var result = Math.pow(2, n)
     console.log(result)
 </script>
+
+<script id="ch0104/01">
+    var n = Number(prompt())
+    var result
+
+    if (n > 0) {
+        result = 'positive'
+    } else if (n === 0) {
+        result = 'zero'
+    } else {
+        result = 'negative'
+    }
+
+    console.log(result)
+</script>
+
+<script id="ch0104/02">
+    var n = Number(prompt())
+    var result
+
+    if (n < 0) {
+        result = n * (-1)
+    } else {
+        result = n
+    }
+
+    console.log(result)
+</script>
+
+<script id="ch0104/03">
+    var n = Number(prompt())
+    var result
+
+    if (n % 2 === 0) {
+        result = 'even' // 偶数
+    } else {
+        result = 'odd' // 奇数
+    }
+
+    console.log(result)
+</script>
+
+<script id="ch0104/04">
+    var n = prompt()
+    var ascii = n.charCodeAt(0)
+    var result
+
+    if (ascii % 2 === 1) {
+        result = 'YES' // 奇数
+    } else {
+        result = 'NO' // 偶数
+    }
+
+    console.log(result)
+</script>
+
+<script id="ch0104/05">
+    var x = Number(prompt())
+    var y = Number(prompt())
+    var result
+
+    if (x === y) {
+        result = '='
+    } else if (x < y) {
+        result = '<'
+    } else {
+        result = '>'
+    }
+
+    console.log(result)
+</script>
+
+<script id="ch0104/06">
+    var n = Number(prompt())
+    var result
+
+    if (n >= 10 && n <= 99) {
+        result = 1
+    } else {
+        result = 0
+    }
+
+    console.log(result)
+</script>
+
+<script id="ch0104/07">
+    var n1 = Number(prompt())
+    var n2 = Number(prompt())
+    var result
+
+    if (n1 >= 10 || n2 >= 20) {
+        result = 1
+    } else {
+        result = 0
+    }
+
+    console.log(result)
+</script>
+
+<script id="ch0104/08">
+    var n = Number(prompt())
+    var result
+
+    if (n % 3 === 0 && n % 5 === 0) {
+        result = 'YES'
+    } else {
+        result = 'NO'
+    }
+
+    console.log(result)
+</script>
+
+<script id="ch0104/09">
+    var n = Number(prompt())
+    var result = ''
+
+    if (n % 3 === 0) {
+        result = result + '3 '
+    }
+
+    if (n % 5 === 0) {
+        result = result + '5 '
+    }
+
+    if (n % 7 === 0) {
+        result = result + '7 '
+    }
+
+    if (result === '') {
+        result = 'n'
+    }
+
+    result = result.trim()
+    console.log(result)
+</script>
+
+<script id="ch0104/10">
+    var n1 = Number(prompt())
+    var n2 = Number(prompt())
+    var result = 0
+
+    if (n1 < 60 && n2 >= 60 || n2 < 60 && n1 >= 60) {
+        result = 1
+    }
+
+    console.log(result)
+</script>
+
+<script id="ch0104/11">
+    var day = Number(prompt())
+    var result = 'YES'
+
+    if (day === 1 || day === 3 || day === 5) {
+        result = 'NO'
+    }
+
+    console.log(result)
+</script>
+
+<script id="ch0104/12">
+    var distMeter = Number(prompt())
+
+    var tBikeUpSeconds = 27
+    var tBikeDownSeconds = 23
+    var vBikeMeterPerSecond = 3.0
+
+    var vWalkMeterPerSecond = 1.2
+
+    var result
+
+    var tBikeSeconds = tBikeUpSeconds + tBikeDownSeconds + distMeter / vBikeMeterPerSecond
+    var tWalkSeconds = distMeter / vWalkMeterPerSecond
+
+    if (tBikeSeconds === tWalkSeconds) {
+        result = 'All'
+    } else if (tBikeSeconds > tWalkSeconds) {
+        result = 'Bike'
+    } else {
+        result = 'Walk'
+    }
+
+    console.log(result)
+</script>
+
+<script id="ch0104/13">
+    var x = Number(prompt())
+    var y = 1
+
+    if (x >= 0 && x < 5) {
+        y = (-1) * x + 2.5
+    } else if (x >= 5 && x < 10) {
+        y = 2 - 1.5 * (x - 3) * (x - 3)
+    } else if (x >= 10 && x < 20) {
+        y = x / 2 - 1.5
+    }
+
+    var result = y.toFixed(3)
+
+    console.log(result)
+</script>
+
+<script id="ch0104/14">
+    var weight = Number(prompt())
+    var isHurry = prompt()
+    var extraCharge = 5
+
+    var result = 0
+
+    if (weight <= 1000) {
+        result += 8
+    } else {
+        result += (8 + Math.ceil((weight - 1000) / 500) * 4)
+    }
+
+    if (isHurry === 'y') {
+        result += 5
+    }
+
+    console.log(result)
+</script>
+
+<script id="ch0104/15">
+    var n1 = Number(prompt())
+    var n2 = Number(prompt())
+    var n3 = Number(prompt())
+
+    var max = n1
+
+    if (n2 > max) {
+        max = n2
+    }
+
+    if (n3 > max) {
+        max = n3
+    }
+
+    console.log(max)
+</script>
+
+<script id="ch0104/16">
+    var a = Number(prompt())
+    var b = Number(prompt())
+    var c = Number(prompt())
+
+    var result = 'no'
+
+    if (a + b > c || a + c > b || b + c > a) {
+        result = 'yes'
+    }
+
+    console.log(result)
+</script>
+
+<script id="ch0104/17">
+    var year = Number(prompt())
+    var result = 'N'
+
+    if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
+        result = 'Y'
+    }
+    console.log(result)
+</script>
+
+<script id="ch0104/18">
+    var x = Number(prompt())
+    var y = Number(prompt())
+
+    var x1 = 1, y1 = -1
+    var x2 = 1, y2 = 1
+    var x3 = -1, y3 = -1
+    var x4 = -1, y4 = 1
+
+    var xMin = Math.min(x1, x2, x3, x4)
+    var xMax = Math.max(x1, x2, x3, x4)
+    var yMin = Math.min(y1, y2, y3, y4)
+    var yMax = Math.max(y1, y2, y3, y4)
+
+    var result = 'no'
+
+    if (x >= xMin && x <= xMax && y >= yMin && y <= yMax) {
+        result = 'yes'
+    }
+
+    console.log(result)
+</script>
+
+<script id="ch0104/19">
+    var n1 = Number(prompt())
+    var n2 = Number(prompt())
+    var operator = prompt()
+    var result
+
+    if (operator !== '+' || operator !== '-' || operator !== '*' || operator !== '/') {
+        result = 'Invalid operator!'
+    } else if (operator === '+') {
+        result = n1 + n2
+    } else if (operator === '-') {
+        result = n1 - n2
+    } else if (operator === '*') {
+        result = n1 * n2
+    } else if (operator === '/' && n2 !== 0) {
+        result = n1 / n2
+    } else {
+        result = 'Divided by zero!'
+    }
+
+    console.log(result)
+</script>
+
+<script id="ch0104/20">
+    var a = Number(prompt())
+    var b = Number(prompt())
+    var c = Number(prompt())
+    var x, x1, x2, realPart, imaginaryPart
+    var result
+
+    var delta = Math.pow(b, 2) - 4 * a * c
+
+    if (delta === 0) {
+        x = -b / (2 * a)
+        result = 'x1=x2=' + x.toFixed(5)
+    } else if (delta > 0) {
+        x1 = (-b + Math.sqrt(Math.pow(b, 2) - 4 * a * c)) / (2 * a)
+        x2 = (-b - Math.sqrt(Math.pow(b, 2) - 4 * a * c)) / (2 * a)
+        result = 'x1=' + x1.toFixed(5) + ';x2=' + x2.toFixed(5)
+    } else {
+        realPart = -b / (2 * a)
+        imaginaryPart = Math.abs(Math.sqrt(4 * a * c - Math.pow(b, 2)) / (2 * a))
+        result = 'x1=' + realPart.toFixed(5) + '+' + imaginaryPart.toFixed(5) + 'i;x2=' + realPart.toFixed(5) + '-' + imaginaryPart.toFixed(5) + 'i'
+    }
+
+    console.log(result)
+</script>
+
+<script id="ch0104/21">
+    var n = Number(prompt())
+    var x = Number(prompt())
+    var y = Number(prompt())
+    var result
+
+    if (y <= n * x) {
+        result = n - Math.ceil(y / x) // 每x小时吃完1个, y小时后的完整苹果数
+    } else {
+        result = 0
+    }
+
+    console.log(result)
+</script>
