@@ -794,7 +794,7 @@
     var effectiveCasesNew
     var effectiveRateNew
 
-    for (let i = 0; i < n; i++) {
+    for (let i = 0; i < n - 1; i++) { // n行中的第1行已输入
         totalCasesNew = Number(prompt())
         effectiveCasesNew = Number(prompt())
         effectiveRateNew = effectiveCasesNew / totalCasesNew
