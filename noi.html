@@ -521,3 +521,346 @@
 
     console.log(result)
 </script>
+
+<script id="ch0105/01">
+    var n = Number(prompt())
+    var ageSum = 0
+
+    for (let i = 0; i < n; i++) {
+        ageSum += Number(prompt())
+    }
+
+    var ageAve = (ageSum / n).toFixed(2)
+    console.log(ageAve)
+</script>
+
+<script id="ch0105/02">
+    var monthCount = 12
+    var balanceSum = 0
+
+    for (let i = 0; i < monthCount; i++) {
+        balanceSum += Number(prompt())
+    }
+
+    var balanceAve = (balanceSum / monthCount).toFixed(2)
+    console.log('$' + balanceAve)
+</script>
+
+<script id="ch0105/03">
+    var n = Number(prompt())
+    var sum = 0
+
+    for (let i = 0; i < n; i++) {
+        sum += Number(prompt())
+    }
+
+    var ave = (sum / n).toFixed(4)
+    console.log(ave)
+</script>
+
+<script id="ch0105/04">
+    var n = Number(prompt())
+    var sum = 0
+
+    for (let i = 0; i < n; i++) {
+        sum += Number(prompt())
+    }
+
+    var ave = (sum / n).toFixed(5)
+    console.log(sum, ave)
+</script>
+
+<script id="ch0105/05">
+    var n = Number(prompt())
+    var scoreMax = 0
+
+    for (let i = 0; i < n; i++) {
+        scoreMax = Math.max(Number(prompt()), scoreMax)
+    }
+
+    console.log(scoreMax)
+</script>
+
+<script id="ch0105/06">
+    var n = Number(prompt())
+    var numMax = 0
+    var numMin = 0
+    var numTemp
+
+    for (let i = 0; i < n; i++) {
+        numTemp = Number(prompt())
+        numMax = Math.max(numTemp, numMax)
+        numMin = Math.max(numTemp, numMin)
+    }
+
+    var range = numMax - numMin
+
+    console.log(range)
+</script>
+
+<script id="ch0105/07">
+    var n = Number(prompt())
+    var goldSum = 0
+    var silverSum = 0
+    var copperSum = 0
+
+    for (let i = 0; i < n; i++) {
+        goldSum += Number(prompt())
+        silverSum += Number(prompt())
+        copperSum += Number(prompt())
+    }
+
+    var medalSum = goldSum + silverSum + copperSum
+
+    console.log(goldSum, silverSum, copperSum, medalSum)
+</script>
+
+<script id="ch0105/08">
+    var n = Number(prompt())
+    var angleTotalSum = (n - 2) * 180
+    var angleKnownSum = 0
+
+    for (let i = 0; i < n - 1; i++) {
+        angleKnownSum += Number(prompt())
+    }
+
+    var angleUnknown = angleTotalSum - angleKnownSum
+
+    console.log(angleUnknown)
+</script>
+
+<script id="ch0105/09">
+    var m = Number(prompt())
+    var n = Number(prompt())
+    var oddSum = 0
+
+    for (let i = m; i <= n; i++) {
+        if (i % 2 !== 0) {
+            oddSum += i
+        }
+    }
+
+    console.log(oddSum)
+</script>
+
+<script id="ch0105/10">
+    var m = Number(prompt())
+    var n = Number(prompt())
+    var sum = 0
+
+    for (let i = m; i <= n; i++) {
+        if (i % 17 === 0) {
+            sum += i
+        }
+    }
+
+    console.log(sum)
+</script>
+
+<script id="ch0105/11">
+    var k = Number(prompt())
+    var times1 = 0
+    var times5 = 0
+    var times10 = 0
+    var numTemp
+
+    for (let i = 0; i < k; i++) {
+        numTemp = Number(prompt())
+
+        if (numTemp === 1) {
+            times1++
+        }
+        if (numTemp === 5) {
+            times5++
+        }
+        if (numTemp === 10) {
+            times10++
+        }
+    }
+
+    console.log(times1)
+    console.log(times5)
+    console.log(times10)
+</script>
+
+<script id="ch0105/12">
+    var N = Number(prompt())
+    var m = Number(prompt())
+    var numTemp
+    var validCount = 0
+
+    for (let i = 0; i < N; i++) {
+        numTemp = Number(prompt())
+
+        if (numTemp === m) {
+            validCount++
+        }
+    }
+
+    console.log(validCount)
+</script>
+
+<script id="ch0105/13">
+    var a = Number(prompt())
+    var n = Number(prompt())
+
+    for (let i = 0; i < n; i++) {
+        a *= a
+    }
+
+    console.log(a)
+</script>
+
+<script id="ch0105/14">
+    var x = Number(prompt())
+    var n = Number(prompt())
+
+    for (let i = 0; i < n; i++) {
+        x *= 1.001
+    }
+
+    var result = x.toFixed(4)
+
+    console.log(result)
+</script>
+
+<script id="ch0105/15">
+    var R = Number(prompt()) // 年利率 R
+    var M = Number(prompt()) // 本金 M
+    var Y = Number(prompt()) // 投资年数 Y
+
+    var currentMoney = M
+
+    for (let i = 0; i < Y; i++) {
+        currentMoney *= (1 + R / 100)
+    }
+
+    var result = Math.floor(currentMoney)
+
+    console.log(result)
+</script>
+
+<script id="ch0105/16">
+    var N = Number(prompt()) // 年薪
+    var K = Number(prompt()) // 房价年增长率
+
+    var currentYear = 1
+    var currentMoney = N
+    var currentPrice = 200
+
+    var buyYear = -1
+
+    for (let i = 1; i <= 20; i++) {
+        if (currentMoney >= currentPrice) {
+            buyYear = currentYear
+            break
+        }
+        currentMoney *= (1 + K / 100)
+        currentYear++
+    }
+
+    var result = (buyYear === -1) ? 'Impossible' : buyYear
+
+    console.log(result)
+</script>
+
+<script id="ch0105/17">
+    var k = Number(prompt())
+
+    var previousNum = 1
+    var currentNum = 1
+
+    var temp
+
+    for (let i = 3; i <= k; i++) {
+        temp = previousNum + currentNum
+        previousNum = currentNum
+        currentNum = temp
+    }
+
+    console.log(currentNum)
+</script>
+
+<script id="ch0105/18">
+    var n = Number(prompt())
+
+    var totalCasesHAART = Number(prompt())
+    var effectiveCasesHAART = Number(prompt())
+    var effectiveRateHAART = effectiveCasesHAART / totalCasesHAART
+
+    var totalCasesNew
+    var effectiveCasesNew
+    var effectiveRateNew
+
+    for (let i = 0; i < n; i++) {
+        totalCasesNew = Number(prompt())
+        effectiveCasesNew = Number(prompt())
+        effectiveRateNew = effectiveCasesNew / totalCasesNew
+
+        if (effectiveRateNew === effectiveRateHAART) {
+            console.log('same')
+        } else if (effectiveRateNew - effectiveRateHAART > 0.05) {
+            console.log('better')
+        } else if (effectiveRateNew - effectiveRateHAART < 0.05) {
+            console.log('worse')
+        }
+    }
+</script>
+
+<script id="ch0105/19">
+    var n = Number(prompt())
+    var x
+    var y
+    var dist
+    var speed = 50
+    var shipTime
+    var personNum
+    var personUpTime = 1
+    var personDownTime = 0.5
+    var personUpTotalTime
+    var personDownTotalTime
+    var eachTotalTime
+    var totalTime = 0
+
+    for (let i = 0; i < n; i++) {
+        x = Number(prompt())
+        y = Number(prompt())
+        personNum = Number(prompt())
+
+        dist = Math.hypot(x, y)
+        shipTime = 2 * dist / speed
+
+        personUpTotalTime = personNum * personUpTime
+        personDownTotalTime = personNum * personDownTime
+
+        eachTotalTime = shipTime + personUpTotalTime + personDownTotalTime
+
+        totalTime += eachTotalTime
+    }
+
+    var result = Math.ceil(totalTime)
+
+    console.log(result)
+</script>
+
+<script id="ch0105/20">
+    var h = Number(prompt())
+    var s = 0
+    var thisHeight = h
+    var nextHeight
+    var round = 10
+
+    for (let i = 0; i < round; i++) {
+        s += thisHeight // 下落
+        nextHeight = thisHeight / 2 // 计算即将上升的高度
+        s += nextHeight // 上升
+
+        thisHeight = nextHeight // 将下次下落高度赋值为上次上升高度
+    }
+
+    var sBeforeTenthUp = s - nextHeight
+    var tenthUp = nextHeight
+
+    console.log(sBeforeTenthUp)
+    console.log(tenthUp)
+</script>
