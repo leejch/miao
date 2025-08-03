@@ -590,7 +590,7 @@
     for (let i = 0; i < n; i++) {
         numTemp = Number(prompt())
         numMax = Math.max(numTemp, numMax)
-        numMin = Math.max(numTemp, numMin)
+        numMin = Math.min(numTemp, numMin)
     }
 
     var range = numMax - numMin
@@ -703,12 +703,13 @@
 <script id="ch0105/13">
     var a = Number(prompt())
     var n = Number(prompt())
+    var result = 1
 
     for (let i = 0; i < n; i++) {
-        a *= a
+        result *= a // 底数不变
     }
 
-    console.log(a)
+    console.log(result)
 </script>
 
 <script id="ch0105/14">
@@ -755,7 +756,8 @@
             buyYear = currentYear
             break
         }
-        currentMoney *= (1 + K / 100)
+        currentMoney += N // 工资年增长N
+        currentPrice *= (1 + K / 100) // 房价年增长K%
         currentYear++
     }
 
@@ -797,12 +799,12 @@
         effectiveCasesNew = Number(prompt())
         effectiveRateNew = effectiveCasesNew / totalCasesNew
 
-        if (effectiveRateNew === effectiveRateHAART) {
-            console.log('same')
-        } else if (effectiveRateNew - effectiveRateHAART > 0.05) {
+        if (effectiveRateNew - effectiveRateHAART > 0.05) { // y-x大于5%, 则效果更好
             console.log('better')
-        } else if (effectiveRateNew - effectiveRateHAART < 0.05) {
+        } else if (effectiveRateHAART - effectiveRateNew > 0.05) { // x-y大于5%, 则效果更差
             console.log('worse')
+        } else { // 否则称为效果差不多
+            console.log('same')
         }
     }
 </script>
