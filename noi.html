@@ -1286,3 +1286,144 @@
     var result = e.toFixed(10)
     console.log(result)
 </script>
+
+<script id="ch0105/36">
+    var x = Number(prompt())
+    var n = Number(prompt())
+
+    var sum = 0
+
+    for (let i = n; i >= 0; i--) {
+        sum += Math.pow(x, i)
+    }
+
+    var result = sum.toFixed(2)
+    console.log(result)
+</script>
+
+<script id="ch0105/37">
+    var maxHealth = Number(prompt()) // 体力最大值 M
+    var currentHealth = 0 // 初始体力值 0
+    var currentPower = Number(prompt()) // 初始战斗力 N
+    var energyElementCount = Number(prompt()) // 初始能量元素数量 X
+
+    var upgradeCount // 每期战斗可升级战斗力的次数(每期连续战斗currentPower天数的次数)
+
+    // console.log('体力最大值: ' + maxHealth)
+    // console.log('初始体力值: ' + currentHealth)
+    // console.log('初始战斗力: ' + currentPower)
+    // console.log('初始能量元素数量: ' + energyElementCount)
+
+    // 当仍有剩余能量元素
+    while (energyElementCount > 0) {
+        // console.log('当前能量元素数量: ' + energyElementCount)
+        // console.log('当前体力: ' + currentHealth)
+
+        // 未补充至体力最大值, 无法战斗
+        if (currentHealth < maxHealth) {
+            // console.log('未补充至体力最大值, 无法战斗')
+
+            // 消耗能量元素, 补充体力(增加体力数量 = currentPower)
+            energyElementCount--
+            currentHealth += currentPower
+            // console.log('消耗能量元素, 本次补充体力数量: ' + currentPower)
+            // console.log('当前能量元素数量: ' + energyElementCount)
+
+            // 体力值无法超过 M
+            currentHealth = Math.min(maxHealth, currentHealth)
+            // console.log('当前体力: ' + currentHealth)
+            continue
+        }
+
+        // 体力已达到最大值, 进入战斗期
+        // console.log('体力已达到最大值, 进入战斗期')
+        currentHealth = 0
+        upgradeCount = Math.floor(maxHealth / currentPower)
+        // console.log('本期战斗天数: ' + maxHealth)
+        // console.log('当前战斗力: ' + currentPower)
+        // console.log('本期可升级战斗力: ' + upgradeCount)
+        currentPower += upgradeCount
+        // console.log('本期战斗完成')
+        // console.log('当前体力: ' + currentHealth)
+        // console.log('当前战斗力: ' + currentPower)
+    }
+
+    console.log(currentPower)
+</script>
+
+<script id="ch0105/38">
+    var functionCount = Number(prompt()) // 待计算导数的函数数量
+    var n // 多项式最高次幂
+    var currentCoefficient // 系数
+
+    var result
+
+    for (let i = 0; i < functionCount; i++) {
+        result = ''
+
+        // 读取多项式最高次幂
+        n = Number(prompt())
+
+        // 从常数项遍历到x^n的系数
+        for (let j = n; j >= 0; j--) {
+            currentCoefficient = Number(prompt())
+
+            if (n === 0) {
+                // 如果f(x)为常函数, 则直接输出0
+                result = '0'
+                break
+            }
+
+            if (j > 0) {
+                // 不显式输出非常数函数导数里的0
+                result = result + currentCoefficient * j + ' '
+            }
+        }
+        result = result.trim()
+        console.log(result)
+    }
+</script>
+
+<script id="ch0105/39">
+    var n = Number(prompt())
+    var targetNum = 7
+    var sum = 0
+    var isRelated
+
+    for (let i = 1; i <= n; i++) {
+        isRelated = false
+
+        if (i % targetNum === 0) {
+            isRelated = true
+        }
+
+        if (i % 10 === targetNum || Math.floor(i / 10) % 10 === targetNum) {
+            isRelated = true
+        }
+
+        if (!isRelated) {
+            sum += Math.pow(i, 2)
+        }
+    }
+
+    console.log(sum)
+</script>
+
+<script id="ch0105/40">
+    var n = Number(prompt())
+    var targetNum = 1
+    var countOfOnes = 0
+    var temp
+
+    for (let i = 1; i <= n; i++) {
+        temp = i
+        while (temp > 0) {
+            if (temp % 10 === targetNum) {
+                countOfOnes++
+            }
+            temp = Math.floor(temp / 10)
+        }
+    }
+
+    console.log(countOfOnes)
+</script>
