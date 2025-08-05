@@ -1057,3 +1057,119 @@
         }
     }
 </script>
+
+<script id="ch0105/26">
+    var n = Number(prompt())
+
+    var ge
+    var shi
+    var bai
+    var qian
+
+    var num
+    var validNums = 0
+
+    for (let i = 0; i < n; i++) {
+        num = Number(prompt())
+        ge = num % 10
+        shi = Math.floor(num / 10) % 10
+        bai = Math.floor(num / 100) % 10
+        qian = Math.floor(num / 1000) % 10
+        if (ge - qian - bai - shi > 0) {
+            validNums++
+        }
+    }
+
+    console.log(validNums)
+</script>
+
+<script id="ch0105/27">
+    var K = Number(prompt())
+    var n = 0
+    var Sn = 0
+
+    while (Sn <= K) {
+        // Sn = 1/1 + 1/2 + 1/3 + ... + 1/n
+        Sn += (1 / ++n)
+    }
+
+    console.log(n)
+</script>
+
+<script id="ch0105/28">
+    var num = Number(prompt())
+    var result = ''
+    var temp
+
+    while (num > 0) {
+        temp = num % 10
+        result = result + temp + ' '
+
+        num = Math.floor(num / 10)
+    }
+
+    result = result.trim()
+    console.log(result)
+</script>
+
+<script id="ch0105/29">
+    var num = Number(prompt())
+    var result = ''
+    var temp
+
+    var validFlag = false
+
+    if (num < 0) {
+        result = '-'
+        num = -num
+    }
+
+    while (num > 0) {
+        temp = num % 10
+
+        // 首次遇到非0位
+        if (temp !== 0 && !validFlag) {
+            validFlag = true
+        }
+
+        // 此时最高位非0
+        if (validFlag) {
+            result = result + temp
+        }
+
+        num = Math.floor(num / 10)
+    }
+
+    result = result.trim()
+    console.log(result)
+</script>
+
+<script id="ch0105/30">
+    var m = Number(prompt()) // 数字
+    var k = Number(prompt()) // 3的次数
+
+    var temp // 临时存放m的每一位
+    var count = 0 // 3的次数
+
+    var result = 'YES'
+
+    if (m % 19 !== 0) {
+        result = 'NO'
+    }
+
+    while (m > 0) {
+        temp = m % 10
+
+        if (temp === 3) {
+            count++
+        }
+
+        m = Math.floor(m / 10)
+    }
+
+    if (count !== k) {
+        result = 'NO'
+    }
+
+    console.log(result)
+</script>
