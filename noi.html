@@ -1427,3 +1427,115 @@
 
     console.log(countOfOnes)
 </script>
+
+<script id="ch0105/41">
+    var startNum = Number(prompt())
+    var endNum = Number(prompt())
+    var targetNum = 2
+    var countOfTargetNum = 0
+    var temp
+
+    for (let i = startNum; i <= endNum; i++) {
+        temp = i
+        while (temp > 0) {
+            if (temp % 10 === targetNum) {
+                countOfTargetNum++
+            }
+            temp = Math.floor(temp / 10)
+        }
+    }
+
+    console.log(countOfTargetNum)
+</script>
+
+<script id="ch0105/42">
+    var height = Number(prompt())
+    var width = Number(prompt())
+    var char = String(prompt())
+    var isSolid = Number(prompt()) // 是否实心
+    var line
+
+    for (let i = 0; i < width; i++) {
+        line = ''
+
+        for (let j = 0; j < height; j++) {
+            if (!isSolid && i > 0 && i < width - 1 && j > 0 && j < height - 1) {
+                line += ' '
+            } else {
+                line += char
+            }
+        }
+
+        console.log(line)
+    }
+</script>
+
+<script id="ch0105/43">
+    var n = Number(prompt())
+    var largerPrime
+
+    for (let i = 2; i * i <= n; i++) {
+        if (n % i === 0) {
+            largerPrime = n / i
+        }
+    }
+
+    console.log(largerPrime)
+</script>
+
+<script id="ch0105/44">
+    var n = Number(prompt())
+    var isPrime
+    var countOfPrime = 1
+    var targetPrime
+
+    if (n === 1) {
+        targetPrime = 2
+    }
+
+    for (let i = 3; countOfPrime < n; i++) {
+        isPrime = true
+
+        for (let j = 2; j < i; j++) {
+            if (i % j === 0) {
+                isPrime = false
+            }
+        }
+
+        if (isPrime) {
+            targetNum = i
+            countOfPrime++
+        }
+    }
+
+    console.log(targetNum)
+</script>
+
+<script id="ch0105/45">
+    var totalDays = Number(prompt())
+    var currentDay = 1 // 当前第currentDay天
+    var tier = 1 // 奖励的阶级
+    var goldsPerTier = tier // 单独分出每阶奖励字段
+    var dayOfCurrentTier = 1 // 此奖励阶级下的第dayOfCurrentTier天
+    var totalGolds = 0 // 获得金币总数
+
+    // 按天计算
+    while (currentDay <= totalDays) {
+        // 上一阶级奖励已发完
+        if (dayOfCurrentTier > tier) {
+            // 升级
+            tier++
+            // 阶级对应的奖励增加
+            goldsPerTier++
+            // 重置当前阶级天数
+            dayOfCurrentTier = 1
+        }
+        // 得到这个阶级对应的金币
+        totalGolds += goldsPerTier
+
+        dayOfCurrentTier++
+        currentDay++
+    }
+
+    console.log(totalGolds)
+</script>
