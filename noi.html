@@ -866,3 +866,194 @@
     console.log(sBeforeTenthUp)
     console.log(tenthUp)
 </script>
+
+<script id="ch0105/21">
+    var n = Number(prompt())
+    var thisNum = n
+    var nextNum
+
+    do {
+        if (thisNum % 2 === 1) {
+            nextNum = thisNum * 3 + 1
+            console.log(thisNum + '*3+1=' + nextNum)
+        } else if (thisNum % 2 === 0) {
+            nextNum = thisNum / 2
+            console.log(thisNum + '/2=' + nextNum)
+        }
+        thisNum = nextNum
+    } while (nextNum !== 1)
+
+    console.log('End')
+</script>
+
+<script id="ch0105/22">
+    var currentMoney = 0 // 当前零花钱
+    var reward = 300 // 每月初获得零花钱
+    var budget // 当月预算
+    var currentBalance // 当月结余
+    var currentDeposit // 当月存款
+    var totalDeposit = 0 // 总存款
+    var flag = 0 // 钱不够用的月
+
+    var result
+
+    for (let i = 1; i <= 12; i++) {
+        // 1 月初 获得零花钱
+        currentMoney += reward
+        // console.log(i + '月: currentMoney = ' + currentMoney)
+
+        // 2 月初 设定花销
+        budget = Number(prompt())
+        // console.log(i + '月: budget = ' + budget)
+
+        // 3 月初 检查当月是否不够原定预算
+        if (budget > currentMoney) {
+            flag = -i
+            // console.log(i + '月: flag = ' + flag)
+            break
+        }
+        // console.log(i + '月: 预算小于余额')
+
+        // 4 月初 计算月末结余
+        currentBalance = currentMoney - budget
+        // console.log(i + '月: currentBalance = ' + currentBalance)
+
+        // 5 月初 计算月初存款
+        currentDeposit = Math.floor(currentBalance / 100) * 100
+        // console.log(i + '月: currentDeposit = ' + currentDeposit)
+
+        // 6 月初 存入
+        totalDeposit += currentDeposit
+        currentMoney -= currentDeposit
+        // console.log(i + '月: totalDeposit = ' + totalDeposit)
+
+        // 7 月末 花费预算
+        currentMoney -= budget
+        // console.log(i + '月: currentMoney = ' + currentMoney)
+    }
+
+    if (flag < 0) {
+        // 如果储蓄计划实施过程中出现某个月钱不够用的情况，输出-X
+        result = flag
+    } else {
+        // 输出年末手中有多少钱
+        result = Math.floor(currentMoney + totalDeposit * 1.2)
+    }
+
+    console.log(result)
+</script>
+
+<script id="ch0105/23">
+    var m = Number(prompt()) // 药品总量
+    var n = Number(prompt()) // 取药人数
+    var medicineBalance = m // 当前药品余量
+    var medicineCurrentPick // 当前病人取药量
+    var patientsFailed = 0
+
+    for (let i = 0; i < n; i++) {
+        medicineCurrentPick = Number(prompt())
+        // 取药量 > 余量
+        if (medicineCurrentPick > medicineBalance) {
+            // 取药失败
+            patientsFailed++
+            continue
+        }
+        // 成功取走药品
+        medicineBalance -= medicineCurrentPick
+    }
+
+    console.log(patientsFailed)
+</script>
+
+<script id="ch0105/24">
+    var n = Number(prompt())
+
+    var systolicBloodPressure // 收缩压
+    var diastolicBloodPressure // 舒张压
+
+    var continuousHours = 0
+    var maxContinuousHours = 0
+
+    for (let i = 0; i < n; i++) {
+        systolicBloodPressure = Number(prompt())
+        diastolicBloodPressure = Number(prompt())
+        // 若血压不正常, 清空连续时长
+        if (systolicBloodPressure < 90 || systolicBloodPressure > 140
+                || diastolicBloodPressure < 60 || diastolicBloodPressure > 90) {
+            continuousHours = 0
+            continue
+        }
+        // 血压正常, 时长累计, 更新连续时长
+        continuousHours++
+        maxContinuousHours = Math.max(continuousHours, maxContinuousHours)
+    }
+
+    console.log(maxContinuousHours)
+</script>
+
+<script id="ch0105/25">
+    // 最小的三位的九进制数 100(9)
+    var MIN_THREE_DIGIT_NOVENARY = Math.pow(9, 2)
+    // 最大的三位的七进制数 666(7)
+    var MAX_THREE_DIGIT_SEPTENARY = 6 * Math.pow(7, 2) + 6 * Math.pow(7, 1) + 6 * Math.pow(7, 0)
+
+    var temp7  // 用于逐步整除
+    var radix7  // 用于存放最终的七进制字符串
+    var rem7 // 当前最低位
+
+    var temp9
+    var radix9
+    var rem9
+
+    var first7
+    var second7
+    var third7
+
+    var first9
+    var second9
+    var third9
+
+    for (let i = MIN_THREE_DIGIT_NOVENARY; i <= MAX_THREE_DIGIT_SEPTENARY; i++) {
+        temp7 = i
+        radix7 = ''
+
+        while (temp7 > 0) {
+            rem7 = temp7 % 7
+            radix7 = '' + rem7 + radix7
+            // 去掉最低位，继续下一轮
+            temp7 = Math.floor(temp7 / 7)
+        }
+
+        radix7 = Number(radix7)
+
+        temp9 = i
+        radix9 = ''
+
+        while (temp9 > 0) {
+            rem9 = temp9 % 9
+            radix9 = '' + rem9 + radix9
+            temp9 = Math.floor(temp9 / 9)
+        }
+
+        radix9 = Number(radix9)
+
+        // 判断七进制与九进制的三位数码表示顺序是否正好相反
+        first7 = radix7 % 10
+        second7 = Math.floor(radix7 / 10) % 10
+        third7 = Math.floor(radix7 / 100) % 10
+
+        first9 = radix9 % 10
+        second9 = Math.floor(radix9 / 10) % 10
+        third9 = Math.floor(radix9 / 100) % 10
+
+        // console.log(third7, second7, first7)
+        // console.log(third9, second9, first9)
+
+        if (first7 === third9 && second7 === second9 && third7 === first9) {
+            console.log(i)
+            console.log(radix7)
+            console.log(radix9)
+            // break
+        }
+    }
+</script>
