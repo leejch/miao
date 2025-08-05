@@ -860,8 +860,8 @@
         thisHeight = nextHeight // 将下次下落高度赋值为上次上升高度
     }
 
-    var sBeforeTenthUp = s - nextHeight
-    var tenthUp = nextHeight
+    var sBeforeTenthUp = (s - nextHeight).toFixed(4)
+    var tenthUp = nextHeight.toFixed(7)
 
     console.log(sBeforeTenthUp)
     console.log(tenthUp)
