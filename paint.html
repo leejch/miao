@@ -66,5 +66,241 @@
     // 不可更改上面的代码
     // 你的代码写在这里
 
+    var x // 绘制点横坐标
+    var y // 绘制点纵坐标
+    var color // 绘制颜色
+    var startX // 起始绘制点横坐标
+    var startY // 起始绘制点纵坐标
+    var endX // 末端绘制点横坐标
+    var endY // 末端绘制点纵坐标
+    var angleX // 与横轴夹角
+    var angleY // 与纵轴夹角
+    var angleRadianX // 与横轴夹角(弧度制)
+    var angleRadianY // 与纵轴夹角(弧度制)
+    var width // 宽(横轴跨度)
+    var height // 高(纵轴跨度)
+    var centerOfCircleX // 圆心横坐标
+    var centerOfCircleY // 圆心纵坐标
+    var radius // 半径
+
+    // 在 坐标 (42, 42) 画出一个点
+    x = 42
+    y = 42
+    color = 'black'
+    dot(x, y, color)
+
+    // 画一条水平实线，粗细为一个像素
+    y = 45
+    startX = 0
+    endX = 1000
+    color = 'red'
+    for (let i = startX; i <= endX; i++) {
+        dot(i, y, color)
+    }
+
+    // 画一条垂直实线，粗细为一个像素
+    x = 45
+    startY = 0
+    endY = 1000
+    color = 'green'
+    for (let i = startY; i <= endY; i++) {
+        dot(x, i, color)
+    }
+
+    // 画一条一个实点一个空点的虚线
+    y = 60
+    startX = 0
+    endX = 1000
+    color = 'orange'
+    for (let i = startX; i <= endX; i++) {
+        if (i % 2 === 0) {
+            dot(i, y, color)
+        }
+    }
+
+    // 画一条两个实点两个空点的虚线
+    y = 75
+    startX = 0
+    endX = 1000
+    color = 'blue'
+    for (let i = startX; i <= endX; i += 2) {
+        if (i % 4 === 0) {
+            dot(i, y, color)
+            dot(i + 1, y, color)
+        }
+    }
+
+    // 画一条三个实点两个空点的虚线
+    y = 90
+    startX = 0
+    endX = 1000
+    color = 'green'
+    for (let i = startX; i <= endX; i += 5) {
+        dot(i, y, color)
+        dot(i + 1, y, color)
+        dot(i + 2, y, color)
+    }
+
+    // 画一条45度的斜线
+    startX = 60
+    startY = 0
+    endX = 1000
+    endY = 1000
+    angleX = 45
+    angleY = 90 - angleX
+    color = 'red'
+    for (let i = startX, j = startY; i <= endX && j <= endY;) {
+        dot(i, j, color)
+        if (angleX < angleY) {
+            i += 1
+            j += Math.tan(angleX / 180 * Math.PI)
+        } else {
+            i += Math.tan(angleY / 180 * Math.PI)
+            j += 1
+        }
+    }
+
+    // 画一条30度的斜线（与x轴的夹角呈30度）
+    startX = 60
+    startY = 0
+    endX = 1000
+    endY = 1000
+    angleX = 30
+    angleY = 90 - angleX
+    color = 'green'
+    for (let i = startX, j = startY; i <= endX && j <= endY;) {
+        dot(i, j, color)
+        if (angleX < angleY) {
+            i += 1
+            j += Math.tan(angleX / 180 * Math.PI)
+        } else {
+            i += Math.tan(angleY / 180 * Math.PI)
+            j += 1
+        }
+    }
+
+    // 画一条60度的斜线（与x轴的夹角呈60度）
+    startX = 60
+    startY = 0
+    endX = 1000
+    endY = 1000
+    angleX = 60
+    angleY = 90 - angleX
+    angleRadianX = angleX / 180 * Math.PI
+    angleRadianY = angleY / 180 * Math.PI
+    color = 'blue'
+    for (let i = startX, j = startY; i <= endX && j <= endY;) {
+        dot(i, j, color)
+        if (angleRadianX < angleRadianY) {
+            i += 1
+            j += Math.tan(angleRadianX)
+        } else {
+            i += Math.tan(angleRadianY)
+            j += 1
+        }
+    }
+
+    // 画一条跨越画布左上角和右下角的对角线（假设画布宽1000高700）
+    startX = 0
+    startY = 0
+    endX = 1000
+    endY = 700
+    angleRadianX = Math.atan((endY - startY) / (endX - startX))
+    angleRadianY = Math.atan((endX - startX) / (endY - startY))
+    color = 'purple'
+    for (let i = startX, j = startY; i <= endX && j <= endY;) {
+        dot(i, j, color)
+        if (angleRadianX < angleRadianY) {
+            i += 1
+            j += Math.tan(angleRadianX)
+        } else {
+            i += Math.tan(angleRadianY)
+            j += 1
+        }
+    }
+
+    // 画一个空心矩形
+    startX = 100
+    startY = 110
+    width = 100
+    height = 50
+    endX = startX + width
+    endY = startY + height
+    color = 'orange'
+
+    for (let i = startX; i <= endX; i++) {
+        for (let j = startY; j <= endY; j++) {
+            if (i === startX || i === endX || j === startY || j === endY) {
+                dot(i, j, color)
+            }
+        }
+    }
+
+    // 画一个实心矩形
+    startX = 210
+    startY = 110
+    width = 100
+    height = 50
+    endX = startX + width
+    endY = startY + height
+    color = 'pink'
+
+    for (let i = startX; i <= endX; i++) {
+        for (let j = startY; j <= endY; j++) {
+            dot(i, j, color)
+        }
+    }
+
+    // 画两个空心的圆，圆心在画布中心：
+    // 一个半径为50像素
+    centerOfCircleX = 500
+    centerOfCircleY = 500
+    radius = 50
+    accuracy = 1 / (2 * Math.PI * radius) / 4
+    color = 'green'
+    for (let i = 0; i <= 2 * Math.PI; i += accuracy) {
+        x = centerOfCircleX + radius * Math.cos(i)
+        y = centerOfCircleY + radius * Math.sin(i)
+        dot(x, y, color)
+    }
+
+    // 一个半径为200像素
+    centerOfCircleX = 500
+    centerOfCircleY = 500
+    radius = 200
+    accuracy = 1 / (2 * Math.PI * radius) / 4
+    color = 'orange'
+    for (let i = 0; i <= 2 * Math.PI; i += accuracy) {
+        x = centerOfCircleX + radius * Math.cos(i)
+        y = centerOfCircleY + radius * Math.sin(i)
+        dot(x, y, color)
+    }
+
+    // 画一个实心的圆，半径至少为100像素
+    centerOfCircleX = 200
+    centerOfCircleY = 300
+    radius = 100
+
+    // 按角度+半径绘制, 性能开销太大
+    // color = 'black'
+    // for (let i = 0; i <= radius; i++) {
+    //     // 每一圈的角度精度(绘制点的个数) = 1/周长, 为了绘制完整性, 同时考虑步长问题, 精度再除以4
+    //     // accuracy = 1 / (2 * Math.PI * radius) / 4
+    //     for (let j = 0; j <= 2 * Math.PI; j += 1 / (2 * Math.PI * i) / 4) {
+    //         x = centerOfCircleX + i * Math.cos(j)
+    //         y = centerOfCircleY + i * Math.sin(j)
+    //         dot(x, y, color)
+    //     }
+    // }
+
+    // 按欧几里得距离绘制, 节省性能
+    color = 'gray'
+    for (let i = centerOfCircleX - radius; i < centerOfCircleX + radius; i++) {
+        for (let j = centerOfCircleY - radius; j < centerOfCircleY + radius; j++) {
+            if (Math.hypot(i - centerOfCircleX, j - centerOfCircleY) <= radius) {
+                dot(i, j, color)
+            }
+        }
+    }
 </script>
 </html>
