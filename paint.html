@@ -82,6 +82,11 @@
     var centerOfCircleX // 圆心横坐标
     var centerOfCircleY // 圆心纵坐标
     var radius // 半径
+    var accuracy // 每次绘制时, x或y的最小移动增量
+    var cycle // 画布区域内的正弦函数周期
+    var offsetPercentage // 偏移量在画布范围内的百分比
+    var radian // 弧度
+    var amplitude // 振幅
 
     // 在 坐标 (42, 42) 画出一个点
     x = 42
@@ -300,6 +305,49 @@
             if (Math.hypot(i - centerOfCircleX, j - centerOfCircleY) <= radius) {
                 dot(i, j, color)
             }
+        }
+    }
+
+    // 画一个【大小位置都合适】的sin(x)的图像
+    startX = 0
+    endX = 1000
+    startY = 500
+    y = startY
+    cycle = 4 // 4个周期
+    accuracy = 0.1
+    amplitude = 100 // 振幅100像素
+
+    color = 'red'
+    for (let i = startX; i <= endX; i += accuracy) {
+        dot(i, y, color)
+        offsetPercentage = (i - startX) / (endX - startX)
+        radian = offsetPercentage * cycle * 2 * Math.PI
+        y = startY - Math.sin(radian) * amplitude
+    }
+
+    // 周期垂直辅助线
+    for (let i = 1; i <= cycle; i++) {
+        x = i * (endX - startX) / cycle
+        startY = 500 - amplitude
+        endY = 500 + amplitude
+        color = 'blue'
+        for (let i = startY; i <= endY; i += 2) {
+            if (i % 4 === 0) {
+                dot(x, i, color)
+                dot(x, i + 1, color)
+            }
+        }
+    }
+
+    // 水平辅助线
+    y = 500
+    startX = 0
+    endX = 1000
+    color = 'orange'
+    for (let i = startX; i <= endX; i += 2) {
+        if (i % 4 === 0) {
+            dot(i, y, color)
+            dot(i + 1, y, color)
         }
     }
 </script>
