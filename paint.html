@@ -88,6 +88,16 @@
     var radian // 弧度
     var amplitude // 振幅
 
+    // 二次贝塞尔曲线的P0, P1, P2
+    var x0, y0
+    var x1, y1
+    var x2, y2
+    var accuracyPercentage // 每次绘制时, x或y的最小移动增量百分比
+
+    // 二次贝塞尔曲线的Q0, Q1
+    var QX0, QY0
+    var QX1, QY1
+
     // 在 坐标 (42, 42) 画出一个点
     x = 42
     y = 42
@@ -302,7 +312,7 @@
     color = 'gray'
     for (let i = centerOfCircleX - radius; i < centerOfCircleX + radius; i++) {
         for (let j = centerOfCircleY - radius; j < centerOfCircleY + radius; j++) {
-            if (Math.hypot(i - centerOfCircleX, j - centerOfCircleY) <= radius) {
+            if (Math.hypot(i - centerOfCircleX, j - centerOfCircleY) < radius) {
                 dot(i, j, color)
             }
         }
@@ -349,6 +359,106 @@
             dot(i, y, color)
             dot(i + 1, y, color)
         }
+    }
+
+    // 画一个贝塞尔曲线（二阶或三阶均可，二阶由三个点确定，三阶由四个点确定）
+    // 二阶贝塞尔曲线
+    x0 = 600
+    y0 = 300
+    x1 = 700
+    y1 = 100
+    x2 = 950
+    y2 = 300
+
+    color = 'black'
+    // dot(x0, y0, color)
+    // dot(x1, y1, color)
+    // dot(x2, y2, color)
+
+    radius = 5
+
+    // 绘制点P0
+    centerOfCircleX = x0
+    centerOfCircleY = y0
+    for (let i = centerOfCircleX - radius; i < centerOfCircleX + radius; i++) {
+        for (let j = centerOfCircleY - radius; j < centerOfCircleY + radius; j++) {
+            if (Math.hypot(i - centerOfCircleX, j - centerOfCircleY) < radius) {
+                dot(i, j, color)
+            }
+        }
+    }
+
+    // 绘制点P1
+    centerOfCircleX = x1
+    centerOfCircleY = y1
+    for (let i = centerOfCircleX - radius; i < centerOfCircleX + radius; i++) {
+        for (let j = centerOfCircleY - radius; j < centerOfCircleY + radius; j++) {
+            if (Math.hypot(i - centerOfCircleX, j - centerOfCircleY) < radius) {
+                dot(i, j, color)
+            }
+        }
+    }
+
+    // 绘制点P2
+    centerOfCircleX = x2
+    centerOfCircleY = y2
+    for (let i = centerOfCircleX - radius; i < centerOfCircleX + radius; i++) {
+        for (let j = centerOfCircleY - radius; j < centerOfCircleY + radius; j++) {
+            if (Math.hypot(i - centerOfCircleX, j - centerOfCircleY) < radius) {
+                dot(i, j, color)
+            }
+        }
+    }
+
+    // 绘制线P0P1
+    startX = x0
+    startY = y0
+    endX = x1
+    endY = y1
+    angleRadianX = Math.atan((endY - startY) / (endX - startX))
+    angleRadianY = Math.atan((endX - startX) / (endY - startY))
+    color = 'gray'
+    for (let i = startX, j = startY; i <= endX && j >= endY;) {
+        dot(i, j, color)
+        if (angleRadianX < angleRadianY) {
+            i += 1
+            j += Math.tan(angleRadianX)
+        } else {
+            i += Math.tan(angleRadianY)
+            j += 1
+        }
+    }
+
+    // 绘制线P1P2
+    startX = x1
+    startY = y1
+    endX = x2
+    endY = y2
+    angleRadianX = Math.atan((endY - startY) / (endX - startX))
+    angleRadianY = Math.atan((endX - startX) / (endY - startY))
+    color = 'gray'
+    for (let i = startX, j = startY; i <= endX && j <= endY;) {
+        dot(i, j, color)
+        if (angleRadianX < angleRadianY) {
+            i += 1
+            j += Math.tan(angleRadianX)
+        } else {
+            i += Math.tan(angleRadianY)
+            j += 1
+        }
+    }
+
+    // 基于P0, P1, P2, 绘制二次贝塞尔曲线
+    color = 'red'
+    accuracyPercentage = 0.0001
+    for (let i = 0; i <= 1; i += accuracyPercentage) {
+        QX0 = x0 + (x1 - x0) * i
+        QY0 = y0 + (y1 - y0) * i
+        QX1 = x1 + (x2 - x1) * i
+        QY1 = y1 + (y2 - y1) * i
+        x = QX0 + (QX1 - QX0) * i
+        y = QY0 + (QY1 - QY0) * i
+        dot(x, y, color)
     }
 </script>
 </html>
