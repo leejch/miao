@@ -87,6 +87,7 @@
     var offsetPercentage // 偏移量在画布范围内的百分比
     var radian // 弧度
     var amplitude // 振幅
+    var red, green, blue // RGB
 
     // 二次贝塞尔曲线的P0, P1, P2
     var x0, y0
@@ -459,6 +460,51 @@
         x = QX0 + (QX1 - QX0) * i
         y = QY0 + (QY1 - QY0) * i
         dot(x, y, color)
+    }
+
+    // 画出rgb色彩空间的某一面（尺寸要大于100x100）
+    startX = 0
+    startY = 800
+    width = 200
+    height = 200
+    endX = startX + width
+    endY = startY + height
+
+    for (let i = startX; i <= endX; i++) {
+        for (let j = startY; j <= endY; j++) {
+            red = (i - startX) / width * 255
+            green = (j - startY) / height * 255
+            color = 'rgb(' + red + ', ' + green + ', ' + '255)'
+            dot(i, j, color)
+        }
+    }
+
+    // 将其每个点的坐标乘以一个矩阵, 即绘制出被线性变换后的色彩空间某一面
+    startX = 0
+    startY = 800
+    width = 200
+    height = 200
+    endX = startX + width
+    endY = startY + height
+
+    // 计算(x,y)乘以矩阵后的x
+    function matrixX(x, y, a, b, c, d) {
+        return a * x + b * y;
+    }
+
+    // 计算(x,y)乘以矩阵后的y
+    function matrixY(x, y, a, b, c, d) {
+        return c * x + d * y;
+    }
+
+    for (let i = startX; i <= endX; i++) {
+        for (let j = startY; j <= endY; j++) {
+            red = (i - startX) / width * 255
+            green = (j - startY) / height * 255
+            color = 'rgb(' + red + ', ' + green + ', ' + '255)'
+            dot(matrixX(i, j, 1, 0.27, 0, 1), matrixY(i, j, 1, 0.27, 0, 1), color)
+            dot(matrixX(i, j, 0.5, 0.87, -0.87, 0.5), matrixY(i, j, 0.5, 0.87, -0.87, 0.5), color)
+        }
     }
 </script>
 </html>
