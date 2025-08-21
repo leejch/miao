@@ -1539,3 +1539,260 @@
 
     console.log(totalGolds)
 </script>
+
+<script id="narcissistic">
+    // 输入一个数, 判断是否是水仙花数
+    // 水仙花数: 三位数, 其每个位上的数字的立方和等于它本身
+
+    function isNarcissistic(num) {
+        var sum = 0
+        var temp = num
+
+        if (!(num >= 100 && num <= 999)) {
+            return 'NO'
+        }
+
+        while (temp > 0) {
+            sum += Math.pow(temp % 10, 3)
+            temp = Math.floor(temp / 10)
+        }
+
+        if (sum !== num) {
+            return 'NO'
+        }
+
+        return 'YES'
+    }
+
+    var n = Number(prompt())
+    console.log(isNarcissistic(n))
+</script>
+
+<script id="narcissistics">
+    // 输出10000以内的水仙花数
+
+    function isNarcissistic(num) {
+        var sum = 0
+        var temp = num
+
+        if (!(num >= 100 && num <= 999)) {
+            return 'NO'
+        }
+
+        while (temp > 0) {
+            sum += Math.pow(temp % 10, 3)
+            temp = Math.floor(temp / 10)
+        }
+
+        if (sum !== num) {
+            return 'NO'
+        }
+
+        return 'YES'
+    }
+
+    var result = ''
+
+    for (let i = 100; i < 10000; i++) {
+        if (isNarcissistic(i) === 'YES') {
+            result += i + ' '
+        }
+    }
+
+    result = result.trim()
+
+    console.log(result)
+</script>
+
+<script id="palindrom">
+    // 输入一个数, 判断是否是回文数
+
+    function isPalindrom(num) {
+        if (num < 10) {
+            return 'NO'
+        }
+
+        if (num > 0 && num % 10 === 0) {
+            return 'NO'
+        }
+
+        if (num === 0) {
+            return 'YES'
+        }
+
+        var originNum = '' + num
+        var reversedNum = ''
+
+        var temp = num
+
+        while (temp > 0) {
+            reversedNum += temp % 10
+            temp = Math.floor(temp / 10)
+        }
+
+        if (originNum !== reversedNum) {
+            return 'NO'
+        }
+
+        return 'YES'
+    }
+
+    var n = Number(prompt())
+
+    console.log(isPalindrom(n))
+</script>
+
+<script id="complete-number">
+    // 输入一个数, 判断是否是完全数
+    // 完全数: 正整数, 其所有真因子(即除了自身以外的因子)的和等于这个数本身
+    function isCompleteNumber(num) {
+        var sum = 0
+
+        for (let i = 1; i <= num - 1; i++) {
+            if (num % i === 0) {
+                sum += i
+            }
+        }
+
+        if (sum !== num) {
+            return 'NO'
+        }
+
+        return 'YES'
+    }
+
+    var n = Number(prompt())
+
+    console.log(isCompleteNumber(n))
+</script>
+
+<script id="complete-numbers">
+    // 输出1000以内的完全数
+    function isCompleteNumber(num) {
+        var sum = 0
+
+        for (let i = 1; i <= num - 1; i++) {
+            if (num % i === 0) {
+                sum += i
+            }
+        }
+
+        if (sum !== num) {
+            return 'NO'
+        }
+
+        return 'YES'
+    }
+
+    result = ''
+
+    for (let i = 2; i < 1000; i++) {
+        if (isCompleteNumber(i) === 'YES') {
+            result += i + ' '
+        }
+    }
+
+    result = result.trim()
+
+    console.log(result)
+</script>
+
+<script id="prime">
+    // 输入一个数, 判断它是否是素数
+    function isPrime(num) {
+        var numSqrt = Math.sqrt(num)
+
+        if (num < 2 || num > 2 && num % 2 === 0) {
+            return 'NO'
+        }
+
+        for (let i = 3; i <= numSqrt; i += 2) {
+            if (num % i === 0) {
+                return 'NO'
+            }
+        }
+
+        return 'YES'
+    }
+
+    var n = Number(prompt())
+
+    console.log(isPrime(n))
+</script>
+
+<script id="primes">
+    // 输出100以内的素数
+    function isPrime(num) {
+        var numSqrt = Math.sqrt(num)
+
+        if (num < 2 || num > 2 && num % 2 === 0) {
+            return 'NO'
+        }
+
+        for (let i = 3; i <= numSqrt; i += 2) {
+            if (num % i === 0) {
+                return 'NO'
+            }
+        }
+
+        return 'YES'
+    }
+
+    result = ''
+
+    for (let i = 2; i < 100; i++) {
+        if (isPrime(i) === 'YES') {
+            result += i + ' '
+        }
+    }
+
+    result = result.trim()
+
+    console.log(result)
+</script>
+
+<script id="lcf&lcm">
+    // 输入两个数, 输出它们的最大公约数和最小公倍数
+
+    // 最大公约数
+    function greatestCommonDivisor(num1, num2) {
+        num1 = Math.abs(num1)
+        num2 = Math.abs(num2)
+        var numMin = Math.min(num1, num2)
+
+        var result
+
+        for (let i = numMin; i >= 1; i--) {
+            if (num1 % i === 0 && num2 % i === 0) {
+                result = i
+                break
+            }
+        }
+
+        return result
+    }
+
+    // 最小公倍数
+    function leastCommonMultiple(num1, num2) {
+        num1 = Math.abs(num1)
+        num2 = Math.abs(num2)
+        var numMax = Math.max(num1, num2)
+        var product = num1 * num2
+
+        var result
+
+        for (let i = numMax; i <= product; i++) {
+            if (i % num1 === 0 && i % num2 === 0) {
+                result = i
+                break
+            }
+        }
+
+        return result
+    }
+
+    var n1 = Number(prompt())
+    var n2 = Number(prompt())
+
+    console.log(greatestCommonDivisor(n1, n2), leastCommonMultiple(n1, n2))
+</script>
