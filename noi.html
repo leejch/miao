@@ -1796,3 +1796,26 @@
 
     console.log(greatestCommonDivisor(n1, n2), leastCommonMultiple(n1, n2))
 </script>
+
+<script id="itob">
+    function digitToChar(digit) {
+        return String.fromCharCode(48 + digit)
+    }
+
+    function itob(num) {
+        var result = ''
+        var digit
+
+        do {
+            digit = num % 10
+            result = digitToChar(digit) + result
+            num = Math.floor(num / 10)
+        } while (num > 0)
+
+        return result;
+    }
+
+    var n = Number(prompt())
+
+    console.log(itob(n))
+</script>
