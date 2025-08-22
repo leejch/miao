@@ -1804,6 +1804,13 @@
 
     function itob(num) {
         var result = ''
+        var isNegative = false
+
+        if (num < 0) {
+            isNegative = true
+            num = -num
+        }
+
         var digit
 
         do {
@@ -1811,6 +1818,10 @@
             result = digitToChar(digit) + result
             num = Math.floor(num / 10)
         } while (num > 0)
+
+        if (isNegative) {
+            result = '-' + result
+        }
 
         return result;
     }
